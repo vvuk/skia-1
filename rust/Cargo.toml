@@ -1,0 +1,8 @@
+[package]
+name = "skia"
+version = "0.1.0"
+authors = ["Vladimir Vukicevic <vladimir@pobox.com>"]
+build = "build.rs"
+links = "skia"
+
+[dependencies]
