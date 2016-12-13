@@ -5,53 +5,40 @@ pub use self::root::*;
 pub mod root {
     #[allow(unused_imports)]
     use self::super::root;
+    /// <div rustbindgen replaces="SkOnce"></div>
+    #[repr(C)]
+    #[derive(Debug, Copy)]
+    pub struct SkOnce {
+        pub v: ::std::os::raw::c_uchar,
+    }
+    #[test]
+    fn bindgen_test_layout_SkOnce() {
+        assert_eq!(::std::mem::size_of::<SkOnce>() , 1usize);
+        assert_eq!(::std::mem::align_of::<SkOnce>() , 1usize);
+    }
+    impl Clone for SkOnce {
+        fn clone(&self) -> Self { *self }
+    }
+    /// <div rustbindgen replaces="sk_sp"></div>
+    #[repr(C)]
+    #[derive(Debug, Copy, Clone)]
+    pub struct sk_sp<T> {
+        pub ptr: *mut T,
+        pub dummy: *mut ::std::os::raw::c_void,
+    }
+    pub type va_list = *mut ::std::os::raw::c_char;
     pub mod std {
         #[allow(unused_imports)]
         use self::super::super::root;
-        #[repr(C)]
-        #[derive(Debug)]
-        pub struct __atomic_base<_ITp> {
-            pub _M_i: root::std::__atomic_base___int_type<_ITp>,
-        }
-        pub type __atomic_base___int_type<_ITp> = _ITp;
-        #[repr(C)]
-        #[derive(Debug)]
-        pub struct atomic<_Tp> {
-            pub _M_i: _Tp,
-        }
-        #[test]
-        fn __bindgen_test_layout_template_1() {
-            assert_eq!(::std::mem::size_of::<root::std::__atomic_base<::std::os::raw::c_uchar>>()
-                       , 1usize);
-            assert_eq!(::std::mem::align_of::<root::std::__atomic_base<::std::os::raw::c_uchar>>()
-                       , 1usize);
-        }
-        #[test]
-        fn __bindgen_test_layout_template_2() {
-            assert_eq!(::std::mem::size_of::<root::std::atomic<::std::os::raw::c_uchar>>()
-                       , 1usize);
-            assert_eq!(::std::mem::align_of::<root::std::atomic<::std::os::raw::c_uchar>>()
-                       , 1usize);
-        }
-        #[test]
-        fn __bindgen_test_layout_template_3() {
-            assert_eq!(::std::mem::size_of::<root::std::__atomic_base<::std::os::raw::c_int>>()
-                       , 4usize);
-            assert_eq!(::std::mem::align_of::<root::std::__atomic_base<::std::os::raw::c_int>>()
-                       , 4usize);
-        }
-        #[test]
-        fn __bindgen_test_layout_template_4() {
-            assert_eq!(::std::mem::size_of::<root::std::atomic<::std::os::raw::c_int>>()
-                       , 4usize);
-            assert_eq!(::std::mem::align_of::<root::std::atomic<::std::os::raw::c_int>>()
-                       , 4usize);
+        pub mod tr1 {
+            #[allow(unused_imports)]
+            use self::super::super::super::root;
         }
         #[repr(C)]
         #[derive(Debug, Copy, Clone)]
-        pub struct default_delete<_Tp> {
+        pub struct default_delete<_Ty> {
             pub _address: u8,
-            pub _phantom_0: ::std::marker::PhantomData<_Tp>,
+            pub _phantom_0: ::std::marker::PhantomData<_Ty>,
         }
         /// <div rustbindgen replaces="std::unique_ptr"></div>
         #[repr(C)]
@@ -61,23 +48,10 @@ pub mod root {
             pub _phantom_1: ::std::marker::PhantomData<D>,
         }
     }
-    pub mod __gnu_cxx {
-        #[allow(unused_imports)]
-        use self::super::super::root;
-    }
-    extern "C" {
-        #[link_name = "_ZL16SkNO_RETURN_HINTv"]
-        pub fn SkNO_RETURN_HINT();
-    }
-    extern "C" {
-        #[link_name = "_Z8SkDebugfPKcz"]
-        pub fn SkDebugf(format: *const ::std::os::raw::c_char);
-    }
     /** 32 bit integer to hold a unicode value
 */
     pub type SkUnichar = i32;
     pub type SkScalar = f32;
-    pub type va_list = root::__gnuc_va_list;
     /** \class SkString
 
     Light weight class for managing strings. Uses reference
@@ -105,7 +79,7 @@ pub mod root {
         fn clone(&self) -> Self { *self }
     }
     extern "C" {
-        #[link_name = "_ZN8SkString9gEmptyRecE"]
+        #[link_name = "?gEmptyRec@SkString@@0URec@1@B"]
         pub static SkString_gEmptyRec: root::SkString_Rec;
     }
     #[test]
@@ -114,127 +88,127 @@ pub mod root {
         assert_eq!(::std::mem::align_of::<SkString>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZNK8SkString6equalsERKS_"]
+        #[link_name = "?equals@SkString@@QEBA_NAEBV1@@Z"]
         pub fn SkString_equals(this: *const root::SkString,
                                arg1: *const root::SkString) -> bool;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkString6equalsEPKc"]
+        #[link_name = "?equals@SkString@@QEBA_NQEBD@Z"]
         pub fn SkString_equals1(this: *const root::SkString,
                                 text: *const ::std::os::raw::c_char) -> bool;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkString6equalsEPKcm"]
+        #[link_name = "?equals@SkString@@QEBA_NQEBD_K@Z"]
         pub fn SkString_equals2(this: *const root::SkString,
                                 text: *const ::std::os::raw::c_char,
                                 len: usize) -> bool;
     }
     extern "C" {
-        #[link_name = "_ZN8SkString12writable_strEv"]
+        #[link_name = "?writable_str@SkString@@QEAAPEADXZ"]
         pub fn SkString_writable_str(this: *mut root::SkString)
          -> *mut ::std::os::raw::c_char;
     }
     extern "C" {
-        #[link_name = "_ZN8SkString5resetEv"]
+        #[link_name = "?reset@SkString@@QEAAXXZ"]
         pub fn SkString_reset(this: *mut root::SkString);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString3setEPKc"]
+        #[link_name = "?set@SkString@@QEAAXQEBD@Z"]
         pub fn SkString_set(this: *mut root::SkString,
                             text: *const ::std::os::raw::c_char);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString3setEPKcm"]
+        #[link_name = "?set@SkString@@QEAAXQEBD_K@Z"]
         pub fn SkString_set1(this: *mut root::SkString,
                              text: *const ::std::os::raw::c_char, len: usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString8setUTF16EPKt"]
+        #[link_name = "?setUTF16@SkString@@QEAAXQEBG@Z"]
         pub fn SkString_setUTF16(this: *mut root::SkString, arg1: *const u16);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString8setUTF16EPKtm"]
+        #[link_name = "?setUTF16@SkString@@QEAAXQEBG_K@Z"]
         pub fn SkString_setUTF161(this: *mut root::SkString, arg1: *const u16,
                                   len: usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString6insertEmPKc"]
+        #[link_name = "?insert@SkString@@QEAAX_KQEBD@Z"]
         pub fn SkString_insert(this: *mut root::SkString, offset: usize,
                                text: *const ::std::os::raw::c_char);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString6insertEmPKcm"]
+        #[link_name = "?insert@SkString@@QEAAX_KQEBD0@Z"]
         pub fn SkString_insert1(this: *mut root::SkString, offset: usize,
                                 text: *const ::std::os::raw::c_char,
                                 len: usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString13insertUnicharEmi"]
+        #[link_name = "?insertUnichar@SkString@@QEAAX_KH@Z"]
         pub fn SkString_insertUnichar(this: *mut root::SkString,
                                       offset: usize, arg1: root::SkUnichar);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString9insertS32Emi"]
+        #[link_name = "?insertS32@SkString@@QEAAX_KH@Z"]
         pub fn SkString_insertS32(this: *mut root::SkString, offset: usize,
                                   value: i32);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString9insertS64Emli"]
+        #[link_name = "?insertS64@SkString@@QEAAX_K_JH@Z"]
         pub fn SkString_insertS64(this: *mut root::SkString, offset: usize,
                                   value: i64,
                                   minDigits: ::std::os::raw::c_int);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString9insertU32Emj"]
+        #[link_name = "?insertU32@SkString@@QEAAX_KI@Z"]
         pub fn SkString_insertU32(this: *mut root::SkString, offset: usize,
                                   value: u32);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString9insertU64Emmi"]
+        #[link_name = "?insertU64@SkString@@QEAAX_K0H@Z"]
         pub fn SkString_insertU64(this: *mut root::SkString, offset: usize,
                                   value: u64,
                                   minDigits: ::std::os::raw::c_int);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString9insertHexEmji"]
+        #[link_name = "?insertHex@SkString@@QEAAX_KIH@Z"]
         pub fn SkString_insertHex(this: *mut root::SkString, offset: usize,
                                   value: u32,
                                   minDigits: ::std::os::raw::c_int);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString12insertScalarEmf"]
+        #[link_name = "?insertScalar@SkString@@QEAAX_KM@Z"]
         pub fn SkString_insertScalar(this: *mut root::SkString, offset: usize,
                                      arg1: root::SkScalar);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString6printfEPKcz"]
+        #[link_name = "?printf@SkString@@QEAAXQEBDZZ"]
         pub fn SkString_printf(this: *mut root::SkString,
                                format: *const ::std::os::raw::c_char);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString7appendfEPKcz"]
+        #[link_name = "?appendf@SkString@@QEAAXQEBDZZ"]
         pub fn SkString_appendf(this: *mut root::SkString,
                                 format: *const ::std::os::raw::c_char);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString12appendVAListEPKcP13__va_list_tag"]
+        #[link_name = "?appendVAList@SkString@@QEAAXQEBDPEAD@Z"]
         pub fn SkString_appendVAList(this: *mut root::SkString,
                                      format: *const ::std::os::raw::c_char,
                                      arg1: root::va_list);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString8prependfEPKcz"]
+        #[link_name = "?prependf@SkString@@QEAAXQEBDZZ"]
         pub fn SkString_prependf(this: *mut root::SkString,
                                  format: *const ::std::os::raw::c_char);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString13prependVAListEPKcP13__va_list_tag"]
+        #[link_name = "?prependVAList@SkString@@QEAAXQEBDPEAD@Z"]
         pub fn SkString_prependVAList(this: *mut root::SkString,
                                       format: *const ::std::os::raw::c_char,
                                       arg1: root::va_list);
     }
     extern "C" {
-        #[link_name = "_ZN8SkString6removeEmm"]
+        #[link_name = "?remove@SkString@@QEAAX_K0@Z"]
         pub fn SkString_remove(this: *mut root::SkString, offset: usize,
                                length: usize);
     }
@@ -243,7 +217,7 @@ pub mod root {
      *  Swap contents between this and other. This function is guaranteed
      *  to never fail or throw.
      */
-        #[link_name = "_ZN8SkString4swapERS_"]
+        #[link_name = "?swap@SkString@@QEAAXAEAV1@@Z"]
         pub fn SkString_swap(this: *mut root::SkString,
                              other: *mut root::SkString);
     }
@@ -370,69 +344,22 @@ pub mod root {
  *  variables, not for storage
  */
     pub type U8CPU = ::std::os::raw::c_uint;
-    /**
- *  Fast type for signed 16 bits. Use for parameter passing and local variables,
- *  not for storage
- */
-    pub type S16CPU = ::std::os::raw::c_int;
-    /**
- *  Fast type for unsigned 16 bits. Use for parameter passing and local
- *  variables, not for storage
- */
-    pub type U16CPU = ::std::os::raw::c_uint;
+    #[repr(C)]
+    #[derive(Debug, Copy)]
+    pub struct _iobuf {
+        pub _Placeholder: *mut ::std::os::raw::c_void,
+    }
+    impl Clone for _iobuf {
+        fn clone(&self) -> Self { *self }
+    }
+    pub type FILE = root::_iobuf;
     pub mod sktfitsin {
         #[allow(unused_imports)]
         use self::super::super::root;
     }
-    extern "C" {
-        /** Returns true if the value can be represented with signed 16bits
- */
-        #[link_name = "_ZL7SkIsS16l"]
-        pub fn SkIsS16(x: ::std::os::raw::c_long) -> bool;
-    }
-    extern "C" {
-        /** Returns true if the value can be represented with unsigned 16bits
- */
-        #[link_name = "_ZL7SkIsU16l"]
-        pub fn SkIsU16(x: ::std::os::raw::c_long) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkLeftShiftii"]
-        pub fn SkLeftShift(value: i32, shift: i32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkLeftShiftli"]
-        pub fn SkLeftShift1(value: i64, shift: i32) -> i64;
-    }
     /** 16 bit unsigned integer to hold a glyph index
 */
     pub type SkGlyphID = u16;
-    extern "C" {
-        /** Faster than SkToBool for integral conditions. Returns 0 or 1
-*/
-        #[link_name = "_ZL10Sk32ToBoolj"]
-        pub fn Sk32ToBool(n: u32) -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL7SkAbs32i"]
-        pub fn SkAbs32(value: i32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL7SkMax32ii"]
-        pub fn SkMax32(a: i32, b: i32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL7SkMin32ii"]
-        pub fn SkMin32(a: i32, b: i32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL8SkSign32i"]
-        pub fn SkSign32(a: i32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkFastMin32ii"]
-        pub fn SkFastMin32(value: i32, max: i32) -> i32;
-    }
     #[repr(u8)]
     /**
  *  Indicates whether an allocation should count against a cache budget.
@@ -459,7 +386,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkFilterQuality_kLast_SkFilterQuality: root::SkFilterQuality =
         SkFilterQuality::kHigh_SkFilterQuality;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
  *  Controls how much filtering to be done when scaling/transforming complex colors
  *  e.g. images
@@ -470,260 +397,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kLow_SkFilterQuality = 1,
         kMedium_SkFilterQuality = 2,
         kHigh_SkFilterQuality = 3,
-    }
-    extern "C" {
-        /**
- *  Computes numer1 * numer2 / denom in full 64 intermediate precision.
- *  It is an error for denom to be 0. There is no special handling if
- *  the result overflows 32bits.
- */
-        #[link_name = "_ZL8SkMulDiviii"]
-        pub fn SkMulDiv(numer1: i32, numer2: i32, denom: i32) -> i32;
-    }
-    extern "C" {
-        /**
- *  Return the integer square root of value, with a bias of bitBias
- */
-        #[link_name = "_Z10SkSqrtBitsii"]
-        pub fn SkSqrtBits(value: i32, bitBias: ::std::os::raw::c_int) -> i32;
-    }
-    extern "C" {
-        /**
- *  Returns (value < 0 ? 0 : value) efficiently (i.e. no compares or branches)
- */
-        #[link_name = "_ZL10SkClampPosi"]
-        pub fn SkClampPos(value: ::std::os::raw::c_int)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        /** Given an integer and a positive (max) integer, return the value
- *  pinned against 0 and max, inclusive.
- *  @param value    The value we want returned pinned between [0...max]
- *  @param max      The positive max value
- *  @return 0 if value < 0, max if value > max, else value
- */
-        #[link_name = "_ZL10SkClampMaxii"]
-        pub fn SkClampMax(value: ::std::os::raw::c_int,
-                          max: ::std::os::raw::c_int)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        /**
- *  Return a*b/((1 << shift) - 1), rounding any fractional bits.
- *  Only valid if a and b are unsigned and <= 32767 and shift is > 0 and <= 8
- */
-        #[link_name = "_ZL17SkMul16ShiftRoundjji"]
-        pub fn SkMul16ShiftRound(a: root::U16CPU, b: root::U16CPU,
-                                 shift: ::std::os::raw::c_int)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        /**
- *  Return a*b/255, rounding any fractional bits.
- *  Only valid if a and b are unsigned and <= 32767.
- */
-        #[link_name = "_ZL16SkMulDiv255Roundjj"]
-        pub fn SkMulDiv255Round(a: root::U16CPU, b: root::U16CPU)
-         -> root::U8CPU;
-    }
-    pub type __off_t = ::std::os::raw::c_long;
-    pub type __off64_t = ::std::os::raw::c_long;
-    extern "C" {
-        /** Convert a sign-bit int (i.e. float interpreted as int) into a 2s compliement
-    int. This also converts -0 (0x80000000) to 0. Doing this to a float allows
-    it to be compared using normal C operators (<, <=, etc.)
-*/
-        #[link_name = "_ZL23SkSignBitTo2sComplimenti"]
-        pub fn SkSignBitTo2sCompliment(x: i32) -> i32;
-    }
-    extern "C" {
-        /** Convert a 2s compliment int to a sign-bit (i.e. int interpreted as float).
-    This undoes the result of SkSignBitTo2sCompliment().
- */
-        #[link_name = "_ZL23Sk2sComplimentToSignBiti"]
-        pub fn Sk2sComplimentToSignBit(x: i32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL12SkFloat2Bitsf"]
-        pub fn SkFloat2Bits(x: f32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL12SkBits2Floati"]
-        pub fn SkBits2Float(floatAsBits: i32) -> f32;
-    }
-    extern "C" {
-        /** Return the float as a 2s compliment int. Just to be used to compare floats
-    to each other or against positive float-bit-constants (like 0). This does
-    not return the int equivalent of the float, just something cheaper for
-    compares-only.
- */
-        #[link_name = "_ZL21SkFloatAs2sComplimentf"]
-        pub fn SkFloatAs2sCompliment(x: f32) -> i32;
-    }
-    extern "C" {
-        /** Return the 2s compliment int as a float. This undos the result of
-    SkFloatAs2sCompliment
- */
-        #[link_name = "_ZL21Sk2sComplimentAsFloati"]
-        pub fn Sk2sComplimentAsFloat(x: i32) -> f32;
-    }
-    extern "C" {
-        /** Return the floor of the float as an int.
-    If the value is out of range, or NaN, return +/- SK_MaxS32
-*/
-        #[link_name = "_ZL17SkFloatToIntFloorf"]
-        pub fn SkFloatToIntFloor(x: f32) -> i32;
-    }
-    extern "C" {
-        /** Return the float rounded to an int.
-    If the value is out of range, or NaN, return +/- SK_MaxS32
-*/
-        #[link_name = "_ZL17SkFloatToIntRoundf"]
-        pub fn SkFloatToIntRound(x: f32) -> i32;
-    }
-    extern "C" {
-        /** Return the ceiling of the float as an int.
-    If the value is out of range, or NaN, return +/- SK_MaxS32
-*/
-        #[link_name = "_ZL16SkFloatToIntCeilf"]
-        pub fn SkFloatToIntCeil(x: f32) -> i32;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkScalarIsNaNf"]
-        pub fn SkScalarIsNaN(x: root::SkScalar) -> bool;
-    }
-    extern "C" {
-        /** Returns true if x is not NaN and not infinite
- */
-        #[link_name = "_ZL16SkScalarIsFinitef"]
-        pub fn SkScalarIsFinite(x: root::SkScalar) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkScalarsAreFiniteff"]
-        pub fn SkScalarsAreFinite(a: root::SkScalar, b: root::SkScalar)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkScalarsAreFinitePKfi"]
-        pub fn SkScalarsAreFinite1(array: *const root::SkScalar,
-                                   count: ::std::os::raw::c_int) -> bool;
-    }
-    extern "C" {
-        /**
- *  Variant of SkScalarRoundToInt, that performs the rounding step (adding 0.5) explicitly using
- *  double, to avoid possibly losing the low bit(s) of the answer before calling floor().
- *
- *  This routine will likely be slower than SkScalarRoundToInt(), and should only be used when the
- *  extra precision is known to be valuable.
- *
- *  In particular, this catches the following case:
- *      SkScalar x = 0.49999997;
- *      int ix = SkScalarRoundToInt(x);
- *      SkASSERT(0 == ix);    // <--- fails
- *      ix = SkDScalarRoundToInt(x);
- *      SkASSERT(0 == ix);    // <--- succeeds
- */
-        #[link_name = "_ZL19SkDScalarRoundToIntf"]
-        pub fn SkDScalarRoundToInt(x: root::SkScalar)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        /** Returns the fractional part of the scalar. */
-        #[link_name = "_ZL16SkScalarFractionf"]
-        pub fn SkScalarFraction(x: root::SkScalar) -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL16SkScalarClampMaxff"]
-        pub fn SkScalarClampMax(x: root::SkScalar, max: root::SkScalar)
-         -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkScalarPinfff"]
-        pub fn SkScalarPin(x: root::SkScalar, min: root::SkScalar,
-                           max: root::SkScalar) -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_Z14SkScalarSinCosfPf"]
-        pub fn SkScalarSinCos(radians: root::SkScalar,
-                              cosValue: *mut root::SkScalar)
-         -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL14SkScalarSquaref"]
-        pub fn SkScalarSquare(x: root::SkScalar) -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkMaxScalarff"]
-        pub fn SkMaxScalar(a: root::SkScalar, b: root::SkScalar)
-         -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkMinScalarff"]
-        pub fn SkMinScalar(a: root::SkScalar, b: root::SkScalar)
-         -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkScalarIsIntf"]
-        pub fn SkScalarIsInt(x: root::SkScalar) -> bool;
-    }
-    extern "C" {
-        /**
- *  Returns -1 || 0 || 1 depending on the sign of value:
- *  -1 if x < 0
- *   0 if x == 0
- *   1 if x > 0
- */
-        #[link_name = "_ZL17SkScalarSignAsIntf"]
-        pub fn SkScalarSignAsInt(x: root::SkScalar) -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL20SkScalarSignAsScalarf"]
-        pub fn SkScalarSignAsScalar(x: root::SkScalar) -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkScalarNearlyZeroff"]
-        pub fn SkScalarNearlyZero(x: root::SkScalar,
-                                  tolerance: root::SkScalar) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL19SkScalarNearlyEqualfff"]
-        pub fn SkScalarNearlyEqual(x: root::SkScalar, y: root::SkScalar,
-                                   tolerance: root::SkScalar) -> bool;
-    }
-    extern "C" {
-        /** Linearly interpolate between A and B, based on t.
-    If t is 0, return A
-    If t is 1, return B
-    else interpolate.
-    t must be [0..SK_Scalar1]
-*/
-        #[link_name = "_ZL14SkScalarInterpfff"]
-        pub fn SkScalarInterp(A: root::SkScalar, B: root::SkScalar,
-                              t: root::SkScalar) -> root::SkScalar;
-    }
-    extern "C" {
-        /** Interpolate along the function described by (keys[length], values[length])
-    for the passed searchKey.  SearchKeys outside the range keys[0]-keys[Length]
-    clamp to the min or max value.  This function was inspired by a desire
-    to change the multiplier for thickness in fakeBold; therefore it assumes
-    the number of pairs (length) will be small, and a linear search is used.
-    Repeated keys are allowed for discontinuous functions (so long as keys is
-    monotonically increasing), and if key is the value of a repeated scalar in
-    keys, the first one will be used.  However, that may change if a binary
-    search is used.
-*/
-        #[link_name = "_Z18SkScalarInterpFuncfPKfS0_i"]
-        pub fn SkScalarInterpFunc(searchKey: root::SkScalar,
-                                  keys: *const root::SkScalar,
-                                  values: *const root::SkScalar,
-                                  length: ::std::os::raw::c_int)
-         -> root::SkScalar;
-    }
-    extern "C" {
-        #[link_name = "_ZL14SkScalarsEqualPKfS0_i"]
-        pub fn SkScalarsEqual(a: *const root::SkScalar,
-                              b: *const root::SkScalar,
-                              n: ::std::os::raw::c_int) -> bool;
     }
     /** \struct SkIPoint
 
@@ -744,7 +417,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Rotate the point clockwise, writing the new point into dst
         It is legal for dst == this
     */
-        #[link_name = "_ZNK8SkIPoint8rotateCWEPS_"]
+        #[link_name = "?rotateCW@SkIPoint@@QEBAXPEAU1@@Z"]
         pub fn SkIPoint_rotateCW(this: *const root::SkIPoint,
                                  dst: *mut root::SkIPoint);
     }
@@ -752,7 +425,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Rotate the point counter-clockwise, writing the new point into dst.
         It is legal for dst == this
     */
-        #[link_name = "_ZNK8SkIPoint9rotateCCWEPS_"]
+        #[link_name = "?rotateCCW@SkIPoint@@QEBAXPEAU1@@Z"]
         pub fn SkIPoint_rotateCCW(this: *const root::SkIPoint,
                                   dst: *mut root::SkIPoint);
     }
@@ -788,7 +461,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkPoint>() , 4usize);
     }
     extern "C" {
-        #[link_name = "_ZN7SkPoint11setIRectFanEiiiim"]
+        #[link_name = "?setIRectFan@SkPoint@@QEAAXHHHH_K@Z"]
         pub fn SkPoint_setIRectFan(this: *mut root::SkPoint,
                                    l: ::std::os::raw::c_int,
                                    t: ::std::os::raw::c_int,
@@ -800,7 +473,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         already points.  If the point has a degenerate length (i.e. nearly 0)
         then set it to (0,0) and return false; otherwise return true.
     */
-        #[link_name = "_ZN7SkPoint9normalizeEv"]
+        #[link_name = "?normalize@SkPoint@@QEAA_NXZ"]
         pub fn SkPoint_normalize(this: *mut root::SkPoint) -> bool;
     }
     extern "C" {
@@ -808,7 +481,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         x,y params. If the vector (x,y) has a degenerate length (i.e. nearly 0)
         then set it to (0,0) and return false, otherwise return true.
     */
-        #[link_name = "_ZN7SkPoint12setNormalizeEff"]
+        #[link_name = "?setNormalize@SkPoint@@QEAA_NMM@Z"]
         pub fn SkPoint_setNormalize(this: *mut root::SkPoint,
                                     x: root::SkScalar, y: root::SkScalar)
          -> bool;
@@ -818,7 +491,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         length. If the original length is degenerately small (nearly zero),
         set it to (0,0) and return false, otherwise return true.
     */
-        #[link_name = "_ZN7SkPoint9setLengthEf"]
+        #[link_name = "?setLength@SkPoint@@QEAA_NM@Z"]
         pub fn SkPoint_setLength(this: *mut root::SkPoint,
                                  length: root::SkScalar) -> bool;
     }
@@ -827,7 +500,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      direction as (x,y). If the vector (x,y) has a degenerate length
      (i.e. nearly 0) then set it to (0,0) and return false, otherwise return true.
     */
-        #[link_name = "_ZN7SkPoint9setLengthEfff"]
+        #[link_name = "?setLength@SkPoint@@QEAA_NMMM@Z"]
         pub fn SkPoint_setLength1(this: *mut root::SkPoint, x: root::SkScalar,
                                   y: root::SkScalar, length: root::SkScalar)
          -> bool;
@@ -835,14 +508,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Same as setLength, but favoring speed over accuracy.
     */
-        #[link_name = "_ZN7SkPoint13setLengthFastEf"]
+        #[link_name = "?setLengthFast@SkPoint@@QEAA_NM@Z"]
         pub fn SkPoint_setLengthFast(this: *mut root::SkPoint,
                                      length: root::SkScalar) -> bool;
     }
     extern "C" {
         /** Same as setLength, but favoring speed over accuracy.
     */
-        #[link_name = "_ZN7SkPoint13setLengthFastEfff"]
+        #[link_name = "?setLengthFast@SkPoint@@QEAA_NMMM@Z"]
         pub fn SkPoint_setLengthFast1(this: *mut root::SkPoint,
                                       x: root::SkScalar, y: root::SkScalar,
                                       length: root::SkScalar) -> bool;
@@ -851,7 +524,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Scale the point's coordinates by scale, writing the answer into dst.
         It is legal for dst == this.
     */
-        #[link_name = "_ZNK7SkPoint5scaleEfPS_"]
+        #[link_name = "?scale@SkPoint@@QEBAXMPEAU1@@Z"]
         pub fn SkPoint_scale(this: *const root::SkPoint,
                              scale: root::SkScalar, dst: *mut root::SkPoint);
     }
@@ -859,7 +532,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Rotate the point clockwise by 90 degrees, writing the answer into dst.
         It is legal for dst == this.
     */
-        #[link_name = "_ZNK7SkPoint8rotateCWEPS_"]
+        #[link_name = "?rotateCW@SkPoint@@QEBAXPEAU1@@Z"]
         pub fn SkPoint_rotateCW(this: *const root::SkPoint,
                                 dst: *mut root::SkPoint);
     }
@@ -867,14 +540,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Rotate the point counter-clockwise by 90 degrees, writing the answer
         into dst. It is legal for dst == this.
     */
-        #[link_name = "_ZNK7SkPoint9rotateCCWEPS_"]
+        #[link_name = "?rotateCCW@SkPoint@@QEBAXPEAU1@@Z"]
         pub fn SkPoint_rotateCCW(this: *const root::SkPoint,
                                  dst: *mut root::SkPoint);
     }
     extern "C" {
         /** Returns the euclidian distance from (0,0) to (x,y)
     */
-        #[link_name = "_ZN7SkPoint6LengthEff"]
+        #[link_name = "?Length@SkPoint@@SAMMM@Z"]
         pub fn SkPoint_Length(x: root::SkScalar, y: root::SkScalar)
          -> root::SkScalar;
     }
@@ -888,7 +561,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         of the point.  If you don't need the previous length, call the
         non-static normalize() method instead.
      */
-        #[link_name = "_ZN7SkPoint9NormalizeEPS_"]
+        #[link_name = "?Normalize@SkPoint@@SAMPEAU1@@Z"]
         pub fn SkPoint_Normalize(pt: *mut root::SkPoint) -> root::SkScalar;
     }
     extern "C" {
@@ -898,7 +571,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * along line from a to b)
      */
         #[link_name =
-              "_ZNK7SkPoint24distanceToLineBetweenSqdERKS_S1_PNS_4SideE"]
+              "?distanceToLineBetweenSqd@SkPoint@@QEBAMAEBU1@0PEAW4Side@1@@Z"]
         pub fn SkPoint_distanceToLineBetweenSqd(this: *const root::SkPoint,
                                                 a: *const root::SkPoint,
                                                 b: *const root::SkPoint,
@@ -909,7 +582,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      * Returns the squared distance to the line segment between pts a and b
      */
-        #[link_name = "_ZNK7SkPoint31distanceToLineSegmentBetweenSqdERKS_S1_"]
+        #[link_name =
+              "?distanceToLineSegmentBetweenSqd@SkPoint@@QEBAMAEBU1@0@Z"]
         pub fn SkPoint_distanceToLineSegmentBetweenSqd(this:
                                                            *const root::SkPoint,
                                                        a:
@@ -997,11 +671,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
         }
     }
     pub type SkVector = root::SkPoint;
-    extern "C" {
-        #[link_name = "_ZL17SkPointsAreFinitePK7SkPointi"]
-        pub fn SkPointsAreFinite(array: *const root::SkPoint,
-                                 count: ::std::os::raw::c_int) -> bool;
-    }
     #[repr(C)]
     #[derive(Debug, Copy, Clone)]
     pub struct SkTSize<T> {
@@ -1011,7 +680,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     ///////////////////////////////////////////////////////////////////////////////
     pub type SkISize = root::SkTSize<::std::os::raw::c_int>;
     #[test]
-    fn __bindgen_test_layout_template_5() {
+    fn __bindgen_test_layout_template_1() {
         assert_eq!(::std::mem::size_of::<root::SkTSize<f32>>() , 8usize);
         assert_eq!(::std::mem::align_of::<root::SkTSize<f32>>() , 4usize);
     }
@@ -1047,7 +716,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** return the 4 points that enclose the rectangle (top-left, top-right, bottom-right,
         bottom-left). TODO: Consider adding param to control whether quad is CW or CCW.
      */
-        #[link_name = "_ZNK6SkRect6toQuadEP7SkPoint"]
+        #[link_name = "?toQuad@SkRect@@QEBAXQEAUSkPoint@@@Z"]
         pub fn SkRect_toQuad(this: *const root::SkRect,
                              quad: *mut root::SkPoint);
     }
@@ -1057,7 +726,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  bounds and return true... unless a non-finite value is encountered,
      *  in which case this rect is set to empty and false is returned.
      */
-        #[link_name = "_ZN6SkRect14setBoundsCheckEPK7SkPointi"]
+        #[link_name = "?setBoundsCheck@SkRect@@QEAA_NQEBUSkPoint@@H@Z"]
         pub fn SkRect_setBoundsCheck(this: *mut root::SkRect,
                                      pts: *const root::SkPoint,
                                      count: ::std::os::raw::c_int) -> bool;
@@ -1067,7 +736,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         intersection, otherwise return false and do not change this rectangle.
         If either rectangle is empty, do nothing and return false.
     */
-        #[link_name = "_ZN6SkRect9intersectERKS_"]
+        #[link_name = "?intersect@SkRect@@QEAA_NAEBU1@@Z"]
         pub fn SkRect_intersect(this: *mut root::SkRect,
                                 r: *const root::SkRect) -> bool;
     }
@@ -1077,7 +746,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         and do not change this rectangle.
         If either rectangle is empty, do nothing and return false.
     */
-        #[link_name = "_ZN6SkRect9intersectEffff"]
+        #[link_name = "?intersect@SkRect@@QEAA_NMMMM@Z"]
         pub fn SkRect_intersect1(this: *mut root::SkRect,
                                  left: root::SkScalar, top: root::SkScalar,
                                  right: root::SkScalar,
@@ -1089,7 +758,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  that intersection, otherwise return false and do not change this
      *  rectangle. If either rectangle is empty, do nothing and return false.
      */
-        #[link_name = "_ZN6SkRect9intersectERKS_S1_"]
+        #[link_name = "?intersect@SkRect@@QEAA_NAEBU1@0@Z"]
         pub fn SkRect_intersect2(this: *mut root::SkRect,
                                  a: *const root::SkRect,
                                  b: *const root::SkRect) -> bool;
@@ -1100,13 +769,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If this rectangle is empty, just set it to the specified rectangle.
      *  If the specified rectangle is empty, do nothing.
      */
-        #[link_name = "_ZN6SkRect4joinEffff"]
+        #[link_name = "?join@SkRect@@QEAAXMMMM@Z"]
         pub fn SkRect_join(this: *mut root::SkRect, left: root::SkScalar,
                            top: root::SkScalar, right: root::SkScalar,
                            bottom: root::SkScalar);
     }
     extern "C" {
-        #[link_name = "_ZNK6SkRect4dumpEb"]
+        #[link_name = "?dump@SkRect@@QEBAX_N@Z"]
         pub fn SkRect_dump(this: *const root::SkRect, asHex: bool);
     }
     impl Clone for SkRect {
@@ -1166,7 +835,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Returns true if the specified rectangle r is inside or equal to this rectangle.
     */
-        #[link_name = "_ZNK7SkIRect8containsERK6SkRect"]
+        #[link_name = "?contains@SkIRect@@QEBA_NAEBUSkRect@@@Z"]
         pub fn SkIRect_contains(this: *const root::SkIRect,
                                 r: *const root::SkRect) -> bool;
     }
@@ -1175,7 +844,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         If this rectangle is empty, just set it to the specified rectangle. If the specified
         rectangle is empty, do nothing.
     */
-        #[link_name = "_ZN7SkIRect4joinEiiii"]
+        #[link_name = "?join@SkIRect@@QEAAXHHHH@Z"]
         pub fn SkIRect_join(this: *mut root::SkIRect, left: i32, top: i32,
                             right: i32, bottom: i32);
     }
@@ -1185,7 +854,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         and may have crossed over each other.
         When this returns, left <= right && top <= bottom
     */
-        #[link_name = "_ZN7SkIRect4sortEv"]
+        #[link_name = "?sort@SkIRect@@QEAAXXZ"]
         pub fn SkIRect_sort(this: *mut root::SkIRect);
     }
     impl Clone for SkIRect {
@@ -1225,7 +894,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub fMat: [root::SkScalar; 9usize],
         pub fTypeMask: u32,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     /** Enum of bit fields for the mask return by getType().
         Use this to identify the complexity of the matrix.
     */
@@ -1255,7 +924,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         SkMatrix__bindgen_ty_1::kMPersp1;
     pub const SkMatrix_kMPersp2: root::SkMatrix__bindgen_ty_1 =
         SkMatrix__bindgen_ty_1::kMPersp2;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix__bindgen_ty_1 {
         kMScaleX = 0,
@@ -1280,7 +949,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         SkMatrix__bindgen_ty_2::kATransX;
     pub const SkMatrix_kATransY: root::SkMatrix__bindgen_ty_2 =
         SkMatrix__bindgen_ty_2::kATransY;
-    #[repr(u32)]
+    #[repr(i32)]
     /** Affine arrays are in column major order
         because that's how PDF and XPS like it.
      */
@@ -1293,7 +962,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kATransX = 4,
         kATransY = 5,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix_ScaleToFit {
         kFill_ScaleToFit = 0,
@@ -1315,7 +984,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                                                        ::std::os::raw::c_int)>;
     pub const SkMatrix_kMaxFlattenSize: root::SkMatrix__bindgen_ty_3 =
         SkMatrix__bindgen_ty_3::kMaxFlattenSize;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix__bindgen_ty_3 { kMaxFlattenSize = 40, }
     pub const SkMatrix_kRectStaysRect_Mask: root::SkMatrix__bindgen_ty_4 =
@@ -1329,7 +998,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         SkMatrix__bindgen_ty_4::kORableMasks;
     pub const SkMatrix_kAllMasks: root::SkMatrix__bindgen_ty_4 =
         SkMatrix__bindgen_ty_4::kAllMasks;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix__bindgen_ty_4 {
         kRectStaysRect_Mask = 16,
@@ -1339,11 +1008,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kAllMasks = 31,
     }
     extern "C" {
-        #[link_name = "_ZN8SkMatrix11gMapXYProcsE"]
+        #[link_name =
+              "?gMapXYProcs@SkMatrix@@0QBQ6AXAEBV1@MMPEAUSkPoint@@@ZB"]
         pub static mut SkMatrix_gMapXYProcs: *const root::SkMatrix_MapXYProc;
     }
     extern "C" {
-        #[link_name = "_ZN8SkMatrix12gMapPtsProcsE"]
+        #[link_name =
+              "?gMapPtsProcs@SkMatrix@@0QBQ6AXAEBV1@QEAUSkPoint@@QEBU2@H@ZB"]
         pub static mut SkMatrix_gMapPtsProcs:
                    *const root::SkMatrix_MapPtsProc;
     }
@@ -1356,7 +1027,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Returns true if the matrix contains only translation, rotation/reflection or uniform scale
         Returns false if other transformation types are included or is degenerate
      */
-        #[link_name = "_ZNK8SkMatrix12isSimilarityEf"]
+        #[link_name = "?isSimilarity@SkMatrix@@QEBA_NM@Z"]
         pub fn SkMatrix_isSimilarity(this: *const root::SkMatrix,
                                      tol: root::SkScalar) -> bool;
     }
@@ -1365,7 +1036,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         (non-uniform scale is allowed).
         Returns false if other transformation types are included or is degenerate
      */
-        #[link_name = "_ZNK8SkMatrix20preservesRightAnglesEf"]
+        #[link_name = "?preservesRightAngles@SkMatrix@@QEBA_NM@Z"]
         pub fn SkMatrix_preservesRightAngles(this: *const root::SkMatrix,
                                              tol: root::SkScalar) -> bool;
     }
@@ -1377,20 +1048,20 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Note: calling set9 followed by get9 may not return the exact same values. Since the matrix
      *  is used to map non-homogeneous coordinates, it is free to rescale the 9 values as needed.
      */
-        #[link_name = "_ZN8SkMatrix4set9EPKf"]
+        #[link_name = "?set9@SkMatrix@@QEAAXQEBM@Z"]
         pub fn SkMatrix_set9(this: *mut root::SkMatrix,
                              buffer: *mut root::SkScalar);
     }
     extern "C" {
         /** Set the matrix to identity
     */
-        #[link_name = "_ZN8SkMatrix5resetEv"]
+        #[link_name = "?reset@SkMatrix@@QEAAXXZ"]
         pub fn SkMatrix_reset(this: *mut root::SkMatrix);
     }
     extern "C" {
         /** Set the matrix to translate by (dx, dy).
     */
-        #[link_name = "_ZN8SkMatrix12setTranslateEff"]
+        #[link_name = "?setTranslate@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_setTranslate(this: *mut root::SkMatrix,
                                      dx: root::SkScalar, dy: root::SkScalar);
     }
@@ -1399,7 +1070,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         The pivot point is the coordinate that should remain unchanged by the
         specified transformation.
     */
-        #[link_name = "_ZN8SkMatrix8setScaleEffff"]
+        #[link_name = "?setScale@SkMatrix@@QEAAXMMMM@Z"]
         pub fn SkMatrix_setScale(this: *mut root::SkMatrix,
                                  sx: root::SkScalar, sy: root::SkScalar,
                                  px: root::SkScalar, py: root::SkScalar);
@@ -1407,7 +1078,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Set the matrix to scale by sx and sy.
     */
-        #[link_name = "_ZN8SkMatrix8setScaleEff"]
+        #[link_name = "?setScale@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_setScale1(this: *mut root::SkMatrix,
                                   sx: root::SkScalar, sy: root::SkScalar);
     }
@@ -1415,7 +1086,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Set the matrix to scale by 1/divx and 1/divy. Returns false and doesn't
         touch the matrix if either divx or divy is zero.
     */
-        #[link_name = "_ZN8SkMatrix7setIDivEii"]
+        #[link_name = "?setIDiv@SkMatrix@@QEAA_NHH@Z"]
         pub fn SkMatrix_setIDiv(this: *mut root::SkMatrix,
                                 divx: ::std::os::raw::c_int,
                                 divy: ::std::os::raw::c_int) -> bool;
@@ -1425,7 +1096,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pivot point at (px, py). The pivot point is the coordinate that should
         remain unchanged by the specified transformation.
     */
-        #[link_name = "_ZN8SkMatrix9setRotateEfff"]
+        #[link_name = "?setRotate@SkMatrix@@QEAAXMMM@Z"]
         pub fn SkMatrix_setRotate(this: *mut root::SkMatrix,
                                   degrees: root::SkScalar, px: root::SkScalar,
                                   py: root::SkScalar);
@@ -1433,7 +1104,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Set the matrix to rotate about (0,0) by the specified number of degrees.
     */
-        #[link_name = "_ZN8SkMatrix9setRotateEf"]
+        #[link_name = "?setRotate@SkMatrix@@QEAAXM@Z"]
         pub fn SkMatrix_setRotate1(this: *mut root::SkMatrix,
                                    degrees: root::SkScalar);
     }
@@ -1442,7 +1113,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         a pivot point at (px, py). The pivot point is the coordinate that
         should remain unchanged by the specified transformation.
     */
-        #[link_name = "_ZN8SkMatrix9setSinCosEffff"]
+        #[link_name = "?setSinCos@SkMatrix@@QEAAXMMMM@Z"]
         pub fn SkMatrix_setSinCos(this: *mut root::SkMatrix,
                                   sinValue: root::SkScalar,
                                   cosValue: root::SkScalar,
@@ -1451,13 +1122,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Set the matrix to rotate by the specified sine and cosine values.
     */
-        #[link_name = "_ZN8SkMatrix9setSinCosEff"]
+        #[link_name = "?setSinCos@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_setSinCos1(this: *mut root::SkMatrix,
                                    sinValue: root::SkScalar,
                                    cosValue: root::SkScalar);
     }
     extern "C" {
-        #[link_name = "_ZN8SkMatrix10setRSXformERK9SkRSXform"]
+        #[link_name = "?setRSXform@SkMatrix@@QEAAAEAV1@AEBUSkRSXform@@@Z"]
         pub fn SkMatrix_setRSXform(this: *mut root::SkMatrix,
                                    arg1: *const root::SkRSXform)
          -> *mut root::SkMatrix;
@@ -1467,7 +1138,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         The pivot point is the coordinate that should remain unchanged by the
         specified transformation.
     */
-        #[link_name = "_ZN8SkMatrix7setSkewEffff"]
+        #[link_name = "?setSkew@SkMatrix@@QEAAXMMMM@Z"]
         pub fn SkMatrix_setSkew(this: *mut root::SkMatrix, kx: root::SkScalar,
                                 ky: root::SkScalar, px: root::SkScalar,
                                 py: root::SkScalar);
@@ -1475,7 +1146,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Set the matrix to skew by sx and sy.
     */
-        #[link_name = "_ZN8SkMatrix7setSkewEff"]
+        #[link_name = "?setSkew@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_setSkew1(this: *mut root::SkMatrix,
                                  kx: root::SkScalar, ky: root::SkScalar);
     }
@@ -1484,7 +1155,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         Either of the two matrices may also be the target matrix.
         *this = a * b;
     */
-        #[link_name = "_ZN8SkMatrix9setConcatERKS_S1_"]
+        #[link_name = "?setConcat@SkMatrix@@QEAAXAEBV1@0@Z"]
         pub fn SkMatrix_setConcat(this: *mut root::SkMatrix,
                                   a: *const root::SkMatrix,
                                   b: *const root::SkMatrix);
@@ -1493,7 +1164,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified translation.
         M' = M * T(dx, dy)
     */
-        #[link_name = "_ZN8SkMatrix12preTranslateEff"]
+        #[link_name = "?preTranslate@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_preTranslate(this: *mut root::SkMatrix,
                                      dx: root::SkScalar, dy: root::SkScalar);
     }
@@ -1501,7 +1172,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified scale.
         M' = M * S(sx, sy, px, py)
     */
-        #[link_name = "_ZN8SkMatrix8preScaleEffff"]
+        #[link_name = "?preScale@SkMatrix@@QEAAXMMMM@Z"]
         pub fn SkMatrix_preScale(this: *mut root::SkMatrix,
                                  sx: root::SkScalar, sy: root::SkScalar,
                                  px: root::SkScalar, py: root::SkScalar);
@@ -1510,7 +1181,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified scale.
         M' = M * S(sx, sy)
     */
-        #[link_name = "_ZN8SkMatrix8preScaleEff"]
+        #[link_name = "?preScale@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_preScale1(this: *mut root::SkMatrix,
                                   sx: root::SkScalar, sy: root::SkScalar);
     }
@@ -1518,7 +1189,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified rotation.
         M' = M * R(degrees, px, py)
     */
-        #[link_name = "_ZN8SkMatrix9preRotateEfff"]
+        #[link_name = "?preRotate@SkMatrix@@QEAAXMMM@Z"]
         pub fn SkMatrix_preRotate(this: *mut root::SkMatrix,
                                   degrees: root::SkScalar, px: root::SkScalar,
                                   py: root::SkScalar);
@@ -1527,7 +1198,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified rotation.
         M' = M * R(degrees)
     */
-        #[link_name = "_ZN8SkMatrix9preRotateEf"]
+        #[link_name = "?preRotate@SkMatrix@@QEAAXM@Z"]
         pub fn SkMatrix_preRotate1(this: *mut root::SkMatrix,
                                    degrees: root::SkScalar);
     }
@@ -1535,7 +1206,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified skew.
         M' = M * K(kx, ky, px, py)
     */
-        #[link_name = "_ZN8SkMatrix7preSkewEffff"]
+        #[link_name = "?preSkew@SkMatrix@@QEAAXMMMM@Z"]
         pub fn SkMatrix_preSkew(this: *mut root::SkMatrix, kx: root::SkScalar,
                                 ky: root::SkScalar, px: root::SkScalar,
                                 py: root::SkScalar);
@@ -1544,7 +1215,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified skew.
         M' = M * K(kx, ky)
     */
-        #[link_name = "_ZN8SkMatrix7preSkewEff"]
+        #[link_name = "?preSkew@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_preSkew1(this: *mut root::SkMatrix,
                                  kx: root::SkScalar, ky: root::SkScalar);
     }
@@ -1552,7 +1223,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcats the matrix with the specified matrix.
         M' = M * other
     */
-        #[link_name = "_ZN8SkMatrix9preConcatERKS_"]
+        #[link_name = "?preConcat@SkMatrix@@QEAAXAEBV1@@Z"]
         pub fn SkMatrix_preConcat(this: *mut root::SkMatrix,
                                   other: *const root::SkMatrix);
     }
@@ -1560,7 +1231,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified translation.
         M' = T(dx, dy) * M
     */
-        #[link_name = "_ZN8SkMatrix13postTranslateEff"]
+        #[link_name = "?postTranslate@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_postTranslate(this: *mut root::SkMatrix,
                                       dx: root::SkScalar, dy: root::SkScalar);
     }
@@ -1568,7 +1239,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified scale.
         M' = S(sx, sy, px, py) * M
     */
-        #[link_name = "_ZN8SkMatrix9postScaleEffff"]
+        #[link_name = "?postScale@SkMatrix@@QEAAXMMMM@Z"]
         pub fn SkMatrix_postScale(this: *mut root::SkMatrix,
                                   sx: root::SkScalar, sy: root::SkScalar,
                                   px: root::SkScalar, py: root::SkScalar);
@@ -1577,7 +1248,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified scale.
         M' = S(sx, sy) * M
     */
-        #[link_name = "_ZN8SkMatrix9postScaleEff"]
+        #[link_name = "?postScale@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_postScale1(this: *mut root::SkMatrix,
                                    sx: root::SkScalar, sy: root::SkScalar);
     }
@@ -1585,7 +1256,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix by dividing it by the specified integers.
         M' = S(1/divx, 1/divy, 0, 0) * M
     */
-        #[link_name = "_ZN8SkMatrix8postIDivEii"]
+        #[link_name = "?postIDiv@SkMatrix@@QEAA_NHH@Z"]
         pub fn SkMatrix_postIDiv(this: *mut root::SkMatrix,
                                  divx: ::std::os::raw::c_int,
                                  divy: ::std::os::raw::c_int) -> bool;
@@ -1594,7 +1265,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified rotation.
         M' = R(degrees, px, py) * M
     */
-        #[link_name = "_ZN8SkMatrix10postRotateEfff"]
+        #[link_name = "?postRotate@SkMatrix@@QEAAXMMM@Z"]
         pub fn SkMatrix_postRotate(this: *mut root::SkMatrix,
                                    degrees: root::SkScalar,
                                    px: root::SkScalar, py: root::SkScalar);
@@ -1603,7 +1274,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified rotation.
         M' = R(degrees) * M
     */
-        #[link_name = "_ZN8SkMatrix10postRotateEf"]
+        #[link_name = "?postRotate@SkMatrix@@QEAAXM@Z"]
         pub fn SkMatrix_postRotate1(this: *mut root::SkMatrix,
                                     degrees: root::SkScalar);
     }
@@ -1611,7 +1282,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified skew.
         M' = K(kx, ky, px, py) * M
     */
-        #[link_name = "_ZN8SkMatrix8postSkewEffff"]
+        #[link_name = "?postSkew@SkMatrix@@QEAAXMMMM@Z"]
         pub fn SkMatrix_postSkew(this: *mut root::SkMatrix,
                                  kx: root::SkScalar, ky: root::SkScalar,
                                  px: root::SkScalar, py: root::SkScalar);
@@ -1620,7 +1291,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified skew.
         M' = K(kx, ky) * M
     */
-        #[link_name = "_ZN8SkMatrix8postSkewEff"]
+        #[link_name = "?postSkew@SkMatrix@@QEAAXMM@Z"]
         pub fn SkMatrix_postSkew1(this: *mut root::SkMatrix,
                                   kx: root::SkScalar, ky: root::SkScalar);
     }
@@ -1628,7 +1299,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Postconcats the matrix with the specified matrix.
         M' = other * M
     */
-        #[link_name = "_ZN8SkMatrix10postConcatERKS_"]
+        #[link_name = "?postConcat@SkMatrix@@QEAAXAEBV1@@Z"]
         pub fn SkMatrix_postConcat(this: *mut root::SkMatrix,
                                    other: *const root::SkMatrix);
     }
@@ -1642,7 +1313,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @return true if the matrix can be represented by the rectangle mapping.
     */
         #[link_name =
-              "_ZN8SkMatrix13setRectToRectERK6SkRectS2_NS_10ScaleToFitE"]
+              "?setRectToRect@SkMatrix@@QEAA_NAEBUSkRect@@0W4ScaleToFit@1@@Z"]
         pub fn SkMatrix_setRectToRect(this: *mut root::SkMatrix,
                                       src: *const root::SkRect,
                                       dst: *const root::SkRect,
@@ -1656,7 +1327,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param count The number of points to use for the transformation
         @return true if the matrix was set to the specified transformation
     */
-        #[link_name = "_ZN8SkMatrix13setPolyToPolyEPK7SkPointS2_i"]
+        #[link_name = "?setPolyToPoly@SkMatrix@@QEAA_NQEBUSkPoint@@0H@Z"]
         pub fn SkMatrix_setPolyToPoly(this: *mut root::SkMatrix,
                                       src: *const root::SkPoint,
                                       dst: *const root::SkPoint,
@@ -1668,7 +1339,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param affine  The array to fill with affine identity values.
         Must not be NULL.
     */
-        #[link_name = "_ZN8SkMatrix17SetAffineIdentityEPf"]
+        #[link_name = "?SetAffineIdentity@SkMatrix@@SAXQEAM@Z"]
         pub fn SkMatrix_SetAffineIdentity(affine: *mut root::SkScalar);
     }
     extern "C" {
@@ -1677,7 +1348,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         and does not change the passed array.
         @param affine  The array to fill with affine values. Ignored if NULL.
     */
-        #[link_name = "_ZNK8SkMatrix8asAffineEPf"]
+        #[link_name = "?asAffine@SkMatrix@@QEBA_NQEAM@Z"]
         pub fn SkMatrix_asAffine(this: *const root::SkMatrix,
                                  affine: *mut root::SkScalar) -> bool;
     }
@@ -1685,7 +1356,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Set the matrix to the specified affine values.
      *  Note: these are passed in column major order.
      */
-        #[link_name = "_ZN8SkMatrix9setAffineEPKf"]
+        #[link_name = "?setAffine@SkMatrix@@QEAAXQEBM@Z"]
         pub fn SkMatrix_setAffine(this: *mut root::SkMatrix,
                                   affine: *mut root::SkScalar);
     }
@@ -1701,7 +1372,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param count The number of triples (homogeneous points) in src to read,
                      and then transform into dst.
     */
-        #[link_name = "_ZNK8SkMatrix20mapHomogeneousPointsEPfPKfi"]
+        #[link_name = "?mapHomogeneousPoints@SkMatrix@@QEBAXQEAMQEBMH@Z"]
         pub fn SkMatrix_mapHomogeneousPoints(this: *const root::SkMatrix,
                                              dst: *mut root::SkScalar,
                                              src: *const root::SkScalar,
@@ -1718,7 +1389,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param count The number of vectors in src to read, and then transform
                      into dst.
     */
-        #[link_name = "_ZNK8SkMatrix10mapVectorsEP7SkPointPKS0_i"]
+        #[link_name = "?mapVectors@SkMatrix@@QEBAXQEAUSkPoint@@QEBU2@H@Z"]
         pub fn SkMatrix_mapVectors(this: *const root::SkMatrix,
                                    dst: *mut root::SkVector,
                                    src: *const root::SkVector,
@@ -1732,7 +1403,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param src  The original rectangle to be transformed.
         @return the result of calling rectStaysRect()
     */
-        #[link_name = "_ZNK8SkMatrix7mapRectEP6SkRectRKS0_"]
+        #[link_name = "?mapRect@SkMatrix@@QEBA_NPEAUSkRect@@AEBU2@@Z"]
         pub fn SkMatrix_mapRect(this: *const root::SkMatrix,
                                 dst: *mut root::SkRect,
                                 src: *const root::SkRect) -> bool;
@@ -1742,7 +1413,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Maps a rect to another rect, asserting (in debug mode) that the matrix only contains
      *  scale and translate elements. If it contains other elements, the results are undefined.
      */
-        #[link_name = "_ZNK8SkMatrix21mapRectScaleTranslateEP6SkRectRKS0_"]
+        #[link_name =
+              "?mapRectScaleTranslate@SkMatrix@@QEBAXPEAUSkRect@@AEBU2@@Z"]
         pub fn SkMatrix_mapRectScaleTranslate(this: *const root::SkMatrix,
                                               dst: *mut root::SkRect,
                                               src: *const root::SkRect);
@@ -1752,7 +1424,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         this matrix. NOTE: in perspective this value assumes the circle
         has its center at the origin.
     */
-        #[link_name = "_ZNK8SkMatrix9mapRadiusEf"]
+        #[link_name = "?mapRadius@SkMatrix@@QEBAMM@Z"]
         pub fn SkMatrix_mapRadius(this: *const root::SkMatrix,
                                   radius: root::SkScalar) -> root::SkScalar;
     }
@@ -1760,7 +1432,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Returns true if the matrix can be stepped in X (not complex
         perspective).
     */
-        #[link_name = "_ZNK8SkMatrix14isFixedStepInXEv"]
+        #[link_name = "?isFixedStepInX@SkMatrix@@QEBA_NXZ"]
         pub fn SkMatrix_isFixedStepInX(this: *const root::SkMatrix) -> bool;
     }
     extern "C" {
@@ -1768,12 +1440,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
         then return the step value.
         If it cannot, behavior is undefined.
     */
-        #[link_name = "_ZNK8SkMatrix12fixedStepInXEf"]
+        #[link_name = "?fixedStepInX@SkMatrix@@QEBA?AUSkPoint@@M@Z"]
         pub fn SkMatrix_fixedStepInX(this: *const root::SkMatrix,
                                      y: root::SkScalar) -> root::SkVector;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkMatrix13writeToMemoryEPv"]
+        #[link_name = "?writeToMemory@SkMatrix@@QEBA_KPEAX@Z"]
         pub fn SkMatrix_writeToMemory(this: *const root::SkMatrix,
                                       buffer: *mut ::std::os::raw::c_void)
          -> usize;
@@ -1787,17 +1459,17 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * @return number of bytes read (must be a multiple of 4) or
      *         0 if there was not enough memory available
      */
-        #[link_name = "_ZN8SkMatrix14readFromMemoryEPKvm"]
+        #[link_name = "?readFromMemory@SkMatrix@@QEAA_KPEBX_K@Z"]
         pub fn SkMatrix_readFromMemory(this: *mut root::SkMatrix,
                                        buffer: *const ::std::os::raw::c_void,
                                        length: usize) -> usize;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkMatrix4dumpEv"]
+        #[link_name = "?dump@SkMatrix@@QEBAXXZ"]
         pub fn SkMatrix_dump(this: *const root::SkMatrix);
     }
     extern "C" {
-        #[link_name = "_ZNK8SkMatrix8toStringEP8SkString"]
+        #[link_name = "?toString@SkMatrix@@QEBAXPEAVSkString@@@Z"]
         pub fn SkMatrix_toString(this: *const root::SkMatrix,
                                  arg1: *mut root::SkString);
     }
@@ -1809,7 +1481,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      * @return minimum scale factor
      */
-        #[link_name = "_ZNK8SkMatrix11getMinScaleEv"]
+        #[link_name = "?getMinScale@SkMatrix@@QEBAMXZ"]
         pub fn SkMatrix_getMinScale(this: *const root::SkMatrix)
          -> root::SkScalar;
     }
@@ -1821,7 +1493,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      * @return maximum scale factor
      */
-        #[link_name = "_ZNK8SkMatrix11getMaxScaleEv"]
+        #[link_name = "?getMaxScale@SkMatrix@@QEBAMXZ"]
         pub fn SkMatrix_getMaxScale(this: *const root::SkMatrix)
          -> root::SkScalar;
     }
@@ -1831,7 +1503,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * is scaleFactors[1]. If the min/max scale factors cannot be computed false is returned and the
      * values of scaleFactors[] are undefined.
      */
-        #[link_name = "_ZNK8SkMatrix15getMinMaxScalesEPf"]
+        #[link_name = "?getMinMaxScales@SkMatrix@@QEBA_NQEAM@Z"]
         pub fn SkMatrix_getMinMaxScales(this: *const root::SkMatrix,
                                         scaleFactors: *mut root::SkScalar)
          -> bool;
@@ -1848,7 +1520,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  Possible reasons to fail: perspective, one or more scale factors are zero.
      */
-        #[link_name = "_ZNK8SkMatrix14decomposeScaleEP6SkSizePS_"]
+        #[link_name = "?decomposeScale@SkMatrix@@QEBA_NPEAUSkSize@@PEAV1@@Z"]
         pub fn SkMatrix_decomposeScale(this: *const root::SkMatrix,
                                        scale: *mut root::SkSize,
                                        remaining: *mut root::SkMatrix)
@@ -1858,7 +1530,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Return a reference to a const identity matrix
      */
-        #[link_name = "_ZN8SkMatrix1IEv"]
+        #[link_name = "?I@SkMatrix@@SAAEBV1@XZ"]
         pub fn SkMatrix_I() -> *const root::SkMatrix;
     }
     extern "C" {
@@ -1866,7 +1538,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Return a reference to a const matrix that is "invalid", one that could
      *  never be used.
      */
-        #[link_name = "_ZN8SkMatrix13InvalidMatrixEv"]
+        #[link_name = "?InvalidMatrix@SkMatrix@@SAAEBV1@XZ"]
         pub fn SkMatrix_InvalidMatrix() -> *const root::SkMatrix;
     }
     impl Clone for SkMatrix {
@@ -2140,41 +1812,21 @@ be copied. It hides its copy-constructor and its assignment-operator.
         }
     }
     pub type SkMScalar = f32;
-    extern "C" {
-        #[link_name = "_ZL16SkFloatToMScalarf"]
-        pub fn SkFloatToMScalar(x: f32) -> f32;
-    }
-    extern "C" {
-        #[link_name = "_ZL16SkMScalarToFloatf"]
-        pub fn SkMScalarToFloat(x: f32) -> f32;
-    }
-    extern "C" {
-        #[link_name = "_ZL17SkDoubleToMScalard"]
-        pub fn SkDoubleToMScalar(x: f64) -> f32;
-    }
-    extern "C" {
-        #[link_name = "_ZL17SkMScalarToDoublef"]
-        pub fn SkMScalarToDouble(x: f32) -> f64;
-    }
-    extern "C" {
-        #[link_name = "_ZL12SkMScalarAbsf"]
-        pub fn SkMScalarAbs(x: f32) -> f32;
-    }
     #[repr(C)]
     #[derive(Debug, Copy)]
     pub struct SkMatrix44 {
         pub fMat: [[root::SkMScalar; 4usize]; 4usize],
         pub fTypeMask: ::std::os::raw::c_uint,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix44_Uninitialized_Constructor {
         kUninitialized_Constructor = 0,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix44_Identity_Constructor { kIdentity_Constructor = 0, }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix44_TypeMask {
         kIdentity_Mask = 0,
@@ -2187,7 +1839,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         SkMatrix44__bindgen_ty_1::kUnknown_Mask;
     pub const SkMatrix44_kAllPublic_Masks: root::SkMatrix44__bindgen_ty_1 =
         SkMatrix44__bindgen_ty_1::kAllPublic_Masks;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMatrix44__bindgen_ty_1 {
         kUnknown_Mask = 128,
@@ -2202,11 +1854,11 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Return a reference to a const identity matrix
      */
-        #[link_name = "_ZN10SkMatrix441IEv"]
+        #[link_name = "?I@SkMatrix44@@SAAEBV1@XZ"]
         pub fn SkMatrix44_I() -> *const root::SkMatrix44;
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4411setIdentityEv"]
+        #[link_name = "?setIdentity@SkMatrix44@@QEAAXXZ"]
         pub fn SkMatrix44_setIdentity(this: *mut root::SkMatrix44);
     }
     extern "C" {
@@ -2219,22 +1871,22 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  contiguously in memory.  Row major indicates that consecutive elements
      *  of rows will be stored contiguously in memory.
      */
-        #[link_name = "_ZNK10SkMatrix4411asColMajorfEPf"]
+        #[link_name = "?asColMajorf@SkMatrix44@@QEBAXQEAM@Z"]
         pub fn SkMatrix44_asColMajorf(this: *const root::SkMatrix44,
                                       arg1: *mut f32);
     }
     extern "C" {
-        #[link_name = "_ZNK10SkMatrix4411asColMajordEPd"]
+        #[link_name = "?asColMajord@SkMatrix44@@QEBAXQEAN@Z"]
         pub fn SkMatrix44_asColMajord(this: *const root::SkMatrix44,
                                       arg1: *mut f64);
     }
     extern "C" {
-        #[link_name = "_ZNK10SkMatrix4411asRowMajorfEPf"]
+        #[link_name = "?asRowMajorf@SkMatrix44@@QEBAXQEAM@Z"]
         pub fn SkMatrix44_asRowMajorf(this: *const root::SkMatrix44,
                                       arg1: *mut f32);
     }
     extern "C" {
-        #[link_name = "_ZNK10SkMatrix4411asRowMajordEPd"]
+        #[link_name = "?asRowMajord@SkMatrix44@@QEBAXQEAN@Z"]
         pub fn SkMatrix44_asRowMajord(this: *const root::SkMatrix44,
                                       arg1: *mut f64);
     }
@@ -2249,27 +1901,27 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  indicates that input memory will be treated as if consecutive elements
      *  of rows are stored contiguously in memory.
      */
-        #[link_name = "_ZN10SkMatrix4412setColMajorfEPKf"]
+        #[link_name = "?setColMajorf@SkMatrix44@@QEAAXQEBM@Z"]
         pub fn SkMatrix44_setColMajorf(this: *mut root::SkMatrix44,
                                        arg1: *const f32);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4412setColMajordEPKd"]
+        #[link_name = "?setColMajord@SkMatrix44@@QEAAXQEBN@Z"]
         pub fn SkMatrix44_setColMajord(this: *mut root::SkMatrix44,
                                        arg1: *const f64);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4412setRowMajorfEPKf"]
+        #[link_name = "?setRowMajorf@SkMatrix44@@QEAAXQEBM@Z"]
         pub fn SkMatrix44_setRowMajorf(this: *mut root::SkMatrix44,
                                        arg1: *const f32);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4412setRowMajordEPKd"]
+        #[link_name = "?setRowMajord@SkMatrix44@@QEAAXQEBN@Z"]
         pub fn SkMatrix44_setRowMajord(this: *mut root::SkMatrix44,
                                        arg1: *const f64);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix446set3x3Efffffffff"]
+        #[link_name = "?set3x3@SkMatrix44@@QEAAXMMMMMMMMM@Z"]
         pub fn SkMatrix44_set3x3(this: *mut root::SkMatrix44,
                                  m00: root::SkMScalar, m01: root::SkMScalar,
                                  m02: root::SkMScalar, m10: root::SkMScalar,
@@ -2278,45 +1930,45 @@ be copied. It hides its copy-constructor and its assignment-operator.
                                  m22: root::SkMScalar);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4415set3x3RowMajorfEPKf"]
+        #[link_name = "?set3x3RowMajorf@SkMatrix44@@QEAAXQEBM@Z"]
         pub fn SkMatrix44_set3x3RowMajorf(this: *mut root::SkMatrix44,
                                           arg1: *const f32);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4412setTranslateEfff"]
+        #[link_name = "?setTranslate@SkMatrix44@@QEAAXMMM@Z"]
         pub fn SkMatrix44_setTranslate(this: *mut root::SkMatrix44,
                                        dx: root::SkMScalar,
                                        dy: root::SkMScalar,
                                        dz: root::SkMScalar);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4412preTranslateEfff"]
+        #[link_name = "?preTranslate@SkMatrix44@@QEAAXMMM@Z"]
         pub fn SkMatrix44_preTranslate(this: *mut root::SkMatrix44,
                                        dx: root::SkMScalar,
                                        dy: root::SkMScalar,
                                        dz: root::SkMScalar);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix4413postTranslateEfff"]
+        #[link_name = "?postTranslate@SkMatrix44@@QEAAXMMM@Z"]
         pub fn SkMatrix44_postTranslate(this: *mut root::SkMatrix44,
                                         dx: root::SkMScalar,
                                         dy: root::SkMScalar,
                                         dz: root::SkMScalar);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix448setScaleEfff"]
+        #[link_name = "?setScale@SkMatrix44@@QEAAXMMM@Z"]
         pub fn SkMatrix44_setScale(this: *mut root::SkMatrix44,
                                    sx: root::SkMScalar, sy: root::SkMScalar,
                                    sz: root::SkMScalar);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix448preScaleEfff"]
+        #[link_name = "?preScale@SkMatrix44@@QEAAXMMM@Z"]
         pub fn SkMatrix44_preScale(this: *mut root::SkMatrix44,
                                    sx: root::SkMScalar, sy: root::SkMScalar,
                                    sz: root::SkMScalar);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix449postScaleEfff"]
+        #[link_name = "?postScale@SkMatrix44@@QEAAXMMM@Z"]
         pub fn SkMatrix44_postScale(this: *mut root::SkMatrix44,
                                     sx: root::SkMScalar, sy: root::SkMScalar,
                                     sz: root::SkMScalar);
@@ -2325,7 +1977,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Rotate about the vector [x,y,z]. If that vector is not unit-length,
         it will be automatically resized.
      */
-        #[link_name = "_ZN10SkMatrix4414setRotateAboutEffff"]
+        #[link_name = "?setRotateAbout@SkMatrix44@@QEAAXMMMM@Z"]
         pub fn SkMatrix44_setRotateAbout(this: *mut root::SkMatrix44,
                                          x: root::SkMScalar,
                                          y: root::SkMScalar,
@@ -2336,7 +1988,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Rotate about the vector [x,y,z]. Does not check the length of the
         vector, assuming it is unit-length.
      */
-        #[link_name = "_ZN10SkMatrix4418setRotateAboutUnitEffff"]
+        #[link_name = "?setRotateAboutUnit@SkMatrix44@@QEAAXMMMM@Z"]
         pub fn SkMatrix44_setRotateAboutUnit(this: *mut root::SkMatrix44,
                                              x: root::SkMScalar,
                                              y: root::SkMScalar,
@@ -2344,7 +1996,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                                              radians: root::SkMScalar);
     }
     extern "C" {
-        #[link_name = "_ZN10SkMatrix449setConcatERKS_S1_"]
+        #[link_name = "?setConcat@SkMatrix44@@QEAAXAEBV1@0@Z"]
         pub fn SkMatrix44_setConcat(this: *mut root::SkMatrix44,
                                     a: *const root::SkMatrix44,
                                     b: *const root::SkMatrix44);
@@ -2354,20 +2006,20 @@ be copied. It hides its copy-constructor and its assignment-operator.
         not invertible, return false and leave the inverse parameter in an
         unspecified state.
      */
-        #[link_name = "_ZNK10SkMatrix446invertEPS_"]
+        #[link_name = "?invert@SkMatrix44@@QEBA_NPEAV1@@Z"]
         pub fn SkMatrix44_invert(this: *const root::SkMatrix44,
                                  inverse: *mut root::SkMatrix44) -> bool;
     }
     extern "C" {
         /** Transpose this matrix in place. */
-        #[link_name = "_ZN10SkMatrix449transposeEv"]
+        #[link_name = "?transpose@SkMatrix44@@QEAAXXZ"]
         pub fn SkMatrix44_transpose(this: *mut root::SkMatrix44);
     }
     extern "C" {
         /** Apply the matrix to the src vector, returning the new vector in dst.
         It is legal for src and dst to point to the same memory.
      */
-        #[link_name = "_ZNK10SkMatrix4410mapScalarsEPKfPf"]
+        #[link_name = "?mapScalars@SkMatrix44@@QEBAXQEBMQEAM@Z"]
         pub fn SkMatrix44_mapScalars(this: *const root::SkMatrix44,
                                      src: *mut root::SkScalar,
                                      dst: *mut root::SkScalar);
@@ -2381,13 +2033,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param count    number of [x, y] pairs in src2
      *  @param dst4     array of [x', y', z', w'] quads as the output.
      */
-        #[link_name = "_ZNK10SkMatrix444map2EPKfiPf"]
+        #[link_name = "?map2@SkMatrix44@@QEBAXQEBMHQEAM@Z"]
         pub fn SkMatrix44_map2(this: *const root::SkMatrix44,
                                src2: *const f32, count: ::std::os::raw::c_int,
                                dst4: *mut f32);
     }
     extern "C" {
-        #[link_name = "_ZNK10SkMatrix444map2EPKdiPd"]
+        #[link_name = "?map2@SkMatrix44@@QEBAXQEBNHQEAN@Z"]
         pub fn SkMatrix44_map21(this: *const root::SkMatrix44,
                                 src2: *const f64,
                                 count: ::std::os::raw::c_int, dst4: *mut f64);
@@ -2403,18 +2055,18 @@ be copied. It hides its copy-constructor and its assignment-operator.
         a 90-degree rotation can still end up with 10^-17 of
         "non-axis-aligned" result.
      */
-        #[link_name = "_ZNK10SkMatrix4424preserves2dAxisAlignmentEf"]
+        #[link_name = "?preserves2dAxisAlignment@SkMatrix44@@QEBA_NM@Z"]
         pub fn SkMatrix44_preserves2dAxisAlignment(this:
                                                        *const root::SkMatrix44,
                                                    epsilon: root::SkMScalar)
          -> bool;
     }
     extern "C" {
-        #[link_name = "_ZNK10SkMatrix444dumpEv"]
+        #[link_name = "?dump@SkMatrix44@@QEBAXXZ"]
         pub fn SkMatrix44_dump(this: *const root::SkMatrix44);
     }
     extern "C" {
-        #[link_name = "_ZNK10SkMatrix4411determinantEv"]
+        #[link_name = "?determinant@SkMatrix44@@QEBANXZ"]
         pub fn SkMatrix44_determinant(this: *const root::SkMatrix44) -> f64;
     }
     impl Clone for SkMatrix44 {
@@ -2558,65 +2210,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
         }
     }
     #[repr(C)]
-    #[derive(Debug, Copy)]
-    pub struct _IO_FILE {
-        pub _flags: ::std::os::raw::c_int,
-        pub _IO_read_ptr: *mut ::std::os::raw::c_char,
-        pub _IO_read_end: *mut ::std::os::raw::c_char,
-        pub _IO_read_base: *mut ::std::os::raw::c_char,
-        pub _IO_write_base: *mut ::std::os::raw::c_char,
-        pub _IO_write_ptr: *mut ::std::os::raw::c_char,
-        pub _IO_write_end: *mut ::std::os::raw::c_char,
-        pub _IO_buf_base: *mut ::std::os::raw::c_char,
-        pub _IO_buf_end: *mut ::std::os::raw::c_char,
-        pub _IO_save_base: *mut ::std::os::raw::c_char,
-        pub _IO_backup_base: *mut ::std::os::raw::c_char,
-        pub _IO_save_end: *mut ::std::os::raw::c_char,
-        pub _markers: *mut root::_IO_marker,
-        pub _chain: *mut root::_IO_FILE,
-        pub _fileno: ::std::os::raw::c_int,
-        pub _flags2: ::std::os::raw::c_int,
-        pub _old_offset: root::__off_t,
-        pub _cur_column: ::std::os::raw::c_ushort,
-        pub _vtable_offset: ::std::os::raw::c_char,
-        pub _shortbuf: [::std::os::raw::c_char; 1usize],
-        pub _lock: *mut root::_IO_lock_t,
-        pub _offset: root::__off64_t,
-        pub __pad1: *mut ::std::os::raw::c_void,
-        pub __pad2: *mut ::std::os::raw::c_void,
-        pub __pad3: *mut ::std::os::raw::c_void,
-        pub __pad4: *mut ::std::os::raw::c_void,
-        pub __pad5: usize,
-        pub _mode: ::std::os::raw::c_int,
-        pub _unused2: [::std::os::raw::c_char; 20usize],
-    }
-    #[test]
-    fn bindgen_test_layout__IO_FILE() {
-        assert_eq!(::std::mem::size_of::<_IO_FILE>() , 216usize);
-        assert_eq!(::std::mem::align_of::<_IO_FILE>() , 8usize);
-    }
-    impl Clone for _IO_FILE {
-        fn clone(&self) -> Self { *self }
-    }
-    pub type FILE = root::_IO_FILE;
-    pub type __gnuc_va_list = root::__builtin_va_list;
-    pub type _IO_lock_t = ::std::os::raw::c_void;
-    #[repr(C)]
-    #[derive(Debug, Copy)]
-    pub struct _IO_marker {
-        pub _next: *mut root::_IO_marker,
-        pub _sbuf: *mut root::_IO_FILE,
-        pub _pos: ::std::os::raw::c_int,
-    }
-    #[test]
-    fn bindgen_test_layout__IO_marker() {
-        assert_eq!(::std::mem::size_of::<_IO_marker>() , 24usize);
-        assert_eq!(::std::mem::align_of::<_IO_marker>() , 8usize);
-    }
-    impl Clone for _IO_marker {
-        fn clone(&self) -> Self { *self }
-    }
-    #[repr(C)]
     pub struct SkRefCntBase__bindgen_vtable {
     }
     /** \class SkRefCntBase
@@ -2633,7 +2226,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     #[derive(Debug)]
     pub struct SkRefCntBase {
         pub vtable_: *const SkRefCntBase__bindgen_vtable,
-        pub fRefCnt: root::std::atomic<::std::os::raw::c_int>,
+        pub fRefCnt: u32,
     }
     pub type SkRefCntBase_INHERITED = root::SkNoncopyable;
     #[test]
@@ -2655,33 +2248,18 @@ be copied. It hides its copy-constructor and its assignment-operator.
     #[repr(C)]
     #[derive(Debug)]
     pub struct SkNVRefCnt<Derived> {
-        pub fRefCnt: root::std::atomic<::std::os::raw::c_int>,
+        pub fRefCnt: u32,
         pub _phantom_0: ::std::marker::PhantomData<Derived>,
     }
-    /**
- *  Shared pointer class to wrap classes that support a ref()/unref() interface.
- *
- *  This can be used for classes inheriting from SkRefCnt, but it also works for other
- *  classes that match the interface, but have different internal choices: e.g. the hosted class
- *  may have its ref/unref be thread-safe, but that is not assumed/imposed by sk_sp.
- */
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct sk_sp<T> {
-        pub fPtr: *mut T,
-    }
-    /** Supports safe bool idiom. Obsolete with explicit operator bool. */
-    pub type sk_sp_unspecified_bool_type<T> = *mut *mut T;
-    pub type sk_sp_element_type<T> = T;
     #[test]
-    fn __bindgen_test_layout_template_6() {
+    fn __bindgen_test_layout_template_2() {
         assert_eq!(::std::mem::size_of::<root::SkNVRefCnt<root::SkData>>() ,
                    4usize);
         assert_eq!(::std::mem::align_of::<root::SkNVRefCnt<root::SkData>>() ,
                    4usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_7() {
+    fn __bindgen_test_layout_template_3() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkData>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkData>>() ,
@@ -2723,7 +2301,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  length to the size of the data. If buffer is NULL, it is ignored, and
      *  only the computed number of bytes is returned.
      */
-        #[link_name = "_ZNK6SkData9copyRangeEmmPv"]
+        #[link_name = "?copyRange@SkData@@QEBA_K_K0PEAX@Z"]
         pub fn SkData_copyRange(this: *const root::SkData, offset: usize,
                                 length: usize,
                                 buffer: *mut ::std::os::raw::c_void) -> usize;
@@ -2733,7 +2311,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns true if these two objects have the same length and contents,
      *  effectively returning 0 == memcmp(...)
      */
-        #[link_name = "_ZNK6SkData6equalsEPKS_"]
+        #[link_name = "?equals@SkData@@QEBA_NPEBV1@@Z"]
         pub fn SkData_equals(this: *const root::SkData,
                              other: *const root::SkData) -> bool;
     }
@@ -2741,7 +2319,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Create a new dataref by copying the specified data
      */
-        #[link_name = "_ZN6SkData12MakeWithCopyEPKvm"]
+        #[link_name =
+              "?MakeWithCopy@SkData@@SA?AV?$sk_sp@VSkData@@@@PEBX_K@Z"]
         pub fn SkData_MakeWithCopy(data: *const ::std::os::raw::c_void,
                                    length: usize)
          -> root::sk_sp<root::SkData>;
@@ -2751,7 +2330,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Create a new data with uninitialized contents. The caller should call writable_data()
      *  to write into the buffer, but this must be done before another ref() is made.
      */
-        #[link_name = "_ZN6SkData17MakeUninitializedEm"]
+        #[link_name =
+              "?MakeUninitialized@SkData@@SA?AV?$sk_sp@VSkData@@@@_K@Z"]
         pub fn SkData_MakeUninitialized(length: usize)
          -> root::sk_sp<root::SkData>;
     }
@@ -2762,7 +2342,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  equal to strlen(cstr) + 1. If cstr is NULL, it will be treated the same
      *  as "".
      */
-        #[link_name = "_ZN6SkData15MakeWithCStringEPKc"]
+        #[link_name =
+              "?MakeWithCString@SkData@@SA?AV?$sk_sp@VSkData@@@@QEBD@Z"]
         pub fn SkData_MakeWithCString(cstr: *const ::std::os::raw::c_char)
          -> root::sk_sp<root::SkData>;
     }
@@ -2771,7 +2352,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Create a new dataref, taking the ptr as is, and using the
      *  releaseproc to free it. The proc may be NULL.
      */
-        #[link_name = "_ZN6SkData12MakeWithProcEPKvmPFvS1_PvES2_"]
+        #[link_name =
+              "?MakeWithProc@SkData@@SA?AV?$sk_sp@VSkData@@@@PEBX_KP6AX0PEAX@Z2@Z"]
         pub fn SkData_MakeWithProc(ptr: *const ::std::os::raw::c_void,
                                    length: usize,
                                    proc_: root::SkData_ReleaseProc,
@@ -2783,7 +2365,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Create a new dataref from a pointer allocated by malloc. The Data object
      *  takes ownership of that allocation, and will handling calling sk_free.
      */
-        #[link_name = "_ZN6SkData14MakeFromMallocEPKvm"]
+        #[link_name =
+              "?MakeFromMalloc@SkData@@SA?AV?$sk_sp@VSkData@@@@PEBX_K@Z"]
         pub fn SkData_MakeFromMalloc(data: *const ::std::os::raw::c_void,
                                      length: usize)
          -> root::sk_sp<root::SkData>;
@@ -2793,7 +2376,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Create a new dataref the file with the specified path.
      *  If the file cannot be opened, this returns NULL.
      */
-        #[link_name = "_ZN6SkData16MakeFromFileNameEPKc"]
+        #[link_name =
+              "?MakeFromFileName@SkData@@SA?AV?$sk_sp@VSkData@@@@QEBD@Z"]
         pub fn SkData_MakeFromFileName(path: *const ::std::os::raw::c_char)
          -> root::sk_sp<root::SkData>;
     }
@@ -2805,7 +2389,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  The FILE must be open for reading only.
      *  Returns NULL on failure.
      */
-        #[link_name = "_ZN6SkData12MakeFromFILEEP8_IO_FILE"]
+        #[link_name =
+              "?MakeFromFILE@SkData@@SA?AV?$sk_sp@VSkData@@@@PEAU_iobuf@@@Z"]
         pub fn SkData_MakeFromFILE(f: *mut root::FILE)
          -> root::sk_sp<root::SkData>;
     }
@@ -2817,7 +2402,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  The file descriptor must be open for reading only.
      *  Returns NULL on failure.
      */
-        #[link_name = "_ZN6SkData10MakeFromFDEi"]
+        #[link_name = "?MakeFromFD@SkData@@SA?AV?$sk_sp@VSkData@@@@H@Z"]
         pub fn SkData_MakeFromFD(fd: ::std::os::raw::c_int)
          -> root::sk_sp<root::SkData>;
     }
@@ -2827,7 +2412,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  else return NULL. Either way the stream's cursor may have been changed as a result
      *  of calling read().
      */
-        #[link_name = "_ZN6SkData14MakeFromStreamEP8SkStreamm"]
+        #[link_name =
+              "?MakeFromStream@SkData@@SA?AV?$sk_sp@VSkData@@@@PEAVSkStream@@_K@Z"]
         pub fn SkData_MakeFromStream(arg1: *mut root::SkStream, size: usize)
          -> root::sk_sp<root::SkData>;
     }
@@ -2836,7 +2422,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Create a new dataref using a subset of the data in the specified
      *  src dataref.
      */
-        #[link_name = "_ZN6SkData10MakeSubsetEPKS_mm"]
+        #[link_name =
+              "?MakeSubset@SkData@@SA?AV?$sk_sp@VSkData@@@@PEBV1@_K1@Z"]
         pub fn SkData_MakeSubset(src: *const root::SkData, offset: usize,
                                  length: usize) -> root::sk_sp<root::SkData>;
     }
@@ -2845,7 +2432,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns a new empty dataref (or a reference to a shared empty dataref).
      *  New or shared, the caller must see that unref() is eventually called.
      */
-        #[link_name = "_ZN6SkData9MakeEmptyEv"]
+        #[link_name = "?MakeEmpty@SkData@@SA?AV?$sk_sp@VSkData@@@@XZ"]
         pub fn SkData_MakeEmpty() -> root::sk_sp<root::SkData>;
     }
     impl SkData {
@@ -2920,47 +2507,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
         }
     }
     /**
- *  Describes a color gamut with primaries and a white point.
- */
-    #[repr(C)]
-    #[derive(Debug, Copy)]
-    pub struct SkColorSpacePrimaries {
-        pub fRX: f32,
-        pub fRY: f32,
-        pub fGX: f32,
-        pub fGY: f32,
-        pub fBX: f32,
-        pub fBY: f32,
-        pub fWX: f32,
-        pub fWY: f32,
-    }
-    #[test]
-    fn bindgen_test_layout_SkColorSpacePrimaries() {
-        assert_eq!(::std::mem::size_of::<SkColorSpacePrimaries>() , 32usize);
-        assert_eq!(::std::mem::align_of::<SkColorSpacePrimaries>() , 4usize);
-    }
-    extern "C" {
-        /**
-     *  Convert primaries and a white point to a toXYZD50 matrix, the preferred color gamut
-     *  representation of SkColorSpace.
-     */
-        #[link_name = "_ZNK21SkColorSpacePrimaries8toXYZD50EP10SkMatrix44"]
-        pub fn SkColorSpacePrimaries_toXYZD50(this:
-                                                  *const root::SkColorSpacePrimaries,
-                                              toXYZD50: *mut root::SkMatrix44)
-         -> bool;
-    }
-    impl Clone for SkColorSpacePrimaries {
-        fn clone(&self) -> Self { *self }
-    }
-    impl SkColorSpacePrimaries {
-        #[inline]
-        pub unsafe fn toXYZD50(&self, toXYZD50: *mut root::SkMatrix44)
-         -> bool {
-            SkColorSpacePrimaries_toXYZD50(&*self, toXYZD50)
-        }
-    }
-    /**
  *  Contains the coefficients for a common transfer function equation, specified as
  *  a transformation from a curved space to linear.
  *
@@ -2991,7 +2537,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         fn clone(&self) -> Self { *self }
     }
     #[test]
-    fn __bindgen_test_layout_template_8() {
+    fn __bindgen_test_layout_template_4() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkColorSpace>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkColorSpace>>() ,
@@ -3032,7 +2578,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Gamut is specified using the matrix transformation to XYZ D50.
      */
         #[link_name =
-              "_ZN12SkColorSpace7MakeRGBENS_17RenderTargetGammaERK10SkMatrix44"]
+              "?MakeRGB@SkColorSpace@@SA?AV?$sk_sp@VSkColorSpace@@@@W4RenderTargetGamma@1@AEBVSkMatrix44@@@Z"]
         pub fn SkColorSpace_MakeRGB(gamma:
                                         root::SkColorSpace_RenderTargetGamma,
                                     toXYZD50: *const root::SkMatrix44)
@@ -3040,7 +2586,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN12SkColorSpace7MakeRGBERK22SkColorSpaceTransferFnRK10SkMatrix44"]
+              "?MakeRGB@SkColorSpace@@SA?AV?$sk_sp@VSkColorSpace@@@@AEBUSkColorSpaceTransferFn@@AEBVSkMatrix44@@@Z"]
         pub fn SkColorSpace_MakeRGB1(coeffs:
                                          *const root::SkColorSpaceTransferFn,
                                      toXYZD50: *const root::SkMatrix44)
@@ -3050,7 +2596,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Create a common, named SkColorSpace.
      */
-        #[link_name = "_ZN12SkColorSpace9MakeNamedENS_5NamedE"]
+        #[link_name =
+              "?MakeNamed@SkColorSpace@@SA?AV?$sk_sp@VSkColorSpace@@@@W4Named@1@@Z"]
         pub fn SkColorSpace_MakeNamed(arg1: root::SkColorSpace_Named)
          -> root::sk_sp<root::SkColorSpace>;
     }
@@ -3058,7 +2605,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Create an SkColorSpace from an ICC profile.
      */
-        #[link_name = "_ZN12SkColorSpace7MakeICCEPKvm"]
+        #[link_name =
+              "?MakeICC@SkColorSpace@@SA?AV?$sk_sp@VSkColorSpace@@@@PEBX_K@Z"]
         pub fn SkColorSpace_MakeICC(arg1: *const ::std::os::raw::c_void,
                                     arg2: usize)
          -> root::sk_sp<root::SkColorSpace>;
@@ -3067,7 +2615,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Returns true if the color space gamma is near enough to be approximated as sRGB.
      */
-        #[link_name = "_ZNK12SkColorSpace16gammaCloseToSRGBEv"]
+        #[link_name = "?gammaCloseToSRGB@SkColorSpace@@QEBA_NXZ"]
         pub fn SkColorSpace_gammaCloseToSRGB(this: *const root::SkColorSpace)
          -> bool;
     }
@@ -3075,7 +2623,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Returns true if the color space gamma is linear.
      */
-        #[link_name = "_ZNK12SkColorSpace13gammaIsLinearEv"]
+        #[link_name = "?gammaIsLinear@SkColorSpace@@QEBA_NXZ"]
         pub fn SkColorSpace_gammaIsLinear(this: *const root::SkColorSpace)
          -> bool;
     }
@@ -3084,7 +2632,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns nullptr on failure.  Fails when we fallback to serializing ICC data and
      *  the data is too large to serialize.
      */
-        #[link_name = "_ZNK12SkColorSpace9serializeEv"]
+        #[link_name = "?serialize@SkColorSpace@@QEBA?AV?$sk_sp@VSkData@@@@XZ"]
         pub fn SkColorSpace_serialize(this: *const root::SkColorSpace)
          -> root::sk_sp<root::SkData>;
     }
@@ -3093,13 +2641,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If |memory| is nullptr, returns the size required to serialize.
      *  Otherwise, serializes into |memory| and returns the size.
      */
-        #[link_name = "_ZNK12SkColorSpace13writeToMemoryEPv"]
+        #[link_name = "?writeToMemory@SkColorSpace@@QEBA_KPEAX@Z"]
         pub fn SkColorSpace_writeToMemory(this: *const root::SkColorSpace,
                                           memory: *mut ::std::os::raw::c_void)
          -> usize;
     }
     extern "C" {
-        #[link_name = "_ZN12SkColorSpace11DeserializeEPKvm"]
+        #[link_name =
+              "?Deserialize@SkColorSpace@@SA?AV?$sk_sp@VSkColorSpace@@@@PEBX_K@Z"]
         pub fn SkColorSpace_Deserialize(data: *const ::std::os::raw::c_void,
                                         length: usize)
          -> root::sk_sp<root::SkColorSpace>;
@@ -3109,7 +2658,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If both are null, we return true.  If one is null and the other is not, we return false.
      *  If both are non-null, we do a deeper compare.
      */
-        #[link_name = "_ZN12SkColorSpace6EqualsEPKS_S1_"]
+        #[link_name = "?Equals@SkColorSpace@@SA_NPEBV1@0@Z"]
         pub fn SkColorSpace_Equals(src: *const root::SkColorSpace,
                                    dst: *const root::SkColorSpace) -> bool;
     }
@@ -3185,7 +2734,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkAlphaType_kLastEnum_SkAlphaType: root::SkAlphaType =
         SkAlphaType::kUnpremul_SkAlphaType;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
  *  Describes how to interpret the alpha component of a pixel.
  */
@@ -3196,19 +2745,11 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kPremul_SkAlphaType = 2,
         kUnpremul_SkAlphaType = 3,
     }
-    extern "C" {
-        #[link_name = "_ZL19SkAlphaTypeIsOpaque11SkAlphaType"]
-        pub fn SkAlphaTypeIsOpaque(at: root::SkAlphaType) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkAlphaTypeIsValidj"]
-        pub fn SkAlphaTypeIsValid(value: ::std::os::raw::c_uint) -> bool;
-    }
     pub const SkColorType_kLastEnum_SkColorType: root::SkColorType =
         SkColorType::kRGBA_F16_SkColorType;
     pub const SkColorType_kN32_SkColorType: root::SkColorType =
-        SkColorType::kRGBA_8888_SkColorType;
-    #[repr(u32)]
+        SkColorType::kBGRA_8888_SkColorType;
+    #[repr(i32)]
     /**
  *  Describes how to interpret the components of a pixel.
  *
@@ -3228,48 +2769,10 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kGray_8_SkColorType = 7,
         kRGBA_F16_SkColorType = 8,
     }
-    extern "C" {
-        #[link_name = "_ZL24SkColorTypeBytesPerPixel11SkColorType"]
-        pub fn SkColorTypeBytesPerPixel(ct: root::SkColorType)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL24SkColorTypeShiftPerPixel11SkColorType"]
-        pub fn SkColorTypeShiftPerPixel(ct: root::SkColorType)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL22SkColorTypeMinRowBytes11SkColorTypei"]
-        pub fn SkColorTypeMinRowBytes(ct: root::SkColorType,
-                                      width: ::std::os::raw::c_int) -> usize;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkColorTypeIsValidj"]
-        pub fn SkColorTypeIsValid(value: ::std::os::raw::c_uint) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL24SkColorTypeComputeOffset11SkColorTypeiim"]
-        pub fn SkColorTypeComputeOffset(ct: root::SkColorType,
-                                        x: ::std::os::raw::c_int,
-                                        y: ::std::os::raw::c_int,
-                                        rowBytes: usize) -> usize;
-    }
-    extern "C" {
-        /**
- *  Return true if alphaType is supported by colorType. If there is a canonical
- *  alphaType for this colorType, return it in canonical.
- */
-        #[link_name =
-              "_Z28SkColorTypeValidateAlphaType11SkColorType11SkAlphaTypePS0_"]
-        pub fn SkColorTypeValidateAlphaType(colorType: root::SkColorType,
-                                            alphaType: root::SkAlphaType,
-                                            canonical: *mut root::SkAlphaType)
-         -> bool;
-    }
     pub const SkYUVColorSpace_kLastEnum_SkYUVColorSpace: root::SkYUVColorSpace
               =
         SkYUVColorSpace::kRec709_SkYUVColorSpace;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
  *  Describes the color space a YUV pixel.
  */
@@ -3308,24 +2811,24 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Create an ImageInfo marked as SRGB with N32 swizzle.
      */
-        #[link_name = "_ZN11SkImageInfo7MakeS32Eii11SkAlphaType"]
+        #[link_name = "?MakeS32@SkImageInfo@@SA?AU1@HHW4SkAlphaType@@@Z"]
         pub fn SkImageInfo_MakeS32(width: ::std::os::raw::c_int,
                                    height: ::std::os::raw::c_int,
                                    at: root::SkAlphaType)
          -> root::SkImageInfo;
     }
     extern "C" {
-        #[link_name = "_ZN11SkImageInfo9unflattenER12SkReadBuffer"]
+        #[link_name = "?unflatten@SkImageInfo@@QEAAXAEAVSkReadBuffer@@@Z"]
         pub fn SkImageInfo_unflatten(this: *mut root::SkImageInfo,
                                      arg1: *mut root::SkReadBuffer);
     }
     extern "C" {
-        #[link_name = "_ZNK11SkImageInfo7flattenER13SkWriteBuffer"]
+        #[link_name = "?flatten@SkImageInfo@@QEBAXAEAVSkWriteBuffer@@@Z"]
         pub fn SkImageInfo_flatten(this: *const root::SkImageInfo,
                                    arg1: *mut root::SkWriteBuffer);
     }
     extern "C" {
-        #[link_name = "_ZNK11SkImageInfo8validateEv"]
+        #[link_name = "?validate@SkImageInfo@@QEBAXXZ"]
         pub fn SkImageInfo_validate(this: *const root::SkImageInfo);
     }
     impl SkImageInfo {
@@ -3361,7 +2864,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Returns the Euclidian distance from (0,0,0) to (x,y,z)
     */
-        #[link_name = "_ZN8SkPoint36LengthEfff"]
+        #[link_name = "?Length@SkPoint3@@SAMMMM@Z"]
         pub fn SkPoint3_Length(x: root::SkScalar, y: root::SkScalar,
                                z: root::SkScalar) -> root::SkScalar;
     }
@@ -3370,7 +2873,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         already points.  If the point has a degenerate length (i.e., nearly 0)
         then set it to (0,0,0) and return false; otherwise return true.
     */
-        #[link_name = "_ZN8SkPoint39normalizeEv"]
+        #[link_name = "?normalize@SkPoint3@@QEAA_NXZ"]
         pub fn SkPoint3_normalize(this: *mut root::SkPoint3) -> bool;
     }
     impl Clone for SkPoint3 {
@@ -3387,7 +2890,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
             SkPoint3_normalize(&mut *self)
         }
     }
-    pub type SkVector3 = root::SkPoint3;
     pub type SkColor3f = root::SkPoint3;
     /** 8-bit type for an alpha value. 0xFF is 100% opaque, 0x00 is 100% transparent.
 */
@@ -3398,90 +2900,11 @@ be copied. It hides its copy-constructor and its assignment-operator.
     specify colors in SkPaint and in gradients.
 */
     pub type SkColor = u32;
-    extern "C" {
-        /** Return a SkColor value from 8 bit component values
-*/
-        #[link_name = "_ZL20SkColorSetARGBInlinejjjj"]
-        pub fn SkColorSetARGBInline(a: root::U8CPU, r: root::U8CPU,
-                                    g: root::U8CPU, b: root::U8CPU)
-         -> root::SkColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkColorSetAjj"]
-        pub fn SkColorSetA(c: root::SkColor, a: root::U8CPU) -> root::SkColor;
-    }
-    extern "C" {
-        /** Convert RGB components to HSV.
-        hsv[0] is Hue [0 .. 360)
-        hsv[1] is Saturation [0...1]
-        hsv[2] is Value [0...1]
-    @param red  red component value [0..255]
-    @param green  green component value [0..255]
-    @param blue  blue component value [0..255]
-    @param hsv  3 element array which holds the resulting HSV components.
-*/
-        #[link_name = "_Z10SkRGBToHSVjjjPf"]
-        pub fn SkRGBToHSV(red: root::U8CPU, green: root::U8CPU,
-                          blue: root::U8CPU, hsv: *mut root::SkScalar);
-    }
-    extern "C" {
-        /** Convert the argb color to its HSV components.
-        hsv[0] is Hue [0 .. 360)
-        hsv[1] is Saturation [0...1]
-        hsv[2] is Value [0...1]
-    @param color the argb color to convert. Note: the alpha component is ignored.
-    @param hsv  3 element array which holds the resulting HSV components.
-*/
-        #[link_name = "_ZL12SkColorToHSVjPf"]
-        pub fn SkColorToHSV(color: root::SkColor, hsv: *mut root::SkScalar);
-    }
-    extern "C" {
-        /** Convert HSV components to an ARGB color. The alpha component is passed through unchanged.
-        hsv[0] is Hue [0 .. 360)
-        hsv[1] is Saturation [0...1]
-        hsv[2] is Value [0...1]
-    If hsv values are out of range, they are pinned.
-    @param alpha the alpha component of the returned argb color.
-    @param hsv  3 element array which holds the input HSV components.
-    @return the resulting argb color
-*/
-        #[link_name = "_Z12SkHSVToColorjPKf"]
-        pub fn SkHSVToColor(alpha: root::U8CPU, hsv: *mut root::SkScalar)
-         -> root::SkColor;
-    }
-    extern "C" {
-        /** Convert HSV components to an ARGB color. The alpha component set to 0xFF.
-        hsv[0] is Hue [0 .. 360)
-        hsv[1] is Saturation [0...1]
-        hsv[2] is Value [0...1]
-    If hsv values are out of range, they are pinned.
-    @param hsv  3 element array which holds the input HSV components.
-    @return the resulting argb color
-*/
-        #[link_name = "_ZL12SkHSVToColorPKf"]
-        pub fn SkHSVToColor1(hsv: *mut root::SkScalar) -> root::SkColor;
-    }
     /** 32 bit ARGB color value, premultiplied. The byte order for this value is
     configuration dependent, matching the format of kARGB32 bitmaps. This is different
     from SkColor, which is nonpremultiplied, and is always in the same byte order.
 */
     pub type SkPMColor = u32;
-    extern "C" {
-        /** Return a SkPMColor value from unpremultiplied 8 bit component values
-*/
-        #[link_name = "_Z17SkPreMultiplyARGBjjjj"]
-        pub fn SkPreMultiplyARGB(a: root::U8CPU, r: root::U8CPU,
-                                 g: root::U8CPU, b: root::U8CPU)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        /** Return a SkPMColor value from a SkColor value. This is done by multiplying the color
-    components by the color's alpha, and by arranging the bytes in a configuration
-    dependent order, to match the format of kARGB32 bitmaps.
-*/
-        #[link_name = "_Z18SkPreMultiplyColorj"]
-        pub fn SkPreMultiplyColor(c: root::SkColor) -> root::SkPMColor;
-    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////
     #[repr(C)]
     #[derive(Debug, Copy)]
@@ -3505,27 +2928,27 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkColor4f>() , 4usize);
     }
     extern "C" {
-        #[link_name = "_ZN9SkColor4f3PinEffff"]
+        #[link_name = "?Pin@SkColor4f@@SA?AU1@MMMM@Z"]
         pub fn SkColor4f_Pin(r: f32, g: f32, b: f32, a: f32)
          -> root::SkColor4f;
     }
     extern "C" {
         /** Convert to SkColor4f, assuming SkColor is sRGB */
-        #[link_name = "_ZN9SkColor4f9FromColorEj"]
+        #[link_name = "?FromColor@SkColor4f@@SA?AU1@I@Z"]
         pub fn SkColor4f_FromColor(arg1: root::SkColor) -> root::SkColor4f;
     }
     extern "C" {
-        #[link_name = "_ZN9SkColor4f11FromColor3fE8SkPoint3f"]
+        #[link_name = "?FromColor3f@SkColor4f@@SA?AU1@USkPoint3@@M@Z"]
         pub fn SkColor4f_FromColor3f(arg1: root::SkColor3f, a: f32)
          -> root::SkColor4f;
     }
     extern "C" {
-        #[link_name = "_ZNK9SkColor4f9toSkColorEv"]
+        #[link_name = "?toSkColor@SkColor4f@@QEBAIXZ"]
         pub fn SkColor4f_toSkColor(this: *const root::SkColor4f)
          -> root::SkColor;
     }
     extern "C" {
-        #[link_name = "_ZNK9SkColor4f6premulEv"]
+        #[link_name = "?premul@SkColor4f@@QEBA?AUSkPM4f@@XZ"]
         pub fn SkColor4f_premul(this: *const root::SkColor4f) -> root::SkPM4f;
     }
     impl Clone for SkColor4f {
@@ -3554,19 +2977,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
             SkColor4f_premul(&*self)
         }
     }
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkOnce {
-        pub fState: root::std::atomic<::std::os::raw::c_uchar>,
-    }
-    #[repr(u8)]
-    #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub enum SkOnce_State { NotStarted = 0, Claimed = 1, Done = 2, }
-    #[test]
-    fn bindgen_test_layout_SkOnce() {
-        assert_eq!(::std::mem::size_of::<SkOnce>() , 1usize);
-        assert_eq!(::std::mem::align_of::<SkOnce>() , 1usize);
-    }
     /** \class SkFlattenable
 
  SkFlattenable is the base class for objects that need to be flattened
@@ -3578,7 +2988,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     pub struct SkFlattenable {
         pub _base: root::SkRefCnt,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkFlattenable_Type {
         kSkColorFilter_Type = 0,
@@ -3611,11 +3021,11 @@ be copied. It hides its copy-constructor and its assignment-operator.
                    , 1usize);
     }
     extern "C" {
-        #[link_name = "_ZN13SkFlattenable18PrivateInitializer8InitCoreEv"]
+        #[link_name = "?InitCore@PrivateInitializer@SkFlattenable@@SAXXZ"]
         pub fn SkFlattenable_PrivateInitializer_InitCore();
     }
     extern "C" {
-        #[link_name = "_ZN13SkFlattenable18PrivateInitializer11InitEffectsEv"]
+        #[link_name = "?InitEffects@PrivateInitializer@SkFlattenable@@SAXXZ"]
         pub fn SkFlattenable_PrivateInitializer_InitEffects();
     }
     impl Clone for SkFlattenable_PrivateInitializer {
@@ -3638,26 +3048,27 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkFlattenable>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN13SkFlattenable13NameToFactoryEPKc"]
+        #[link_name =
+              "?NameToFactory@SkFlattenable@@SAP6A?AV?$sk_sp@VSkFlattenable@@@@AEAVSkReadBuffer@@@ZQEBD@Z"]
         pub fn SkFlattenable_NameToFactory(name:
                                                *const ::std::os::raw::c_char)
          -> root::SkFlattenable_Factory;
     }
     extern "C" {
         #[link_name =
-              "_ZN13SkFlattenable13FactoryToNameEPF5sk_spIS_ER12SkReadBufferE"]
+              "?FactoryToName@SkFlattenable@@SAPEBDP6A?AV?$sk_sp@VSkFlattenable@@@@AEAVSkReadBuffer@@@Z@Z"]
         pub fn SkFlattenable_FactoryToName(arg1: root::SkFlattenable_Factory)
          -> *const ::std::os::raw::c_char;
     }
     extern "C" {
-        #[link_name = "_ZN13SkFlattenable10NameToTypeEPKcPNS_4TypeE"]
+        #[link_name = "?NameToType@SkFlattenable@@SA_NQEBDPEAW4Type@1@@Z"]
         pub fn SkFlattenable_NameToType(name: *const ::std::os::raw::c_char,
                                         type_: *mut root::SkFlattenable_Type)
          -> bool;
     }
     extern "C" {
         #[link_name =
-              "_ZN13SkFlattenable8RegisterEPKcPF5sk_spIS_ER12SkReadBufferENS_4TypeE"]
+              "?Register@SkFlattenable@@SAXQEBDP6A?AV?$sk_sp@VSkFlattenable@@@@AEAVSkReadBuffer@@@ZW4Type@1@@Z"]
         pub fn SkFlattenable_Register(name: *const ::std::os::raw::c_char,
                                       arg1: root::SkFlattenable_Factory,
                                       arg2: root::SkFlattenable_Type);
@@ -3702,7 +3113,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub f16BitCacheOnce: root::SkOnce,
         pub fCount: ::std::os::raw::c_int,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkColorTable_AllocatedWithMalloc { kAllocatedWithMalloc = 0, }
     pub type SkColorTable_INHERITED = root::SkRefCnt;
@@ -3714,17 +3125,18 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** read16BitCache() returns the array of RGB16 colors that mirror the 32bit colors.
      */
-        #[link_name = "_ZNK12SkColorTable14read16BitCacheEv"]
+        #[link_name = "?read16BitCache@SkColorTable@@QEBAPEBGXZ"]
         pub fn SkColorTable_read16BitCache(this: *const root::SkColorTable)
          -> *const u16;
     }
     extern "C" {
-        #[link_name = "_ZNK12SkColorTable13writeToBufferER13SkWriteBuffer"]
+        #[link_name =
+              "?writeToBuffer@SkColorTable@@QEBAXAEAVSkWriteBuffer@@@Z"]
         pub fn SkColorTable_writeToBuffer(this: *const root::SkColorTable,
                                           arg1: *mut root::SkWriteBuffer);
     }
     extern "C" {
-        #[link_name = "_ZN12SkColorTable6CreateER12SkReadBuffer"]
+        #[link_name = "?Create@SkColorTable@@SAPEAV1@AEAVSkReadBuffer@@@Z"]
         pub fn SkColorTable_Create(arg1: *mut root::SkReadBuffer)
          -> *mut root::SkColorTable;
     }
@@ -3755,7 +3167,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub fRowBytes: u32,
         pub fFormat: root::SkMask_Format,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMask_Format {
         kBW_Format = 0,
@@ -3766,10 +3178,10 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkMask_kCountMaskFormats: root::SkMask__bindgen_ty_1 =
         SkMask__bindgen_ty_1::kCountMaskFormats;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMask__bindgen_ty_1 { kCountMaskFormats = 5, }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkMask_CreateMode {
         kJustComputeBounds_CreateMode = 0,
@@ -3786,7 +3198,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         Does not account for k3D_Format. For that, use computeTotalImageSize().
         If there is an overflow of 32bits, then returns 0.
     */
-        #[link_name = "_ZNK6SkMask16computeImageSizeEv"]
+        #[link_name = "?computeImageSize@SkMask@@QEBA_KXZ"]
         pub fn SkMask_computeImageSize(this: *const root::SkMask) -> usize;
     }
     extern "C" {
@@ -3794,7 +3206,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         any extra planes (e.g. k3D_Format).
         If there is an overflow of 32bits, then returns 0.
     */
-        #[link_name = "_ZNK6SkMask21computeTotalImageSizeEv"]
+        #[link_name = "?computeTotalImageSize@SkMask@@QEBA_KXZ"]
         pub fn SkMask_computeTotalImageSize(this: *const root::SkMask)
          -> usize;
     }
@@ -3811,18 +3223,18 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  This should not be called with kBW_Format, as it will give unspecified
      *  results (and assert in the debug build).
      */
-        #[link_name = "_ZNK6SkMask7getAddrEii"]
+        #[link_name = "?getAddr@SkMask@@QEBAPEAXHH@Z"]
         pub fn SkMask_getAddr(this: *const root::SkMask,
                               x: ::std::os::raw::c_int,
                               y: ::std::os::raw::c_int)
          -> *mut ::std::os::raw::c_void;
     }
     extern "C" {
-        #[link_name = "_ZN6SkMask10AllocImageEm"]
+        #[link_name = "?AllocImage@SkMask@@SAPEAE_K@Z"]
         pub fn SkMask_AllocImage(bytes: usize) -> *mut u8;
     }
     extern "C" {
-        #[link_name = "_ZN6SkMask9FreeImageEPv"]
+        #[link_name = "?FreeImage@SkMask@@SAXPEAX@Z"]
         pub fn SkMask_FreeImage(image: *mut ::std::os::raw::c_void);
     }
     impl Clone for SkMask {
@@ -3870,11 +3282,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkPixmap>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkPixmap5resetEv"]
+        #[link_name = "?reset@SkPixmap@@QEAAXXZ"]
         pub fn SkPixmap_reset(this: *mut root::SkPixmap);
     }
     extern "C" {
-        #[link_name = "_ZN8SkPixmap5resetERK11SkImageInfoPKvmP12SkColorTable"]
+        #[link_name =
+              "?reset@SkPixmap@@QEAAXAEBUSkImageInfo@@PEBX_KPEAVSkColorTable@@@Z"]
         pub fn SkPixmap_reset1(this: *mut root::SkPixmap,
                                info: *const root::SkImageInfo,
                                addr: *const ::std::os::raw::c_void,
@@ -3882,7 +3295,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
                                ctable: *mut root::SkColorTable);
     }
     extern "C" {
-        #[link_name = "_ZN8SkPixmap13setColorSpaceE5sk_spI12SkColorSpaceE"]
+        #[link_name =
+              "?setColorSpace@SkPixmap@@QEAAXV?$sk_sp@VSkColorSpace@@@@@Z"]
         pub fn SkPixmap_setColorSpace(this: *mut root::SkPixmap,
                                       arg1: root::sk_sp<root::SkColorSpace>);
     }
@@ -3891,7 +3305,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If supported, set this pixmap to point to the pixels in the specified mask and return true.
      *  On failure, return false and set this pixmap to empty.
      */
-        #[link_name = "_ZN8SkPixmap5resetERK6SkMask"]
+        #[link_name = "?reset@SkPixmap@@QEAA_NAEBUSkMask@@@Z"]
         pub fn SkPixmap_reset2(this: *mut root::SkPixmap,
                                arg1: *const root::SkMask) -> bool;
     }
@@ -3902,7 +3316,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  On failure, return false and ignore the subset parameter.
      */
-        #[link_name = "_ZNK8SkPixmap13extractSubsetEPS_RK7SkIRect"]
+        #[link_name = "?extractSubset@SkPixmap@@QEBA_NPEAV1@AEBUSkIRect@@@Z"]
         pub fn SkPixmap_extractSubset(this: *const root::SkPixmap,
                                       subset: *mut root::SkPixmap,
                                       area: *const root::SkIRect) -> bool;
@@ -3912,7 +3326,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  This will brute-force return true if all of the pixels in the pixmap
      *  are opaque. If there are no pixels, or encounters an error, returns false.
      */
-        #[link_name = "_ZNK8SkPixmap15computeIsOpaqueEv"]
+        #[link_name = "?computeIsOpaque@SkPixmap@@QEBA_NXZ"]
         pub fn SkPixmap_computeIsOpaque(this: *const root::SkPixmap) -> bool;
     }
     extern "C" {
@@ -3924,13 +3338,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  alpha set.  The value is undefined for kUnknown_SkColorType or if x or y
      *  are out of bounds, or if the pixtap does not have any pixels.
      */
-        #[link_name = "_ZNK8SkPixmap8getColorEii"]
+        #[link_name = "?getColor@SkPixmap@@QEBAIHH@Z"]
         pub fn SkPixmap_getColor(this: *const root::SkPixmap,
                                  x: ::std::os::raw::c_int,
                                  y: ::std::os::raw::c_int) -> root::SkColor;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkPixmap10readPixelsERK11SkImageInfoPvmii"]
+        #[link_name =
+              "?readPixels@SkPixmap@@QEBA_NAEBUSkImageInfo@@PEAX_KHH@Z"]
         pub fn SkPixmap_readPixels(this: *const root::SkPixmap,
                                    dstInfo: *const root::SkImageInfo,
                                    dstPixels: *mut ::std::os::raw::c_void,
@@ -3946,7 +3361,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If dst's dimensions differ from the src dimension, the image will be scaled, applying the
      *  specified filter-quality.
      */
-        #[link_name = "_ZNK8SkPixmap11scalePixelsERKS_15SkFilterQuality"]
+        #[link_name =
+              "?scalePixels@SkPixmap@@QEBA_NAEBV1@W4SkFilterQuality@@@Z"]
         pub fn SkPixmap_scalePixels(this: *const root::SkPixmap,
                                     dst: *const root::SkPixmap,
                                     arg1: root::SkFilterQuality) -> bool;
@@ -3956,13 +3372,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns true if pixels were written to (e.g. if colorType is kUnknown_SkColorType, this
      *  will return false). If subset does not intersect the bounds of this pixmap, returns false.
      */
-        #[link_name = "_ZNK8SkPixmap5eraseEjRK7SkIRect"]
+        #[link_name = "?erase@SkPixmap@@QEBA_NIAEBUSkIRect@@@Z"]
         pub fn SkPixmap_erase(this: *const root::SkPixmap,
                               arg1: root::SkColor,
                               subset: *const root::SkIRect) -> bool;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkPixmap5eraseERK9SkColor4fPK7SkIRect"]
+        #[link_name = "?erase@SkPixmap@@QEBA_NAEBUSkColor4f@@PEBUSkIRect@@@Z"]
         pub fn SkPixmap_erase1(this: *const root::SkPixmap,
                                arg1: *const root::SkColor4f,
                                subset: *const root::SkIRect) -> bool;
@@ -4045,7 +3461,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If there is a currently locked pixmap, unlock it, then copy the specified pixmap
      *  and (optional) unlock proc/context.
      */
-        #[link_name = "_ZN18SkAutoPixmapUnlock5resetERK8SkPixmapPFvPvES3_"]
+        #[link_name =
+              "?reset@SkAutoPixmapUnlock@@QEAAXAEBVSkPixmap@@P6AXPEAX@Z1@Z"]
         pub fn SkAutoPixmapUnlock_reset(this: *mut root::SkAutoPixmapUnlock,
                                         pm: *const root::SkPixmap,
                                         unlock:
@@ -4064,56 +3481,56 @@ be copied. It hides its copy-constructor and its assignment-operator.
         }
     }
     #[test]
-    fn __bindgen_test_layout_template_9() {
+    fn __bindgen_test_layout_template_5() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkShader>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkShader>>() ,
                    8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_10() {
+    fn __bindgen_test_layout_template_6() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkColorFilter>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkColorFilter>>()
                    , 8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_11() {
+    fn __bindgen_test_layout_template_7() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkPathEffect>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkPathEffect>>() ,
                    8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_12() {
+    fn __bindgen_test_layout_template_8() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkMaskFilter>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkMaskFilter>>() ,
                    8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_13() {
+    fn __bindgen_test_layout_template_9() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkTypeface>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkTypeface>>() ,
                    8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_14() {
+    fn __bindgen_test_layout_template_10() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkRasterizer>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkRasterizer>>() ,
                    8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_15() {
+    fn __bindgen_test_layout_template_11() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkImageFilter>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkImageFilter>>()
                    , 8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_16() {
+    fn __bindgen_test_layout_template_12() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkDrawLooper>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkDrawLooper>>() ,
@@ -4143,7 +3560,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub fBlendMode: u32,
         pub __bindgen_anon_1: root::SkPaint__bindgen_ty_1,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     /** Specifies the level of hinting to be performed. These names are taken
         from the Gnome/Cairo names for the same. They are translated into
         Freetype concepts the same as in cairo-ft-font.c:
@@ -4203,8 +3620,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
     /** Specifies the bit values that are stored in the paint's flags.
     */
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct SkPaint_Flags(pub u32);
-    #[repr(u32)]
+    pub struct SkPaint_Flags(pub i32);
+    #[repr(i32)]
     /** Styles apply to rect, oval, path, and text.
         Bitmaps are always drawn in "fill", and lines are always drawn in
         "stroke".
@@ -4222,14 +3639,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkPaint_kStyleCount: root::SkPaint__bindgen_ty_2 =
         SkPaint__bindgen_ty_2::kStyleCount;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkPaint__bindgen_ty_2 { kStyleCount = 3, }
     pub const SkPaint_Cap_kLast_Cap: root::SkPaint_Cap =
         SkPaint_Cap::kSquare_Cap;
     pub const SkPaint_Cap_kDefault_Cap: root::SkPaint_Cap =
         SkPaint_Cap::kButt_Cap;
-    #[repr(u32)]
+    #[repr(i32)]
     /** Cap enum specifies the settings for the paint's strokecap. This is the
         treatment that is applied to the beginning and end of each non-closed
         contour (e.g. lines).
@@ -4249,7 +3666,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         SkPaint_Join::kBevel_Join;
     pub const SkPaint_Join_kDefault_Join: root::SkPaint_Join =
         SkPaint_Join::kMiter_Join;
-    #[repr(u32)]
+    #[repr(i32)]
     /** Join enum specifies the settings for the paint's strokejoin. This is
         the treatment that is applied to corners in paths and rectangles.
     */
@@ -4259,7 +3676,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kRound_Join = 1,
         kBevel_Join = 2,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkPaint_Align {
         kLeft_Align = 0,
@@ -4268,10 +3685,10 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkPaint_kAlignCount: root::SkPaint__bindgen_ty_3 =
         SkPaint__bindgen_ty_3::kAlignCount;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkPaint__bindgen_ty_3 { kAlignCount = 3, }
-    #[repr(u32)]
+    #[repr(i32)]
     /** Describes how to interpret the text parameters that are passed to paint
         methods like measureText() and getTextWidths().
     */
@@ -4336,7 +3753,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
             A set flag indicates that the metric may be trusted.
         */
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct SkPaint_FontMetrics_FontMetricsFlags(pub u32);
+    pub struct SkPaint_FontMetrics_FontMetricsFlags(pub i32);
     #[test]
     fn bindgen_test_layout_SkPaint_FontMetrics() {
         assert_eq!(::std::mem::size_of::<SkPaint_FontMetrics>() , 56usize);
@@ -4525,7 +3942,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         SkPaint__bindgen_ty_4::kCanonicalTextSizeForPaths;
     pub const SkPaint_kMaxSizeForGlyphCache: root::SkPaint__bindgen_ty_4 =
         SkPaint__bindgen_ty_4::kMaxSizeForGlyphCache;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkPaint__bindgen_ty_4 {
         kCanonicalTextSizeForPaths = 64,
@@ -4542,27 +3959,27 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** getHash() is a shallow hash, with the same limitations as operator==.
      *  If operator== returns true for two paints, getHash() returns the same value for each.
      */
-        #[link_name = "_ZNK7SkPaint7getHashEv"]
+        #[link_name = "?getHash@SkPaint@@QEBAIXZ"]
         pub fn SkPaint_getHash(this: *const root::SkPaint) -> u32;
     }
     extern "C" {
-        #[link_name = "_ZNK7SkPaint7flattenER13SkWriteBuffer"]
+        #[link_name = "?flatten@SkPaint@@QEBAXAEAVSkWriteBuffer@@@Z"]
         pub fn SkPaint_flatten(this: *const root::SkPaint,
                                arg1: *mut root::SkWriteBuffer);
     }
     extern "C" {
-        #[link_name = "_ZN7SkPaint9unflattenER12SkReadBuffer"]
+        #[link_name = "?unflatten@SkPaint@@QEAAXAEAVSkReadBuffer@@@Z"]
         pub fn SkPaint_unflatten(this: *mut root::SkPaint,
                                  arg1: *mut root::SkReadBuffer);
     }
     extern "C" {
         /** Restores the paint to its initial settings.
     */
-        #[link_name = "_ZN7SkPaint5resetEv"]
+        #[link_name = "?reset@SkPaint@@QEAAXXZ"]
         pub fn SkPaint_reset(this: *mut root::SkPaint);
     }
     extern "C" {
-        #[link_name = "_ZN7SkPaint10setHintingENS_7HintingE"]
+        #[link_name = "?setHinting@SkPaint@@QEAAXW4Hinting@1@@Z"]
         pub fn SkPaint_setHinting(this: *mut root::SkPaint,
                                   hintingLevel: root::SkPaint_Hinting);
     }
@@ -4570,21 +3987,21 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Set the paint's flags. Use the Flag enum to specific flag values.
         @param flags    The new flag bits for the paint (see Flags enum)
     */
-        #[link_name = "_ZN7SkPaint8setFlagsEj"]
+        #[link_name = "?setFlags@SkPaint@@QEAAXI@Z"]
         pub fn SkPaint_setFlags(this: *mut root::SkPaint, flags: u32);
     }
     extern "C" {
         /** Helper for setFlags(), setting or clearing the kAntiAlias_Flag bit
         @param aa   true to enable antialiasing, false to disable it
         */
-        #[link_name = "_ZN7SkPaint12setAntiAliasEb"]
+        #[link_name = "?setAntiAlias@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setAntiAlias(this: *mut root::SkPaint, aa: bool);
     }
     extern "C" {
         /** Helper for setFlags(), setting or clearing the kDither_Flag bit
         @param dither   true to enable dithering, false to disable it
         */
-        #[link_name = "_ZN7SkPaint9setDitherEb"]
+        #[link_name = "?setDither@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setDither(this: *mut root::SkPaint, dither: bool);
     }
     extern "C" {
@@ -4592,7 +4009,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param linearText true to set the linearText bit in the paint's flags,
                           false to clear it.
     */
-        #[link_name = "_ZN7SkPaint13setLinearTextEb"]
+        #[link_name = "?setLinearText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setLinearText(this: *mut root::SkPaint,
                                      linearText: bool);
     }
@@ -4602,7 +4019,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param subpixelText true to set the subpixelText bit in the paint's
      *                      flags, false to clear it.
      */
-        #[link_name = "_ZN7SkPaint15setSubpixelTextEb"]
+        #[link_name = "?setSubpixelText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setSubpixelText(this: *mut root::SkPaint,
                                        subpixelText: bool);
     }
@@ -4613,7 +4030,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param lcdText true to set the LCDRenderText bit in the paint's flags,
      *                 false to clear it.
      */
-        #[link_name = "_ZN7SkPaint16setLCDRenderTextEb"]
+        #[link_name = "?setLCDRenderText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setLCDRenderText(this: *mut root::SkPaint,
                                         lcdText: bool);
     }
@@ -4622,7 +4039,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param useEmbeddedBitmapText true to set the kEmbeddedBitmapText bit in the paint's flags,
                                      false to clear it.
     */
-        #[link_name = "_ZN7SkPaint21setEmbeddedBitmapTextEb"]
+        #[link_name = "?setEmbeddedBitmapText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setEmbeddedBitmapText(this: *mut root::SkPaint,
                                              useEmbeddedBitmapText: bool);
     }
@@ -4632,7 +4049,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                                   paint's flags,
                              false to clear it.
     */
-        #[link_name = "_ZN7SkPaint13setAutohintedEb"]
+        #[link_name = "?setAutohinted@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setAutohinted(this: *mut root::SkPaint,
                                      useAutohinter: bool);
     }
@@ -4645,7 +4062,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  X values, and drawText will places its glyphs vertically rather than
      *  horizontally.
      */
-        #[link_name = "_ZN7SkPaint15setVerticalTextEb"]
+        #[link_name = "?setVerticalText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setVerticalText(this: *mut root::SkPaint, arg1: bool);
     }
     extern "C" {
@@ -4653,7 +4070,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param underlineText true to set the underlineText bit in the paint's
                              flags, false to clear it.
     */
-        #[link_name = "_ZN7SkPaint16setUnderlineTextEb"]
+        #[link_name = "?setUnderlineText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setUnderlineText(this: *mut root::SkPaint,
                                         underlineText: bool);
     }
@@ -4662,7 +4079,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param strikeThruText   true to set the strikeThruText bit in the
                                 paint's flags, false to clear it.
     */
-        #[link_name = "_ZN7SkPaint17setStrikeThruTextEb"]
+        #[link_name = "?setStrikeThruText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setStrikeThruText(this: *mut root::SkPaint,
                                          strikeThruText: bool);
     }
@@ -4671,7 +4088,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param fakeBoldText true to set the kFakeBoldText_Flag bit in the paint's
                             flags, false to clear it.
     */
-        #[link_name = "_ZN7SkPaint15setFakeBoldTextEb"]
+        #[link_name = "?setFakeBoldText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setFakeBoldText(this: *mut root::SkPaint,
                                        fakeBoldText: bool);
     }
@@ -4680,7 +4097,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param kernText true to set the kKernText_Flag bit in the paint's
                             flags, false to clear it.
     */
-        #[link_name = "_ZN7SkPaint14setDevKernTextEb"]
+        #[link_name = "?setDevKernText@SkPaint@@QEAAX_N@Z"]
         pub fn SkPaint_setDevKernText(this: *mut root::SkPaint,
                                       devKernText: bool);
     }
@@ -4689,7 +4106,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Set the filter quality. This affects the quality (and performance) of
      *  drawing scaled images.
      */
-        #[link_name = "_ZN7SkPaint16setFilterQualityE15SkFilterQuality"]
+        #[link_name = "?setFilterQuality@SkPaint@@QEAAXW4SkFilterQuality@@@Z"]
         pub fn SkPaint_setFilterQuality(this: *mut root::SkPaint,
                                         quality: root::SkFilterQuality);
     }
@@ -4699,7 +4116,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         Fill).
         @param style    The new style to set in the paint
     */
-        #[link_name = "_ZN7SkPaint8setStyleENS_5StyleE"]
+        #[link_name = "?setStyle@SkPaint@@QEAAXW4Style@1@@Z"]
         pub fn SkPaint_setStyle(this: *mut root::SkPaint,
                                 style: root::SkPaint_Style);
     }
@@ -4709,7 +4126,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         that its alpha can be any value, regardless of the values of r,g,b.
         @param color    The new color (including alpha) to set in the paint.
     */
-        #[link_name = "_ZN7SkPaint8setColorEj"]
+        #[link_name = "?setColor@SkPaint@@QEAAXI@Z"]
         pub fn SkPaint_setColor(this: *mut root::SkPaint,
                                 color: root::SkColor);
     }
@@ -4718,7 +4135,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         leaving its r,g,b values unchanged.
         @param a    set the alpha component (0..255) of the paint's color.
     */
-        #[link_name = "_ZN7SkPaint8setAlphaEj"]
+        #[link_name = "?setAlpha@SkPaint@@QEAAXI@Z"]
         pub fn SkPaint_setAlpha(this: *mut root::SkPaint, a: root::U8CPU);
     }
     extern "C" {
@@ -4729,7 +4146,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param g    The new green component (0..255) of the paint's color.
         @param b    The new blue component (0..255) of the paint's color.
     */
-        #[link_name = "_ZN7SkPaint7setARGBEjjjj"]
+        #[link_name = "?setARGB@SkPaint@@QEAAXIIII@Z"]
         pub fn SkPaint_setARGB(this: *mut root::SkPaint, a: root::U8CPU,
                                r: root::U8CPU, g: root::U8CPU,
                                b: root::U8CPU);
@@ -4741,7 +4158,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param width set the paint's stroke width, used whenever the paint's
                      style is Stroke or StrokeAndFill.
     */
-        #[link_name = "_ZN7SkPaint14setStrokeWidthEf"]
+        #[link_name = "?setStrokeWidth@SkPaint@@QEAAXM@Z"]
         pub fn SkPaint_setStrokeWidth(this: *mut root::SkPaint,
                                       width: root::SkScalar);
     }
@@ -4752,7 +4169,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param miter    set the miter limit on the paint, used whenever the
                         paint's style is Stroke or StrokeAndFill.
     */
-        #[link_name = "_ZN7SkPaint14setStrokeMiterEf"]
+        #[link_name = "?setStrokeMiter@SkPaint@@QEAAXM@Z"]
         pub fn SkPaint_setStrokeMiter(this: *mut root::SkPaint,
                                       miter: root::SkScalar);
     }
@@ -4761,7 +4178,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param cap  set the paint's line cap style, used whenever the paint's
                     style is Stroke or StrokeAndFill.
     */
-        #[link_name = "_ZN7SkPaint12setStrokeCapENS_3CapE"]
+        #[link_name = "?setStrokeCap@SkPaint@@QEAAXW4Cap@1@@Z"]
         pub fn SkPaint_setStrokeCap(this: *mut root::SkPaint,
                                     cap: root::SkPaint_Cap);
     }
@@ -4770,7 +4187,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param join set the paint's line join style, used whenever the paint's
                     style is Stroke or StrokeAndFill.
     */
-        #[link_name = "_ZN7SkPaint13setStrokeJoinENS_4JoinE"]
+        #[link_name = "?setStrokeJoin@SkPaint@@QEAAXW4Join@1@@Z"]
         pub fn SkPaint_setStrokeJoin(this: *mut root::SkPaint,
                                      join: root::SkPaint_Join);
     }
@@ -4789,7 +4206,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @return     true if the path should be filled, or false if it should be
      *              drawn with a hairline (width == 0)
      */
-        #[link_name = "_ZNK7SkPaint11getFillPathERK6SkPathPS0_PK6SkRectf"]
+        #[link_name =
+              "?getFillPath@SkPaint@@QEBA_NAEBVSkPath@@PEAV2@PEBUSkRect@@M@Z"]
         pub fn SkPaint_getFillPath(this: *const root::SkPaint,
                                    src: *const root::SkPath,
                                    dst: *mut root::SkPath,
@@ -4817,7 +4235,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If shader is not NULL, its reference count is incremented.
      *  @param shader   May be NULL. The shader to be installed in the paint
      */
-        #[link_name = "_ZN7SkPaint9setShaderE5sk_spI8SkShaderE"]
+        #[link_name = "?setShader@SkPaint@@QEAAXV?$sk_sp@VSkShader@@@@@Z"]
         pub fn SkPaint_setShader(this: *mut root::SkPaint,
                                  arg1: root::sk_sp<root::SkShader>);
     }
@@ -4828,7 +4246,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         If filter is not NULL, its reference count is incremented.
         @param filter   May be NULL. The filter to be installed in the paint
     */
-        #[link_name = "_ZN7SkPaint14setColorFilterE5sk_spI13SkColorFilterE"]
+        #[link_name =
+              "?setColorFilter@SkPaint@@QEAAXV?$sk_sp@VSkColorFilter@@@@@Z"]
         pub fn SkPaint_setColorFilter(this: *mut root::SkPaint,
                                       arg1: root::sk_sp<root::SkColorFilter>);
     }
@@ -4843,7 +4262,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
                         paint
         @return         effect
     */
-        #[link_name = "_ZN7SkPaint13setPathEffectE5sk_spI12SkPathEffectE"]
+        #[link_name =
+              "?setPathEffect@SkPaint@@QEAAXV?$sk_sp@VSkPathEffect@@@@@Z"]
         pub fn SkPaint_setPathEffect(this: *mut root::SkPaint,
                                      arg1: root::sk_sp<root::SkPathEffect>);
     }
@@ -4858,7 +4278,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
                             the paint
         @return             maskfilter
     */
-        #[link_name = "_ZN7SkPaint13setMaskFilterE5sk_spI12SkMaskFilterE"]
+        #[link_name =
+              "?setMaskFilter@SkPaint@@QEAAXV?$sk_sp@VSkMaskFilter@@@@@Z"]
         pub fn SkPaint_setMaskFilter(this: *mut root::SkPaint,
                                      arg1: root::sk_sp<root::SkMaskFilter>);
     }
@@ -4873,7 +4294,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                         paint
         @return         typeface
     */
-        #[link_name = "_ZN7SkPaint11setTypefaceE5sk_spI10SkTypefaceE"]
+        #[link_name = "?setTypeface@SkPaint@@QEAAXV?$sk_sp@VSkTypeface@@@@@Z"]
         pub fn SkPaint_setTypeface(this: *mut root::SkPaint,
                                    arg1: root::sk_sp<root::SkTypeface>);
     }
@@ -4889,12 +4310,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
                           the paint.
         @return           rasterizer
     */
-        #[link_name = "_ZN7SkPaint13setRasterizerE5sk_spI12SkRasterizerE"]
+        #[link_name =
+              "?setRasterizer@SkPaint@@QEAAXV?$sk_sp@VSkRasterizer@@@@@Z"]
         pub fn SkPaint_setRasterizer(this: *mut root::SkPaint,
                                      arg1: root::sk_sp<root::SkRasterizer>);
     }
     extern "C" {
-        #[link_name = "_ZN7SkPaint14setImageFilterE5sk_spI13SkImageFilterE"]
+        #[link_name =
+              "?setImageFilter@SkPaint@@QEAAXV?$sk_sp@VSkImageFilter@@@@@Z"]
         pub fn SkPaint_setImageFilter(this: *mut root::SkPaint,
                                       arg1: root::sk_sp<root::SkImageFilter>);
     }
@@ -4908,12 +4331,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  incremented.
      *  @param looper May be NULL. The new looper to be installed in the paint.
      */
-        #[link_name = "_ZN7SkPaint13setDrawLooperE5sk_spI12SkDrawLooperE"]
+        #[link_name =
+              "?setDrawLooper@SkPaint@@QEAAXV?$sk_sp@VSkDrawLooper@@@@@Z"]
         pub fn SkPaint_setDrawLooper(this: *mut root::SkPaint,
                                      arg1: root::sk_sp<root::SkDrawLooper>);
     }
     extern "C" {
-        #[link_name = "_ZN7SkPaint9setLooperE5sk_spI12SkDrawLooperE"]
+        #[link_name = "?setLooper@SkPaint@@QEAAXV?$sk_sp@VSkDrawLooper@@@@@Z"]
         pub fn SkPaint_setLooper(this: *mut root::SkPaint,
                                  arg1: root::sk_sp<root::SkDrawLooper>);
     }
@@ -4921,7 +4345,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Set the paint's text alignment.
         @param align set the paint's Align value for drawing text.
     */
-        #[link_name = "_ZN7SkPaint12setTextAlignENS_5AlignE"]
+        #[link_name = "?setTextAlign@SkPaint@@QEAAXW4Align@1@@Z"]
         pub fn SkPaint_setTextAlign(this: *mut root::SkPaint,
                                     align: root::SkPaint_Align);
     }
@@ -4929,7 +4353,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Set the paint's text size. This value must be > 0
         @param textSize set the paint's text size.
     */
-        #[link_name = "_ZN7SkPaint11setTextSizeEf"]
+        #[link_name = "?setTextSize@SkPaint@@QEAAXM@Z"]
         pub fn SkPaint_setTextSize(this: *mut root::SkPaint,
                                    textSize: root::SkScalar);
     }
@@ -4940,7 +4364,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param scaleX   set the paint's scale factor in X for drawing/measuring
                         text.
     */
-        #[link_name = "_ZN7SkPaint13setTextScaleXEf"]
+        #[link_name = "?setTextScaleX@SkPaint@@QEAAXM@Z"]
         pub fn SkPaint_setTextScaleX(this: *mut root::SkPaint,
                                      scaleX: root::SkScalar);
     }
@@ -4949,12 +4373,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
         is 0. For approximating oblique text, use values around -0.25.
         @param skewX set the paint's skew factor in X for drawing text.
     */
-        #[link_name = "_ZN7SkPaint12setTextSkewXEf"]
+        #[link_name = "?setTextSkewX@SkPaint@@QEAAXM@Z"]
         pub fn SkPaint_setTextSkewX(this: *mut root::SkPaint,
                                     skewX: root::SkScalar);
     }
     extern "C" {
-        #[link_name = "_ZN7SkPaint15setTextEncodingENS_12TextEncodingE"]
+        #[link_name = "?setTextEncoding@SkPaint@@QEAAXW4TextEncoding@1@@Z"]
         pub fn SkPaint_setTextEncoding(this: *mut root::SkPaint,
                                        encoding: root::SkPaint_TextEncoding);
     }
@@ -4970,7 +4394,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                             by this value
         @param return the recommended spacing between lines
     */
-        #[link_name = "_ZNK7SkPaint14getFontMetricsEPNS_11FontMetricsEf"]
+        #[link_name = "?getFontMetrics@SkPaint@@QEBAMPEAUFontMetrics@1@M@Z"]
         pub fn SkPaint_getFontMetrics(this: *const root::SkPaint,
                                       metrics: *mut root::SkPaint_FontMetrics,
                                       scale: root::SkScalar)
@@ -4981,7 +4405,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         glyphs ID written. If glyphs is NULL, it is ignore and only the count
         is returned.
     */
-        #[link_name = "_ZNK7SkPaint12textToGlyphsEPKvmPt"]
+        #[link_name = "?textToGlyphs@SkPaint@@QEBAHPEBX_KQEAG@Z"]
         pub fn SkPaint_textToGlyphs(this: *const root::SkPaint,
                                     text: *const ::std::os::raw::c_void,
                                     byteLength: usize,
@@ -4996,7 +4420,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         If the text encoding for the paint is kGlyph_TextEncoding, then this
         returns true if all of the specified glyph IDs are non-zero.
      */
-        #[link_name = "_ZNK7SkPaint12containsTextEPKvm"]
+        #[link_name = "?containsText@SkPaint@@QEBA_NPEBX_K@Z"]
         pub fn SkPaint_containsText(this: *const root::SkPaint,
                                     text: *const ::std::os::raw::c_void,
                                     byteLength: usize) -> bool;
@@ -5006,7 +4430,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         to zero. Note: this does not look at the text-encoding setting in the
         paint, only at the typeface.
     */
-        #[link_name = "_ZNK7SkPaint16glyphsToUnicharsEPKtiPi"]
+        #[link_name = "?glyphsToUnichars@SkPaint@@QEBAXQEBGHQEAH@Z"]
         pub fn SkPaint_glyphsToUnichars(this: *const root::SkPaint,
                                         glyphs: *const root::SkGlyphID,
                                         count: ::std::os::raw::c_int,
@@ -5023,7 +4447,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *                      relative to (0, 0).
      *  @return             The advance width of the text
      */
-        #[link_name = "_ZNK7SkPaint11measureTextEPKvmP6SkRect"]
+        #[link_name = "?measureText@SkPaint@@QEBAMPEBX_KPEAUSkRect@@@Z"]
         pub fn SkPaint_measureText(this: *const root::SkPaint,
                                    text: *const ::std::os::raw::c_void,
                                    length: usize, bounds: *mut root::SkRect)
@@ -5043,7 +4467,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @return         The number of bytes of text that were measured. Will be
      *                  <= length.
      */
-        #[link_name = "_ZNK7SkPaint9breakTextEPKvmfPf"]
+        #[link_name = "?breakText@SkPaint@@QEBA_KPEBX_KMPEAM@Z"]
         pub fn SkPaint_breakText(this: *const root::SkPaint,
                                  text: *const ::std::os::raw::c_void,
                                  length: usize, maxWidth: root::SkScalar,
@@ -5062,7 +4486,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *                      character, relative to (0, 0)
      *  @return the number of unichars in the specified text.
      */
-        #[link_name = "_ZNK7SkPaint13getTextWidthsEPKvmPfP6SkRect"]
+        #[link_name = "?getTextWidths@SkPaint@@QEBAHPEBX_KQEAMQEAUSkRect@@@Z"]
         pub fn SkPaint_getTextWidths(this: *const root::SkPaint,
                                      text: *const ::std::os::raw::c_void,
                                      byteLength: usize,
@@ -5081,7 +4505,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param y            The y-coordinate of the origin of the text.
      *  @param path         The outline of the text.
      */
-        #[link_name = "_ZNK7SkPaint11getTextPathEPKvmffP6SkPath"]
+        #[link_name = "?getTextPath@SkPaint@@QEBAXPEBX_KMMPEAVSkPath@@@Z"]
         pub fn SkPaint_getTextPath(this: *const root::SkPaint,
                                    text: *const ::std::os::raw::c_void,
                                    length: usize, x: root::SkScalar,
@@ -5098,7 +4522,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param pos          array of positions, used to position each character
      *  @param path         The outline of the text.
      */
-        #[link_name = "_ZNK7SkPaint14getPosTextPathEPKvmPK7SkPointP6SkPath"]
+        #[link_name =
+              "?getPosTextPath@SkPaint@@QEBAXPEBX_KQEBUSkPoint@@PEAVSkPath@@@Z"]
         pub fn SkPaint_getPosTextPath(this: *const root::SkPaint,
                                       text: *const ::std::os::raw::c_void,
                                       length: usize,
@@ -5111,7 +4536,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  the string. The caller may pass nullptr for intervals to determine the size of the interval
      *  array, or may conservatively pre-allocate an array with length * 2 entries. The computed
      *  intervals are cached by glyph to improve performance for multiple calls.
-     *  This permits constructing an underline that skips the descenders.
+     *  This permits constructing an underline that skips the descenders. 
      *
      *  @param text         the text
      *  @param length       number of bytes of text
@@ -5122,7 +4547,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  @return             The number of intersections, which may be zero.
      */
-        #[link_name = "_ZNK7SkPaint17getTextInterceptsEPKvmffPKfPf"]
+        #[link_name = "?getTextIntercepts@SkPaint@@QEBAHPEBX_KMMQEBMPEAM@Z"]
         pub fn SkPaint_getTextIntercepts(this: *const root::SkPaint,
                                          text: *const ::std::os::raw::c_void,
                                          length: usize, x: root::SkScalar,
@@ -5137,7 +4562,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  string. The caller may pass nullptr for intervals to determine the size of the interval
      *  array, or may conservatively pre-allocate an array with length * 2 entries. The computed
      *  intervals are cached by glyph to improve performance for multiple calls.
-     *  This permits constructing an underline that skips the descenders.
+     *  This permits constructing an underline that skips the descenders. 
      *
      *  @param text         the text
      *  @param length       number of bytes of text
@@ -5148,7 +4573,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @return             The number of intersections, which may be zero.
      */
         #[link_name =
-              "_ZNK7SkPaint20getPosTextInterceptsEPKvmPK7SkPointPKfPf"]
+              "?getPosTextIntercepts@SkPaint@@QEBAHPEBX_KQEBUSkPoint@@QEBMPEAM@Z"]
         pub fn SkPaint_getPosTextIntercepts(this: *const root::SkPaint,
                                             text:
                                                 *const ::std::os::raw::c_void,
@@ -5175,7 +4600,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  @return             The number of intersections, which may be zero.
      */
-        #[link_name = "_ZNK7SkPaint21getPosTextHInterceptsEPKvmPKffS3_Pf"]
+        #[link_name =
+              "?getPosTextHIntercepts@SkPaint@@QEBAHPEBX_KQEBMM2PEAM@Z"]
         pub fn SkPaint_getPosTextHIntercepts(this: *const root::SkPaint,
                                              text:
                                                  *const ::std::os::raw::c_void,
@@ -5200,7 +4626,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @return             The number of intersections, which may be zero.
      */
         #[link_name =
-              "_ZNK7SkPaint21getTextBlobInterceptsEPK10SkTextBlobPKfPf"]
+              "?getTextBlobIntercepts@SkPaint@@QEBAHPEBVSkTextBlob@@QEBMPEAM@Z"]
         pub fn SkPaint_getTextBlobIntercepts(this: *const root::SkPaint,
                                              blob: *const root::SkTextBlob,
                                              bounds: *mut root::SkScalar,
@@ -5214,12 +4640,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  will not take into account any hinting, but will respect any text-scale-x or text-skew-x
      *  on this paint.
      */
-        #[link_name = "_ZNK7SkPaint13getFontBoundsEv"]
+        #[link_name = "?getFontBounds@SkPaint@@QEBA?AUSkRect@@XZ"]
         pub fn SkPaint_getFontBounds(this: *const root::SkPaint)
          -> root::SkRect;
     }
     extern "C" {
-        #[link_name = "_ZNK7SkPaint13nothingToDrawEv"]
+        #[link_name = "?nothingToDraw@SkPaint@@QEBA_NXZ"]
         pub fn SkPaint_nothingToDraw(this: *const root::SkPaint) -> bool;
     }
     extern "C" {
@@ -5227,13 +4653,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
      bounds (i.e. there is nothing complex like a patheffect that would make
      the bounds computation expensive.
      */
-        #[link_name = "_ZNK7SkPaint20canComputeFastBoundsEv"]
+        #[link_name = "?canComputeFastBounds@SkPaint@@QEBA_NXZ"]
         pub fn SkPaint_canComputeFastBounds(this: *const root::SkPaint)
          -> bool;
     }
     extern "C" {
         #[link_name =
-              "_ZNK7SkPaint19doComputeFastBoundsERK6SkRectPS0_NS_5StyleE"]
+              "?doComputeFastBounds@SkPaint@@QEBAAEBUSkRect@@AEBU2@PEAU2@W4Style@1@@Z"]
         pub fn SkPaint_doComputeFastBounds(this: *const root::SkPaint,
                                            orig: *const root::SkRect,
                                            storage: *mut root::SkRect,
@@ -5241,7 +4667,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
          -> *const root::SkRect;
     }
     extern "C" {
-        #[link_name = "_ZNK7SkPaint8toStringEP8SkString"]
+        #[link_name = "?toString@SkPaint@@QEBAXPEAVSkString@@@Z"]
         pub fn SkPaint_toString(this: *const root::SkPaint,
                                 str: *mut root::SkString);
     }
@@ -5585,12 +5011,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
     pub type SkRegion_RunType = i32;
     pub const SkRegion_kRunTypeSentinel: root::SkRegion__bindgen_ty_1 =
         SkRegion__bindgen_ty_1::kRunTypeSentinel;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkRegion__bindgen_ty_1 { kRunTypeSentinel = 2147483647, }
     pub const SkRegion_Op_kLastOp: root::SkRegion_Op =
         SkRegion_Op::kReplace_Op;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
      *  The logical operations that can be performed when combining two regions.
      */
@@ -5621,17 +5047,17 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkRegion_Iterator>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkRegion8Iterator6rewindEv"]
+        #[link_name = "?rewind@Iterator@SkRegion@@QEAA_NXZ"]
         pub fn SkRegion_Iterator_rewind(this: *mut root::SkRegion_Iterator)
          -> bool;
     }
     extern "C" {
-        #[link_name = "_ZN8SkRegion8Iterator5resetERKS_"]
+        #[link_name = "?reset@Iterator@SkRegion@@QEAAXAEBV2@@Z"]
         pub fn SkRegion_Iterator_reset(this: *mut root::SkRegion_Iterator,
                                        arg1: *const root::SkRegion);
     }
     extern "C" {
-        #[link_name = "_ZN8SkRegion8Iterator4nextEv"]
+        #[link_name = "?next@Iterator@SkRegion@@QEAAXXZ"]
         pub fn SkRegion_Iterator_next(this: *mut root::SkRegion_Iterator);
     }
     impl Clone for SkRegion_Iterator {
@@ -5667,7 +5093,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkRegion_Cliperator>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkRegion10Cliperator4nextEv"]
+        #[link_name = "?next@Cliperator@SkRegion@@QEAAXXZ"]
         pub fn SkRegion_Cliperator_next(this: *mut root::SkRegion_Cliperator);
     }
     impl Clone for SkRegion_Cliperator {
@@ -5695,7 +5121,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkRegion_Spanerator>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkRegion10Spanerator4nextEPiS1_"]
+        #[link_name = "?next@Spanerator@SkRegion@@QEAA_NPEAH0@Z"]
         pub fn SkRegion_Spanerator_next(this: *mut root::SkRegion_Spanerator,
                                         left: *mut ::std::os::raw::c_int,
                                         right: *mut ::std::os::raw::c_int)
@@ -5713,12 +5139,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkRegion_kOpCount: root::SkRegion__bindgen_ty_2 =
         SkRegion__bindgen_ty_2::kOpCount;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkRegion__bindgen_ty_2 { kOpCount = 6, }
     pub const SkRegion_kRectRegionRuns: root::SkRegion__bindgen_ty_3 =
         SkRegion__bindgen_ty_3::kRectRegionRuns;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkRegion__bindgen_ty_3 { kRectRegionRuns = 7, }
     #[repr(C)]
@@ -5740,7 +5166,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Swap the contents of this and the specified region. This operation
      *  is gauarenteed to never fail.
      */
-        #[link_name = "_ZN8SkRegion4swapERS_"]
+        #[link_name = "?swap@SkRegion@@QEAAXAEAV1@@Z"]
         pub fn SkRegion_swap(this: *mut root::SkRegion,
                              arg1: *mut root::SkRegion);
     }
@@ -5753,7 +5179,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Use this to compare two regions, where the larger count likely
      *  indicates a more complex region.
      */
-        #[link_name = "_ZNK8SkRegion23computeRegionComplexityEv"]
+        #[link_name = "?computeRegionComplexity@SkRegion@@QEBAHXZ"]
         pub fn SkRegion_computeRegionComplexity(this: *const root::SkRegion)
          -> ::std::os::raw::c_int;
     }
@@ -5763,7 +5189,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  boundary(s) of the region to the specified path.
      *  If the region is empty, returns false, and path is left unmodified.
      */
-        #[link_name = "_ZNK8SkRegion15getBoundaryPathEP6SkPath"]
+        #[link_name = "?getBoundaryPath@SkRegion@@QEBA_NPEAVSkPath@@@Z"]
         pub fn SkRegion_getBoundaryPath(this: *const root::SkRegion,
                                         path: *mut root::SkPath) -> bool;
     }
@@ -5772,7 +5198,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Set the region to be empty, and return false, since the resulting
      *  region is empty
      */
-        #[link_name = "_ZN8SkRegion8setEmptyEv"]
+        #[link_name = "?setEmpty@SkRegion@@QEAA_NXZ"]
         pub fn SkRegion_setEmpty(this: *mut root::SkRegion) -> bool;
     }
     extern "C" {
@@ -5780,7 +5206,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If rect is non-empty, set this region to that rectangle and return true,
      *  otherwise set this region to empty and return false.
      */
-        #[link_name = "_ZN8SkRegion7setRectERK7SkIRect"]
+        #[link_name = "?setRect@SkRegion@@QEAA_NAEBUSkIRect@@@Z"]
         pub fn SkRegion_setRect(this: *mut root::SkRegion,
                                 arg1: *const root::SkIRect) -> bool;
     }
@@ -5789,7 +5215,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If left < right and top < bottom, set this region to that rectangle and
      *  return true, otherwise set this region to empty and return false.
      */
-        #[link_name = "_ZN8SkRegion7setRectEiiii"]
+        #[link_name = "?setRect@SkRegion@@QEAA_NHHHH@Z"]
         pub fn SkRegion_setRect1(this: *mut root::SkRegion, left: i32,
                                  top: i32, right: i32, bottom: i32) -> bool;
     }
@@ -5800,7 +5226,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  0, then this region is set to the empty region.
      *  @return true if the resulting region is non-empty
      */
-        #[link_name = "_ZN8SkRegion8setRectsEPK7SkIRecti"]
+        #[link_name = "?setRects@SkRegion@@QEAA_NQEBUSkIRect@@H@Z"]
         pub fn SkRegion_setRects(this: *mut root::SkRegion,
                                  rects: *const root::SkIRect,
                                  count: ::std::os::raw::c_int) -> bool;
@@ -5810,7 +5236,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Set this region to the specified region, and return true if it is
      *  non-empty.
      */
-        #[link_name = "_ZN8SkRegion9setRegionERKS_"]
+        #[link_name = "?setRegion@SkRegion@@QEAA_NAEBV1@@Z"]
         pub fn SkRegion_setRegion(this: *mut root::SkRegion,
                                   arg1: *const root::SkRegion) -> bool;
     }
@@ -5821,7 +5247,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  This produces a region that is identical to the pixels that would be
      *  drawn by the path (with no antialiasing) with the specified clip.
      */
-        #[link_name = "_ZN8SkRegion7setPathERK6SkPathRKS_"]
+        #[link_name = "?setPath@SkRegion@@QEAA_NAEBVSkPath@@AEBV1@@Z"]
         pub fn SkRegion_setPath(this: *mut root::SkRegion,
                                 arg1: *const root::SkPath,
                                 clip: *const root::SkRegion) -> bool;
@@ -5831,7 +5257,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns true if the specified rectangle has a non-empty intersection
      *  with this region.
      */
-        #[link_name = "_ZNK8SkRegion10intersectsERK7SkIRect"]
+        #[link_name = "?intersects@SkRegion@@QEBA_NAEBUSkIRect@@@Z"]
         pub fn SkRegion_intersects(this: *const root::SkRegion,
                                    arg1: *const root::SkIRect) -> bool;
     }
@@ -5840,7 +5266,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns true if the specified region has a non-empty intersection
      *  with this region.
      */
-        #[link_name = "_ZNK8SkRegion10intersectsERKS_"]
+        #[link_name = "?intersects@SkRegion@@QEBA_NAEBV1@@Z"]
         pub fn SkRegion_intersects1(this: *const root::SkRegion,
                                     arg1: *const root::SkRegion) -> bool;
     }
@@ -5848,7 +5274,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Return true if the specified x,y coordinate is inside the region.
      */
-        #[link_name = "_ZNK8SkRegion8containsEii"]
+        #[link_name = "?contains@SkRegion@@QEBA_NHH@Z"]
         pub fn SkRegion_contains(this: *const root::SkRegion, x: i32, y: i32)
          -> bool;
     }
@@ -5859,7 +5285,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  returns the correct result. Note: if either this region or the rectangle
      *  is empty, contains() returns false.
      */
-        #[link_name = "_ZNK8SkRegion8containsERK7SkIRect"]
+        #[link_name = "?contains@SkRegion@@QEBA_NAEBUSkIRect@@@Z"]
         pub fn SkRegion_contains1(this: *const root::SkRegion,
                                   arg1: *const root::SkIRect) -> bool;
     }
@@ -5870,7 +5296,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  returns the correct result. Note: if either region is empty, contains()
      *  returns false.
      */
-        #[link_name = "_ZNK8SkRegion8containsERKS_"]
+        #[link_name = "?contains@SkRegion@@QEBA_NAEBV1@@Z"]
         pub fn SkRegion_contains2(this: *const root::SkRegion,
                                   arg1: *const root::SkRegion) -> bool;
     }
@@ -5881,7 +5307,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  dst parameter, effectively translating the region in place. If dst is
      *  null, nothing happens.
      */
-        #[link_name = "_ZNK8SkRegion9translateEiiPS_"]
+        #[link_name = "?translate@SkRegion@@QEBAXHHPEAV1@@Z"]
         pub fn SkRegion_translate(this: *const root::SkRegion,
                                   dx: ::std::os::raw::c_int,
                                   dy: ::std::os::raw::c_int,
@@ -5893,7 +5319,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  rectangle and region: this = (rect op rgn).
      *  Return true if the resulting region is non-empty.
      */
-        #[link_name = "_ZN8SkRegion2opERK7SkIRectRKS_NS_2OpE"]
+        #[link_name = "?op@SkRegion@@QEAA_NAEBUSkIRect@@AEBV1@W4Op@1@@Z"]
         pub fn SkRegion_op(this: *mut root::SkRegion,
                            rect: *const root::SkIRect,
                            rgn: *const root::SkRegion,
@@ -5905,7 +5331,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  region and rectangle: this = (rgn op rect).
      *  Return true if the resulting region is non-empty.
      */
-        #[link_name = "_ZN8SkRegion2opERKS_RK7SkIRectNS_2OpE"]
+        #[link_name = "?op@SkRegion@@QEAA_NAEBV1@AEBUSkIRect@@W4Op@1@@Z"]
         pub fn SkRegion_op1(this: *mut root::SkRegion,
                             rgn: *const root::SkRegion,
                             rect: *const root::SkIRect,
@@ -5917,7 +5343,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  regions: this = (rgna op rgnb).
      *  Return true if the resulting region is non-empty.
      */
-        #[link_name = "_ZN8SkRegion2opERKS_S1_NS_2OpE"]
+        #[link_name = "?op@SkRegion@@QEAA_NAEBV1@0W4Op@1@@Z"]
         pub fn SkRegion_op2(this: *mut root::SkRegion,
                             rgna: *const root::SkRegion,
                             rgnb: *const root::SkRegion,
@@ -5928,7 +5354,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Write the region to the buffer, and return the number of bytes written.
      *  If buffer is NULL, it still returns the number of bytes.
      */
-        #[link_name = "_ZNK8SkRegion13writeToMemoryEPv"]
+        #[link_name = "?writeToMemory@SkRegion@@QEBA_KPEAX@Z"]
         pub fn SkRegion_writeToMemory(this: *const root::SkRegion,
                                       buffer: *mut ::std::os::raw::c_void)
          -> usize;
@@ -5942,7 +5368,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * @return number of bytes read (must be a multiple of 4) or
      *         0 if there was not enough memory available
      */
-        #[link_name = "_ZN8SkRegion14readFromMemoryEPKvm"]
+        #[link_name = "?readFromMemory@SkRegion@@QEAA_KPEBX_K@Z"]
         pub fn SkRegion_readFromMemory(this: *mut root::SkRegion,
                                        buffer: *const ::std::os::raw::c_void,
                                        length: usize) -> usize;
@@ -5952,23 +5378,23 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns a reference to a global empty region. Just a convenience for
      *  callers that need a const empty region.
      */
-        #[link_name = "_ZN8SkRegion14GetEmptyRegionEv"]
+        #[link_name = "?GetEmptyRegion@SkRegion@@SAAEBV1@XZ"]
         pub fn SkRegion_GetEmptyRegion() -> *const root::SkRegion;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkRegion4dumpEv"]
+        #[link_name = "?dump@SkRegion@@QEBAXXZ"]
         pub fn SkRegion_dump(this: *const root::SkRegion);
     }
     extern "C" {
-        #[link_name = "_ZNK8SkRegion8validateEv"]
+        #[link_name = "?validate@SkRegion@@QEBAXXZ"]
         pub fn SkRegion_validate(this: *const root::SkRegion);
     }
     extern "C" {
-        #[link_name = "_ZN8SkRegion8UnitTestEv"]
+        #[link_name = "?UnitTest@SkRegion@@SAXXZ"]
         pub fn SkRegion_UnitTest();
     }
     extern "C" {
-        #[link_name = "_ZN8SkRegion12debugSetRunsEPKii"]
+        #[link_name = "?debugSetRuns@SkRegion@@QEAA_NQEBHH@Z"]
         pub fn SkRegion_debugSetRuns(this: *mut root::SkRegion,
                                      runs: *const root::SkRegion_RunType,
                                      count: ::std::os::raw::c_int) -> bool;
@@ -6166,7 +5592,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     #[repr(C)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct SkBitmap_Flags(pub u32);
+    pub struct SkBitmap_Flags(pub i32);
     #[test]
     fn bindgen_test_layout_SkBitmap() {
         assert_eq!(::std::mem::size_of::<SkBitmap>() , 72usize);
@@ -6175,7 +5601,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     extern "C" {
         /** Swap the fields of the two bitmaps. This routine is guaranteed to never fail or throw.
     */
-        #[link_name = "_ZN8SkBitmap4swapERS_"]
+        #[link_name = "?swap@SkBitmap@@QEAAXAEAV1@@Z"]
         pub fn SkBitmap_swap(this: *mut root::SkBitmap,
                              other: *mut root::SkBitmap);
     }
@@ -6189,7 +5615,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  that all bitmaps that might be sharing (subsets of) the pixels will
      *  be affected.
      */
-        #[link_name = "_ZN8SkBitmap12setAlphaTypeE11SkAlphaType"]
+        #[link_name = "?setAlphaType@SkBitmap@@QEAA_NW4SkAlphaType@@@Z"]
         pub fn SkBitmap_setAlphaType(this: *mut root::SkBitmap,
                                      arg1: root::SkAlphaType) -> bool;
     }
@@ -6197,7 +5623,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Returns true if this bitmap is marked as immutable, meaning that the
         contents of its pixels will not change for the lifetime of the bitmap.
     */
-        #[link_name = "_ZNK8SkBitmap11isImmutableEv"]
+        #[link_name = "?isImmutable@SkBitmap@@QEBA_NXZ"]
         pub fn SkBitmap_isImmutable(this: *const root::SkBitmap) -> bool;
     }
     extern "C" {
@@ -6207,13 +5633,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
         cleared once it is set. This state propagates to all other bitmaps
         that share the same pixelref.
     */
-        #[link_name = "_ZN8SkBitmap12setImmutableEv"]
+        #[link_name = "?setImmutable@SkBitmap@@QEAAXXZ"]
         pub fn SkBitmap_setImmutable(this: *mut root::SkBitmap);
     }
     extern "C" {
         /** Returns true if the bitmap is volatile (i.e. should not be cached by devices.)
     */
-        #[link_name = "_ZNK8SkBitmap10isVolatileEv"]
+        #[link_name = "?isVolatile@SkBitmap@@QEBA_NXZ"]
         pub fn SkBitmap_isVolatile(this: *const root::SkBitmap) -> bool;
     }
     extern "C" {
@@ -6224,31 +5650,31 @@ be copied. It hides its copy-constructor and its assignment-operator.
         improve performance by avoiding unnecessary overhead and resource
         consumption on the device.
     */
-        #[link_name = "_ZN8SkBitmap13setIsVolatileEb"]
+        #[link_name = "?setIsVolatile@SkBitmap@@QEAAX_N@Z"]
         pub fn SkBitmap_setIsVolatile(this: *mut root::SkBitmap, arg1: bool);
     }
     extern "C" {
         /** Reset the bitmap to its initial state (see default constructor). If we are a (shared)
         owner of the pixels, that ownership is decremented.
     */
-        #[link_name = "_ZN8SkBitmap5resetEv"]
+        #[link_name = "?reset@SkBitmap@@QEAAXXZ"]
         pub fn SkBitmap_reset(this: *mut root::SkBitmap);
     }
     extern "C" {
         /**
      *  Return the bitmap's bounds [0, 0, width, height] as an SkRect
      */
-        #[link_name = "_ZNK8SkBitmap9getBoundsEP6SkRect"]
+        #[link_name = "?getBounds@SkBitmap@@QEBAXPEAUSkRect@@@Z"]
         pub fn SkBitmap_getBounds(this: *const root::SkBitmap,
                                   bounds: *mut root::SkRect);
     }
     extern "C" {
-        #[link_name = "_ZNK8SkBitmap9getBoundsEP7SkIRect"]
+        #[link_name = "?getBounds@SkBitmap@@QEBAXPEAUSkIRect@@@Z"]
         pub fn SkBitmap_getBounds1(this: *const root::SkBitmap,
                                    bounds: *mut root::SkIRect);
     }
     extern "C" {
-        #[link_name = "_ZN8SkBitmap7setInfoERK11SkImageInfom"]
+        #[link_name = "?setInfo@SkBitmap@@QEAA_NAEBUSkImageInfo@@_K@Z"]
         pub fn SkBitmap_setInfo(this: *mut root::SkBitmap,
                                 arg1: *const root::SkImageInfo,
                                 rowBytes: usize) -> bool;
@@ -6261,7 +5687,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  On failure, the bitmap will be set to empty and return false.
      */
         #[link_name =
-              "_ZN8SkBitmap14tryAllocPixelsERK11SkImageInfoP17SkPixelRefFactoryP12SkColorTable"]
+              "?tryAllocPixels@SkBitmap@@QEAA_NAEBUSkImageInfo@@PEAVSkPixelRefFactory@@PEAVSkColorTable@@@Z"]
         pub fn SkBitmap_tryAllocPixels(this: *mut root::SkBitmap,
                                        arg1: *const root::SkImageInfo,
                                        arg2: *mut root::SkPixelRefFactory,
@@ -6276,7 +5702,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  the pixel size specified by info.colorType()) then false is returned
      *  and the bitmap is set to empty.
      */
-        #[link_name = "_ZN8SkBitmap14tryAllocPixelsERK11SkImageInfom"]
+        #[link_name = "?tryAllocPixels@SkBitmap@@QEAA_NAEBUSkImageInfo@@_K@Z"]
         pub fn SkBitmap_tryAllocPixels1(this: *mut root::SkBitmap,
                                         info: *const root::SkImageInfo,
                                         rowBytes: usize) -> bool;
@@ -6293,7 +5719,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  for success but the releaseProc is immediately called (e.g. valid Info but NULL pixels).
      */
         #[link_name =
-              "_ZN8SkBitmap13installPixelsERK11SkImageInfoPvmP12SkColorTablePFvS3_S3_ES3_"]
+              "?installPixels@SkBitmap@@QEAA_NAEBUSkImageInfo@@PEAX_KPEAVSkColorTable@@P6AX11@Z1@Z"]
         pub fn SkBitmap_installPixels(this: *mut root::SkBitmap,
                                       arg1: *const root::SkImageInfo,
                                       pixels: *mut ::std::os::raw::c_void,
@@ -6314,7 +5740,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  colortable are valid for the lifetime of the created bitmap
      *  (and its pixelRef).
      */
-        #[link_name = "_ZN8SkBitmap13installPixelsERK8SkPixmap"]
+        #[link_name = "?installPixels@SkBitmap@@QEAA_NAEBVSkPixmap@@@Z"]
         pub fn SkBitmap_installPixels1(this: *mut root::SkBitmap,
                                        arg1: *const root::SkPixmap) -> bool;
     }
@@ -6324,7 +5750,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  ensure that the specified mask pixels are valid for the lifetime
      *  of the created bitmap (and its pixelRef).
      */
-        #[link_name = "_ZN8SkBitmap17installMaskPixelsERK6SkMask"]
+        #[link_name = "?installMaskPixels@SkBitmap@@QEAA_NAEBUSkMask@@@Z"]
         pub fn SkBitmap_installMaskPixels(this: *mut root::SkBitmap,
                                           arg1: *const root::SkMask) -> bool;
     }
@@ -6339,7 +5765,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param pixels   Address for the pixels, managed by the caller.
         @param ctable   ColorTable (or null) that matches the specified pixels
     */
-        #[link_name = "_ZN8SkBitmap9setPixelsEPvP12SkColorTable"]
+        #[link_name = "?setPixels@SkBitmap@@QEAAXPEAXPEAVSkColorTable@@@Z"]
         pub fn SkBitmap_setPixels(this: *mut root::SkBitmap,
                                   p: *mut ::std::os::raw::c_void,
                                   ctable: *mut root::SkColorTable);
@@ -6363,7 +5789,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                             bitmap's internal stride.
         @param preserveDstPad Must we preserve padding in the dst
     */
-        #[link_name = "_ZNK8SkBitmap12copyPixelsToEPvmmb"]
+        #[link_name = "?copyPixelsTo@SkBitmap@@QEBA_NQEAX_K1_N@Z"]
         pub fn SkBitmap_copyPixelsTo(this: *const root::SkBitmap,
                                      dst: *const ::std::os::raw::c_void,
                                      dstSize: usize, dstRowBytes: usize,
@@ -6389,7 +5815,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                      the bitmap will be unchanged.
     */
         #[link_name =
-              "_ZN8SkBitmap14tryAllocPixelsEPNS_9AllocatorEP12SkColorTable"]
+              "?tryAllocPixels@SkBitmap@@QEAA_NPEAVAllocator@1@PEAVSkColorTable@@@Z"]
         pub fn SkBitmap_tryAllocPixels2(this: *mut root::SkBitmap,
                                         allocator:
                                             *mut root::SkBitmap_Allocator,
@@ -6404,7 +5830,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  top/left corner of the bitmap. For a bitmap that encompases the entire
      *  pixels of the pixelref, these will be (0,0).
      */
-        #[link_name = "_ZN8SkBitmap11setPixelRefEP10SkPixelRefii"]
+        #[link_name = "?setPixelRef@SkBitmap@@QEAAPEAVSkPixelRef@@PEAV2@HH@Z"]
         pub fn SkBitmap_setPixelRef(this: *mut root::SkBitmap,
                                     pr: *mut root::SkPixelRef,
                                     dx: ::std::os::raw::c_int,
@@ -6416,7 +5842,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         in the pixelref. Balance it with a call to unlockPixels(). These calls
         are harmless if there is no pixelref.
     */
-        #[link_name = "_ZNK8SkBitmap10lockPixelsEv"]
+        #[link_name = "?lockPixels@SkBitmap@@QEBAXXZ"]
         pub fn SkBitmap_lockPixels(this: *const root::SkBitmap);
     }
     extern "C" {
@@ -6425,7 +5851,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         cached/deferred image decoding to know when there are active clients of
         a given image.
     */
-        #[link_name = "_ZNK8SkBitmap12unlockPixelsEv"]
+        #[link_name = "?unlockPixels@SkBitmap@@QEBAXXZ"]
         pub fn SkBitmap_unlockPixels(this: *const root::SkBitmap);
     }
     extern "C" {
@@ -6435,12 +5861,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  not be used as targets for a raster device/canvas (since all pixels
      *  modifications will be lost when unlockPixels() is called.)
      */
-        #[link_name = "_ZNK8SkBitmap21lockPixelsAreWritableEv"]
+        #[link_name = "?lockPixelsAreWritable@SkBitmap@@QEBA_NXZ"]
         pub fn SkBitmap_lockPixelsAreWritable(this: *const root::SkBitmap)
          -> bool;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkBitmap11requestLockEP18SkAutoPixmapUnlock"]
+        #[link_name =
+              "?requestLock@SkBitmap@@QEBA_NPEAVSkAutoPixmapUnlock@@@Z"]
         pub fn SkBitmap_requestLock(this: *const root::SkBitmap,
                                     result: *mut root::SkAutoPixmapUnlock)
          -> bool;
@@ -6451,7 +5878,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         is called), a different generation ID will be returned. Finally, if
         there is no pixelRef then zero is returned.
     */
-        #[link_name = "_ZNK8SkBitmap15getGenerationIDEv"]
+        #[link_name = "?getGenerationID@SkBitmap@@QEBAIXZ"]
         pub fn SkBitmap_getGenerationID(this: *const root::SkBitmap) -> u32;
     }
     extern "C" {
@@ -6459,7 +5886,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         turn cause a different generation ID value to be returned from
         getGenerationID().
     */
-        #[link_name = "_ZNK8SkBitmap19notifyPixelsChangedEv"]
+        #[link_name = "?notifyPixelsChanged@SkBitmap@@QEBAXXZ"]
         pub fn SkBitmap_notifyPixelsChanged(this: *const root::SkBitmap);
     }
     extern "C" {
@@ -6469,7 +5896,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  of the color is ignored (treated as opaque). If the colortype only supports
      *  alpha (e.g. A1 or A8) then the color's r,g,b components are ignored.
      */
-        #[link_name = "_ZNK8SkBitmap10eraseColorEj"]
+        #[link_name = "?eraseColor@SkBitmap@@QEBAXI@Z"]
         pub fn SkBitmap_eraseColor(this: *const root::SkBitmap,
                                    c: root::SkColor);
     }
@@ -6480,7 +5907,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  of the color is ignored (treated as opaque). If the colortype only supports
      *  alpha (e.g. A1 or A8) then the color's r,g,b components are ignored.
      */
-        #[link_name = "_ZNK8SkBitmap5eraseEjRK7SkIRect"]
+        #[link_name = "?erase@SkBitmap@@QEBAXIAEBUSkIRect@@@Z"]
         pub fn SkBitmap_erase(this: *const root::SkBitmap, c: root::SkColor,
                               area: *const root::SkIRect);
     }
@@ -6494,7 +5921,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         perform a debugging assert that getPixels() is not null, but they do
         not do any runtime checks.
     */
-        #[link_name = "_ZNK8SkBitmap7getAddrEii"]
+        #[link_name = "?getAddr@SkBitmap@@QEBAPEAXHH@Z"]
         pub fn SkBitmap_getAddr(this: *const root::SkBitmap,
                                 x: ::std::os::raw::c_int,
                                 y: ::std::os::raw::c_int)
@@ -6512,7 +5939,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                       reference.
         @return true if the subset copy was successfully made.
     */
-        #[link_name = "_ZNK8SkBitmap13extractSubsetEPS_RK7SkIRect"]
+        #[link_name = "?extractSubset@SkBitmap@@QEBA_NPEAV1@AEBUSkIRect@@@Z"]
         pub fn SkBitmap_extractSubset(this: *const root::SkBitmap,
                                       dst: *mut root::SkBitmap,
                                       subset: *const root::SkIRect) -> bool;
@@ -6530,7 +5957,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *                   will be used.
      *  @return true if the copy was made.
      */
-        #[link_name = "_ZNK8SkBitmap6copyToEPS_11SkColorTypePNS_9AllocatorE"]
+        #[link_name =
+              "?copyTo@SkBitmap@@QEBA_NPEAV1@W4SkColorType@@PEAVAllocator@1@@Z"]
         pub fn SkBitmap_copyTo(this: *const root::SkBitmap,
                                dst: *mut root::SkBitmap,
                                ct: root::SkColorType,
@@ -6556,7 +5984,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  - If the requested colortype/alphatype cannot be converted from the src's types.
      *  - If the src pixels are not available.
      */
-        #[link_name = "_ZNK8SkBitmap10readPixelsERK11SkImageInfoPvmii"]
+        #[link_name =
+              "?readPixels@SkBitmap@@QEBA_NAEBUSkImageInfo@@PEAX_KHH@Z"]
         pub fn SkBitmap_readPixels(this: *const root::SkBitmap,
                                    dstInfo: *const root::SkImageInfo,
                                    dstPixels: *mut ::std::os::raw::c_void,
@@ -6569,7 +5998,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns true if this bitmap's pixels can be converted into the requested
      *  colorType, such that copyTo() could succeed.
      */
-        #[link_name = "_ZNK8SkBitmap9canCopyToE11SkColorType"]
+        #[link_name = "?canCopyTo@SkBitmap@@QEBA_NW4SkColorType@@@Z"]
         pub fn SkBitmap_canCopyTo(this: *const root::SkBitmap,
                                   colorType: root::SkColorType) -> bool;
     }
@@ -6580,7 +6009,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  gpu (typically as a texture), the it will do the same for the dst.
      *  If the request cannot be fulfilled, returns false and dst is unmodified.
      */
-        #[link_name = "_ZNK8SkBitmap10deepCopyToEPS_"]
+        #[link_name = "?deepCopyTo@SkBitmap@@QEBA_NPEAV1@@Z"]
         pub fn SkBitmap_deepCopyTo(this: *const root::SkBitmap,
                                    dst: *mut root::SkBitmap) -> bool;
     }
@@ -6599,7 +6028,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                       original
     */
         #[link_name =
-              "_ZNK8SkBitmap12extractAlphaEPS_PK7SkPaintPNS_9AllocatorEP8SkIPoint"]
+              "?extractAlpha@SkBitmap@@QEBA_NPEAV1@PEBVSkPaint@@PEAVAllocator@1@PEAUSkIPoint@@@Z"]
         pub fn SkBitmap_extractAlpha(this: *const root::SkBitmap,
                                      dst: *mut root::SkBitmap,
                                      paint: *const root::SkPaint,
@@ -6616,16 +6045,16 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Note: if this returns true, the results (in the pixmap) are only valid until the bitmap
      *  is changed in anyway, in which case the results are invalid.
      */
-        #[link_name = "_ZNK8SkBitmap10peekPixelsEP8SkPixmap"]
+        #[link_name = "?peekPixels@SkBitmap@@QEBA_NPEAVSkPixmap@@@Z"]
         pub fn SkBitmap_peekPixels(this: *const root::SkBitmap,
                                    arg1: *mut root::SkPixmap) -> bool;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkBitmap8validateEv"]
+        #[link_name = "?validate@SkBitmap@@QEBAXXZ"]
         pub fn SkBitmap_validate(this: *const root::SkBitmap);
     }
     extern "C" {
-        #[link_name = "_ZNK8SkBitmap8toStringEP8SkString"]
+        #[link_name = "?toString@SkBitmap@@QEBAXPEAVSkString@@@Z"]
         pub fn SkBitmap_toString(this: *const root::SkBitmap,
                                  str: *mut root::SkString);
     }
@@ -6870,31 +6299,32 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Attempts to open the specified file as a stream, returns nullptr on failure.
      */
-        #[link_name = "_ZN8SkStream12MakeFromFileEPKc"]
+        #[link_name =
+              "?MakeFromFile@SkStream@@SA?AV?$unique_ptr@VSkStreamAsset@@U?$default_delete@VSkStreamAsset@@@std@@@std@@QEBD@Z"]
         pub fn SkStream_MakeFromFile(path: *const ::std::os::raw::c_char)
          ->
              root::std::unique_ptr<root::SkStreamAsset,
                                    root::std::default_delete<root::SkStreamAsset>>;
     }
     extern "C" {
-        #[link_name = "_ZN8SkStream6readS8Ev"]
+        #[link_name = "?readS8@SkStream@@QEAACXZ"]
         pub fn SkStream_readS8(this: *mut root::SkStream) -> i8;
     }
     extern "C" {
-        #[link_name = "_ZN8SkStream7readS16Ev"]
+        #[link_name = "?readS16@SkStream@@QEAAFXZ"]
         pub fn SkStream_readS16(this: *mut root::SkStream) -> i16;
     }
     extern "C" {
-        #[link_name = "_ZN8SkStream7readS32Ev"]
+        #[link_name = "?readS32@SkStream@@QEAAHXZ"]
         pub fn SkStream_readS32(this: *mut root::SkStream) -> i32;
     }
     extern "C" {
-        #[link_name = "_ZN8SkStream10readScalarEv"]
+        #[link_name = "?readScalar@SkStream@@QEAAMXZ"]
         pub fn SkStream_readScalar(this: *mut root::SkStream)
          -> root::SkScalar;
     }
     extern "C" {
-        #[link_name = "_ZN8SkStream14readPackedUIntEv"]
+        #[link_name = "?readPackedUInt@SkStream@@QEAA_KXZ"]
         pub fn SkStream_readPackedUInt(this: *mut root::SkStream) -> usize;
     }
     impl SkStream {
@@ -6957,536 +6387,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::size_of::<SkStreamAsset>() , 8usize);
         assert_eq!(::std::mem::align_of::<SkStreamAsset>() , 8usize);
     }
-    /** SkStreamMemory is a SkStreamAsset for which getMemoryBase is required. */
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkStreamMemory {
-        pub _base: root::SkStreamAsset,
-    }
-    #[test]
-    fn bindgen_test_layout_SkStreamMemory() {
-        assert_eq!(::std::mem::size_of::<SkStreamMemory>() , 8usize);
-        assert_eq!(::std::mem::align_of::<SkStreamMemory>() , 8usize);
-    }
-    #[repr(C)]
-    pub struct SkWStream__bindgen_vtable {
-    }
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkWStream {
-        pub vtable_: *const SkWStream__bindgen_vtable,
-    }
-    #[test]
-    fn bindgen_test_layout_SkWStream() {
-        assert_eq!(::std::mem::size_of::<SkWStream>() , 8usize);
-        assert_eq!(::std::mem::align_of::<SkWStream>() , 8usize);
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream6write8Ej"]
-        pub fn SkWStream_write8(this: *mut root::SkWStream, arg1: root::U8CPU)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream7write16Ej"]
-        pub fn SkWStream_write16(this: *mut root::SkWStream,
-                                 arg1: root::U16CPU) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream7write32Ej"]
-        pub fn SkWStream_write32(this: *mut root::SkWStream, arg1: u32)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream14writeDecAsTextEi"]
-        pub fn SkWStream_writeDecAsText(this: *mut root::SkWStream, arg1: i32)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream17writeBigDecAsTextEli"]
-        pub fn SkWStream_writeBigDecAsText(this: *mut root::SkWStream,
-                                           arg1: i64,
-                                           minDigits: ::std::os::raw::c_int)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream14writeHexAsTextEji"]
-        pub fn SkWStream_writeHexAsText(this: *mut root::SkWStream, arg1: u32,
-                                        minDigits: ::std::os::raw::c_int)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream17writeScalarAsTextEf"]
-        pub fn SkWStream_writeScalarAsText(this: *mut root::SkWStream,
-                                           arg1: root::SkScalar) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream11writeScalarEf"]
-        pub fn SkWStream_writeScalar(this: *mut root::SkWStream,
-                                     arg1: root::SkScalar) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream15writePackedUIntEm"]
-        pub fn SkWStream_writePackedUInt(this: *mut root::SkWStream,
-                                         arg1: usize) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN9SkWStream11writeStreamEP8SkStreamm"]
-        pub fn SkWStream_writeStream(this: *mut root::SkWStream,
-                                     input: *mut root::SkStream,
-                                     length: usize) -> bool;
-    }
-    extern "C" {
-        /**
-     * This returns the number of bytes in the stream required to store
-     * 'value'.
-     */
-        #[link_name = "_ZN9SkWStream16SizeOfPackedUIntEm"]
-        pub fn SkWStream_SizeOfPackedUInt(value: usize)
-         -> ::std::os::raw::c_int;
-    }
-    impl SkWStream {
-        #[inline]
-        pub unsafe fn write8(&mut self, arg1: root::U8CPU) -> bool {
-            SkWStream_write8(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn write16(&mut self, arg1: root::U16CPU) -> bool {
-            SkWStream_write16(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn write32(&mut self, arg1: u32) -> bool {
-            SkWStream_write32(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn writeDecAsText(&mut self, arg1: i32) -> bool {
-            SkWStream_writeDecAsText(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn writeBigDecAsText(&mut self, arg1: i64,
-                                        minDigits: ::std::os::raw::c_int)
-         -> bool {
-            SkWStream_writeBigDecAsText(&mut *self, arg1, minDigits)
-        }
-        #[inline]
-        pub unsafe fn writeHexAsText(&mut self, arg1: u32,
-                                     minDigits: ::std::os::raw::c_int)
-         -> bool {
-            SkWStream_writeHexAsText(&mut *self, arg1, minDigits)
-        }
-        #[inline]
-        pub unsafe fn writeScalarAsText(&mut self, arg1: root::SkScalar)
-         -> bool {
-            SkWStream_writeScalarAsText(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn writeScalar(&mut self, arg1: root::SkScalar) -> bool {
-            SkWStream_writeScalar(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn writePackedUInt(&mut self, arg1: usize) -> bool {
-            SkWStream_writePackedUInt(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn writeStream(&mut self, input: *mut root::SkStream,
-                                  length: usize) -> bool {
-            SkWStream_writeStream(&mut *self, input, length)
-        }
-        #[inline]
-        pub unsafe fn SizeOfPackedUInt(value: usize)
-         -> ::std::os::raw::c_int {
-            SkWStream_SizeOfPackedUInt(value)
-        }
-    }
-    extern "C" {
-        #[link_name = "_ZL15SkStrStartsWithPKcS0_"]
-        pub fn SkStrStartsWith(string: *const ::std::os::raw::c_char,
-                               prefixStr: *const ::std::os::raw::c_char)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL15SkStrStartsWithPKcc"]
-        pub fn SkStrStartsWith1(string: *const ::std::os::raw::c_char,
-                                prefixChar: ::std::os::raw::c_char) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_Z13SkStrEndsWithPKcS0_"]
-        pub fn SkStrEndsWith(string: *const ::std::os::raw::c_char,
-                             suffixStr: *const ::std::os::raw::c_char)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_Z13SkStrEndsWithPKcc"]
-        pub fn SkStrEndsWith1(string: *const ::std::os::raw::c_char,
-                              suffixChar: ::std::os::raw::c_char) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_Z20SkStrStartsWithOneOfPKcS0_"]
-        pub fn SkStrStartsWithOneOf(string: *const ::std::os::raw::c_char,
-                                    prefixes: *const ::std::os::raw::c_char)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL9SkStrFindPKcS0_"]
-        pub fn SkStrFind(string: *const ::std::os::raw::c_char,
-                         substring: *const ::std::os::raw::c_char)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL15SkStrFindLastOfPKcc"]
-        pub fn SkStrFindLastOf(string: *const ::std::os::raw::c_char,
-                               subchar: ::std::os::raw::c_char)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkStrContainsPKcS0_"]
-        pub fn SkStrContains(string: *const ::std::os::raw::c_char,
-                             substring: *const ::std::os::raw::c_char)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkStrContainsPKcc"]
-        pub fn SkStrContains1(string: *const ::std::os::raw::c_char,
-                              subchar: ::std::os::raw::c_char) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL8SkStrDupPKc"]
-        pub fn SkStrDup(string: *const ::std::os::raw::c_char)
-         -> *mut ::std::os::raw::c_char;
-    }
-    extern "C" {
-        #[link_name = "_Z14SkStrAppendU32Pcj"]
-        pub fn SkStrAppendU32(buffer: *mut ::std::os::raw::c_char, arg1: u32)
-         -> *mut ::std::os::raw::c_char;
-    }
-    extern "C" {
-        #[link_name = "_Z14SkStrAppendU64Pcmi"]
-        pub fn SkStrAppendU64(buffer: *mut ::std::os::raw::c_char, arg1: u64,
-                              minDigits: ::std::os::raw::c_int)
-         -> *mut ::std::os::raw::c_char;
-    }
-    extern "C" {
-        #[link_name = "_Z14SkStrAppendS32Pci"]
-        pub fn SkStrAppendS32(buffer: *mut ::std::os::raw::c_char, arg1: i32)
-         -> *mut ::std::os::raw::c_char;
-    }
-    extern "C" {
-        #[link_name = "_Z14SkStrAppendS64Pcli"]
-        pub fn SkStrAppendS64(buffer: *mut ::std::os::raw::c_char, arg1: i64,
-                              minDigits: ::std::os::raw::c_int)
-         -> *mut ::std::os::raw::c_char;
-    }
-    extern "C" {
-        #[link_name = "_Z16SkStrAppendFloatPcf"]
-        pub fn SkStrAppendFloat(buffer: *mut ::std::os::raw::c_char,
-                                arg1: f32) -> *mut ::std::os::raw::c_char;
-    }
-    extern "C" {
-        /// Creates a new string and writes into it using a printf()-style format.
-        #[link_name = "_Z14SkStringPrintfPKcz"]
-        pub fn SkStringPrintf(format: *const ::std::os::raw::c_char)
-         -> root::SkString;
-    }
-    extern "C" {
-        #[link_name = "_ZL7SkTSwapI8SkStringEvRT_S2_"]
-        pub fn SkTSwap(a: *mut root::SkString, b: *mut root::SkString);
-    }
-    #[repr(u32)]
-    #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub enum SkStrSplitMode {
-        kStrict_SkStrSplitMode = 0,
-        kCoalesce_SkStrSplitMode = 1,
-    }
-    extern "C" {
-        #[link_name =
-              "_Z10SkStrSplitPKcS0_14SkStrSplitModeP8SkTArrayI8SkStringLb0EE"]
-        pub fn SkStrSplit(str: *const ::std::os::raw::c_char,
-                          delimiters: *const ::std::os::raw::c_char,
-                          splitMode: root::SkStrSplitMode,
-                          out: *mut [u64; 4usize]);
-    }
-    extern "C" {
-        #[link_name = "_Z10SkStrSplitPKcS0_P8SkTArrayI8SkStringLb0EE"]
-        pub fn SkStrSplit1(str: *const ::std::os::raw::c_char,
-                           delimiters: *const ::std::os::raw::c_char,
-                           out: *mut [u64; 4usize]);
-    }
-    /** A stream that wraps a C FILE* file stream. */
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkFILEStream {
-        pub _base: root::SkStreamAsset,
-        pub fFILE: *mut root::FILE,
-        pub fName: root::SkString,
-        pub fOwnership: root::SkFILEStream_Ownership,
-        pub fData: root::sk_sp<root::SkData>,
-    }
-    #[repr(u32)]
-    #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub enum SkFILEStream_Ownership {
-        kCallerPasses_Ownership = 0,
-        kCallerRetains_Ownership = 1,
-    }
-    pub type SkFILEStream_INHERITED = root::SkStreamAsset;
-    #[test]
-    fn bindgen_test_layout_SkFILEStream() {
-        assert_eq!(::std::mem::size_of::<SkFILEStream>() , 40usize);
-        assert_eq!(::std::mem::align_of::<SkFILEStream>() , 8usize);
-    }
-    extern "C" {
-        /** Close the current file, and open a new file with the specified path.
-     *  If path is NULL, just close the current file.
-     */
-        #[link_name = "_ZN12SkFILEStream7setPathEPKc"]
-        pub fn SkFILEStream_setPath(this: *mut root::SkFILEStream,
-                                    path: *const ::std::os::raw::c_char);
-    }
-    impl SkFILEStream {
-        #[inline]
-        pub unsafe fn setPath(&mut self,
-                              path: *const ::std::os::raw::c_char) {
-            SkFILEStream_setPath(&mut *self, path)
-        }
-    }
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkMemoryStream {
-        pub _base: root::SkStreamMemory,
-        pub fData: root::sk_sp<root::SkData>,
-        pub fOffset: usize,
-    }
-    pub type SkMemoryStream_INHERITED = root::SkStreamMemory;
-    #[test]
-    fn bindgen_test_layout_SkMemoryStream() {
-        assert_eq!(::std::mem::size_of::<SkMemoryStream>() , 24usize);
-        assert_eq!(::std::mem::align_of::<SkMemoryStream>() , 8usize);
-    }
-    extern "C" {
-        /** Replace any memory buffer with the specified buffer. The caller
-        must have allocated data with sk_malloc or sk_realloc, since it
-        will be freed with sk_free.
-    */
-        #[link_name = "_ZN14SkMemoryStream14setMemoryOwnedEPKvm"]
-        pub fn SkMemoryStream_setMemoryOwned(this: *mut root::SkMemoryStream,
-                                             data:
-                                                 *const ::std::os::raw::c_void,
-                                             length: usize);
-    }
-    extern "C" {
-        #[link_name = "_ZN14SkMemoryStream7setDataE5sk_spI6SkDataE"]
-        pub fn SkMemoryStream_setData(this: *mut root::SkMemoryStream,
-                                      arg1: root::sk_sp<root::SkData>);
-    }
-    extern "C" {
-        #[link_name = "_ZN14SkMemoryStream12skipToAlign4Ev"]
-        pub fn SkMemoryStream_skipToAlign4(this: *mut root::SkMemoryStream);
-    }
-    extern "C" {
-        #[link_name = "_ZN14SkMemoryStream8getAtPosEv"]
-        pub fn SkMemoryStream_getAtPos(this: *mut root::SkMemoryStream)
-         -> *const ::std::os::raw::c_void;
-    }
-    impl SkMemoryStream {
-        #[inline]
-        pub unsafe fn setMemoryOwned(&mut self,
-                                     data: *const ::std::os::raw::c_void,
-                                     length: usize) {
-            SkMemoryStream_setMemoryOwned(&mut *self, data, length)
-        }
-        #[inline]
-        pub unsafe fn setData(&mut self, arg1: root::sk_sp<root::SkData>) {
-            SkMemoryStream_setData(&mut *self, arg1)
-        }
-        #[inline]
-        pub unsafe fn skipToAlign4(&mut self) {
-            SkMemoryStream_skipToAlign4(&mut *self)
-        }
-        #[inline]
-        pub unsafe fn getAtPos(&mut self) -> *const ::std::os::raw::c_void {
-            SkMemoryStream_getAtPos(&mut *self)
-        }
-    }
-    /////////////////////////////////////////////////////////////////////////////////////////////
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkFILEWStream {
-        pub _base: root::SkWStream,
-        pub fFILE: *mut root::FILE,
-    }
-    pub type SkFILEWStream_INHERITED = root::SkWStream;
-    #[test]
-    fn bindgen_test_layout_SkFILEWStream() {
-        assert_eq!(::std::mem::size_of::<SkFILEWStream>() , 16usize);
-        assert_eq!(::std::mem::align_of::<SkFILEWStream>() , 8usize);
-    }
-    extern "C" {
-        #[link_name = "_ZN13SkFILEWStream5fsyncEv"]
-        pub fn SkFILEWStream_fsync(this: *mut root::SkFILEWStream);
-    }
-    impl SkFILEWStream {
-        #[inline]
-        pub unsafe fn fsync(&mut self) { SkFILEWStream_fsync(&mut *self) }
-    }
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkDynamicMemoryWStream {
-        pub _base: root::SkWStream,
-        pub fHead: *mut root::SkDynamicMemoryWStream_Block,
-        pub fTail: *mut root::SkDynamicMemoryWStream_Block,
-        pub fBytesWritten: usize,
-        pub fCopy: root::sk_sp<root::SkData>,
-    }
-    #[repr(C)]
-    #[derive(Debug, Copy)]
-    pub struct SkDynamicMemoryWStream_Block {
-        pub _address: u8,
-    }
-    impl Clone for SkDynamicMemoryWStream_Block {
-        fn clone(&self) -> Self { *self }
-    }
-    pub type SkDynamicMemoryWStream_INHERITED = root::SkWStream;
-    #[test]
-    fn bindgen_test_layout_SkDynamicMemoryWStream() {
-        assert_eq!(::std::mem::size_of::<SkDynamicMemoryWStream>() , 40usize);
-        assert_eq!(::std::mem::align_of::<SkDynamicMemoryWStream>() , 8usize);
-    }
-    extern "C" {
-        #[link_name = "_ZN22SkDynamicMemoryWStream5writeEPKvmm"]
-        pub fn SkDynamicMemoryWStream_write1(this:
-                                                 *mut root::SkDynamicMemoryWStream,
-                                             buffer:
-                                                 *const ::std::os::raw::c_void,
-                                             offset: usize, size: usize)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZN22SkDynamicMemoryWStream4readEPvmm"]
-        pub fn SkDynamicMemoryWStream_read(this:
-                                               *mut root::SkDynamicMemoryWStream,
-                                           buffer:
-                                               *mut ::std::os::raw::c_void,
-                                           offset: usize, size: usize)
-         -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZNK22SkDynamicMemoryWStream6copyToEPv"]
-        pub fn SkDynamicMemoryWStream_copyTo(this:
-                                                 *const root::SkDynamicMemoryWStream,
-                                             dst:
-                                                 *mut ::std::os::raw::c_void);
-    }
-    extern "C" {
-        #[link_name =
-              "_ZNK22SkDynamicMemoryWStream13writeToStreamEP9SkWStream"]
-        pub fn SkDynamicMemoryWStream_writeToStream(this:
-                                                        *const root::SkDynamicMemoryWStream,
-                                                    dst:
-                                                        *mut root::SkWStream);
-    }
-    extern "C" {
-        #[link_name = "_ZNK22SkDynamicMemoryWStream14snapshotAsDataEv"]
-        pub fn SkDynamicMemoryWStream_snapshotAsData(this:
-                                                         *const root::SkDynamicMemoryWStream)
-         -> root::sk_sp<root::SkData>;
-    }
-    extern "C" {
-        #[link_name = "_ZN22SkDynamicMemoryWStream12detachAsDataEv"]
-        pub fn SkDynamicMemoryWStream_detachAsData(this:
-                                                       *mut root::SkDynamicMemoryWStream)
-         -> root::sk_sp<root::SkData>;
-    }
-    extern "C" {
-        /** Reset, returning a reader stream with the current content. */
-        #[link_name = "_ZN22SkDynamicMemoryWStream14detachAsStreamEv"]
-        pub fn SkDynamicMemoryWStream_detachAsStream(this:
-                                                         *mut root::SkDynamicMemoryWStream)
-         -> *mut root::SkStreamAsset;
-    }
-    extern "C" {
-        /** Reset the stream to its original, empty, state. */
-        #[link_name = "_ZN22SkDynamicMemoryWStream5resetEv"]
-        pub fn SkDynamicMemoryWStream_reset(this:
-                                                *mut root::SkDynamicMemoryWStream);
-    }
-    extern "C" {
-        #[link_name = "_ZN22SkDynamicMemoryWStream11padToAlign4Ev"]
-        pub fn SkDynamicMemoryWStream_padToAlign4(this:
-                                                      *mut root::SkDynamicMemoryWStream);
-    }
-    impl SkDynamicMemoryWStream {
-        #[inline]
-        pub unsafe fn write(&mut self, buffer: *const ::std::os::raw::c_void,
-                            offset: usize, size: usize) -> bool {
-            SkDynamicMemoryWStream_write1(&mut *self, buffer, offset, size)
-        }
-        #[inline]
-        pub unsafe fn read(&mut self, buffer: *mut ::std::os::raw::c_void,
-                           offset: usize, size: usize) -> bool {
-            SkDynamicMemoryWStream_read(&mut *self, buffer, offset, size)
-        }
-        #[inline]
-        pub unsafe fn copyTo(&self, dst: *mut ::std::os::raw::c_void) {
-            SkDynamicMemoryWStream_copyTo(&*self, dst)
-        }
-        #[inline]
-        pub unsafe fn writeToStream(&self, dst: *mut root::SkWStream) {
-            SkDynamicMemoryWStream_writeToStream(&*self, dst)
-        }
-        #[inline]
-        pub unsafe fn snapshotAsData(&self) -> root::sk_sp<root::SkData> {
-            SkDynamicMemoryWStream_snapshotAsData(&*self)
-        }
-        #[inline]
-        pub unsafe fn detachAsData(&mut self) -> root::sk_sp<root::SkData> {
-            SkDynamicMemoryWStream_detachAsData(&mut *self)
-        }
-        #[inline]
-        pub unsafe fn detachAsStream(&mut self) -> *mut root::SkStreamAsset {
-            SkDynamicMemoryWStream_detachAsStream(&mut *self)
-        }
-        #[inline]
-        pub unsafe fn reset(&mut self) {
-            SkDynamicMemoryWStream_reset(&mut *self)
-        }
-        #[inline]
-        pub unsafe fn padToAlign4(&mut self) {
-            SkDynamicMemoryWStream_padToAlign4(&mut *self)
-        }
-    }
-    extern "C" {
-        /**
- * Encode SkPixmap in the given binary image format.
- *
- * @param  dst     results are written to this stream.
- * @param  src     source pixels.
- * @param  format  image format, not all formats are supported.
- * @param  quality range from 0-100, not all formats respect quality.
- *
- * @return false iff input is bad or format is unsupported.
- *
- * Will always return false if Skia is compiled without image
- * encoders.
- *
- * For examples of encoding an image to a file or to a block of memory,
- * see tools/sk_tool_utils.h.
- */
-        #[link_name =
-              "_Z13SkEncodeImageP9SkWStreamRK8SkPixmap20SkEncodedImageFormati"]
-        pub fn SkEncodeImage(dst: *mut root::SkWStream,
-                             src: *const root::SkPixmap,
-                             format: root::SkEncodedImageFormat,
-                             quality: ::std::os::raw::c_int) -> bool;
-    }
-    extern "C" {
-        /**
- * The following helper function wraps SkEncodeImage().
- */
-        #[link_name =
-              "_Z13SkEncodeImageP9SkWStreamRK8SkBitmap20SkEncodedImageFormati"]
-        pub fn SkEncodeImage1(dst: *mut root::SkWStream,
-                              src: *const root::SkBitmap,
-                              f: root::SkEncodedImageFormat,
-                              q: ::std::os::raw::c_int) -> bool;
-    }
     pub const SkBlendMode_kLastCoeffMode: root::SkBlendMode =
         SkBlendMode::kScreen;
     pub const SkBlendMode_kLastSeparableMode: root::SkBlendMode =
@@ -7525,14 +6425,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kSaturation = 26,
         kColor = 27,
         kLuminosity = 28,
-    }
-    extern "C" {
-        /**
- *  Return the (c-string) name of the blendmode.
- */
-        #[link_name = "_Z16SkBlendMode_Name11SkBlendMode"]
-        pub fn SkBlendMode_Name(arg1: root::SkBlendMode)
-         -> *const ::std::os::raw::c_char;
     }
     #[repr(C)]
     #[derive(Debug, Copy)]
@@ -7607,7 +6499,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         fn clone(&self) -> Self { *self }
     }
     #[test]
-    fn __bindgen_test_layout_template_17() {
+    fn __bindgen_test_layout_template_13() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkPicture>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkPicture>>() ,
@@ -7629,7 +6521,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub _base: root::SkFlattenable,
         pub fLocalMatrix: root::SkMatrix,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkShader_TileMode {
         kClamp_TileMode = 0,
@@ -7638,7 +6530,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkShader_kTileModeCount: root::SkShader__bindgen_ty_1 =
         SkShader__bindgen_ty_1::kTileModeCount;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkShader__bindgen_ty_1 { kTileModeCount = 3, }
     pub const SkShader_Flags_kOpaqueAlpha_Flag: root::SkShader_Flags =
@@ -7659,7 +6551,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     #[repr(C)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct SkShader_Flags(pub u32);
+    pub struct SkShader_Flags(pub i32);
     /**
      *  ContextRec acts as a parameter bundle for creating Contexts.
      */
@@ -7672,7 +6564,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub fPreferredDstType: root::SkShader_ContextRec_DstType,
         pub fDstColorSpace: *mut root::SkColorSpace,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkShader_ContextRec_DstType {
         kPMColor_DstType = 0,
@@ -7711,7 +6603,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     pub const SkShader_Context_BlitState_N:
               root::SkShader_Context_BlitState__bindgen_ty_1 =
         SkShader_Context_BlitState__bindgen_ty_1::N;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkShader_Context_BlitState__bindgen_ty_1 { N = 2, }
     #[test]
@@ -7756,7 +6648,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                                                    arg1: *mut root::SkPMColor,
                                                    count:
                                                        ::std::os::raw::c_int)>;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkShader_Context_MatrixClass {
         kLinear_MatrixClass = 0,
@@ -7770,7 +6662,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkShader_Context>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN8SkShader7Context18ComputeMatrixClassERK8SkMatrix"]
+        #[link_name =
+              "?ComputeMatrixClass@Context@SkShader@@KA?AW4MatrixClass@12@AEBVSkMatrix@@@Z"]
         pub fn SkShader_Context_ComputeMatrixClass(arg1:
                                                        *const root::SkMatrix)
          -> root::SkShader_Context_MatrixClass;
@@ -7785,7 +6678,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     pub const SkShader_GradientType_kLast_GradientType:
               root::SkShader_GradientType =
         SkShader_GradientType::kConical_GradientType;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
      *  If the shader subclass can be represented as a gradient, asAGradient
      *  returns the matching GradientType enum (or kNone_GradientType if it
@@ -7899,7 +6792,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Create the actual object that does the shading.
      *  Size of storage must be >= contextSize.
      */
-        #[link_name = "_ZNK8SkShader13createContextERKNS_10ContextRecEPv"]
+        #[link_name =
+              "?createContext@SkShader@@QEBAPEAVContext@1@AEBUContextRec@1@PEAX@Z"]
         pub fn SkShader_createContext(this: *const root::SkShader,
                                       arg1: *const root::SkShader_ContextRec,
                                       storage: *mut ::std::os::raw::c_void)
@@ -7909,7 +6803,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Return the size of a Context returned by createContext.
      */
-        #[link_name = "_ZNK8SkShader11contextSizeERKNS_10ContextRecE"]
+        #[link_name = "?contextSize@SkShader@@QEBA_KAEBUContextRec@1@@Z"]
         pub fn SkShader_contextSize(this: *const root::SkShader,
                                     arg1: *const root::SkShader_ContextRec)
          -> usize;
@@ -7923,7 +6817,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Note: if this returns true, the returned color will always be opaque, as only the RGB
      *  components are used to compute luminance.
      */
-        #[link_name = "_ZNK8SkShader16asLuminanceColorEPj"]
+        #[link_name = "?asLuminanceColor@SkShader@@QEBA_NPEAI@Z"]
         pub fn SkShader_asLuminanceColor(this: *const root::SkShader,
                                          arg1: *mut root::SkColor) -> bool;
     }
@@ -7932,7 +6826,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Return a shader that will apply the specified localMatrix to this shader.
      *  The specified matrix will be applied before any matrix associated with this shader.
      */
-        #[link_name = "_ZNK8SkShader19makeWithLocalMatrixERK8SkMatrix"]
+        #[link_name =
+              "?makeWithLocalMatrix@SkShader@@QEBA?AV?$sk_sp@VSkShader@@@@AEBVSkMatrix@@@Z"]
         pub fn SkShader_makeWithLocalMatrix(this: *const root::SkShader,
                                             arg1: *const root::SkMatrix)
          -> root::sk_sp<root::SkShader>;
@@ -7943,7 +6838,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  the colorfilter.
      */
         #[link_name =
-              "_ZNK8SkShader19makeWithColorFilterE5sk_spI13SkColorFilterE"]
+              "?makeWithColorFilter@SkShader@@QEBA?AV?$sk_sp@VSkShader@@@@V?$sk_sp@VSkColorFilter@@@@@Z"]
         pub fn SkShader_makeWithColorFilter(this: *const root::SkShader,
                                             arg1:
                                                 root::sk_sp<root::SkColorFilter>)
@@ -7953,7 +6848,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Call this to create a new "empty" shader, that will not draw anything.
      */
-        #[link_name = "_ZN8SkShader15MakeEmptyShaderEv"]
+        #[link_name =
+              "?MakeEmptyShader@SkShader@@SA?AV?$sk_sp@VSkShader@@@@XZ"]
         pub fn SkShader_MakeEmptyShader() -> root::sk_sp<root::SkShader>;
     }
     extern "C" {
@@ -7961,7 +6857,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Call this to create a new shader that just draws the specified color. This should always
      *  draw the same as a paint with this color (and no shader).
      */
-        #[link_name = "_ZN8SkShader15MakeColorShaderEj"]
+        #[link_name =
+              "?MakeColorShader@SkShader@@SA?AV?$sk_sp@VSkShader@@@@I@Z"]
         pub fn SkShader_MakeColorShader(arg1: root::SkColor)
          -> root::sk_sp<root::SkShader>;
     }
@@ -7973,7 +6870,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  not support specific colorspaces.
      */
         #[link_name =
-              "_ZN8SkShader15MakeColorShaderERK9SkColor4f5sk_spI12SkColorSpaceE"]
+              "?MakeColorShader@SkShader@@SA?AV?$sk_sp@VSkShader@@@@AEBUSkColor4f@@V?$sk_sp@VSkColorSpace@@@@@Z"]
         pub fn SkShader_MakeColorShader1(arg1: *const root::SkColor4f,
                                          arg2:
                                              root::sk_sp<root::SkColorSpace>)
@@ -7981,7 +6878,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkShader17MakeComposeShaderE5sk_spIS_ES1_11SkBlendMode"]
+              "?MakeComposeShader@SkShader@@SA?AV?$sk_sp@VSkShader@@@@V2@0W4SkBlendMode@@@Z"]
         pub fn SkShader_MakeComposeShader(dst: root::sk_sp<root::SkShader>,
                                           src: root::sk_sp<root::SkShader>,
                                           arg1: root::SkBlendMode)
@@ -8003,7 +6900,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @return     Returns a new shader object. Note: this function never returns null.
     */
         #[link_name =
-              "_ZN8SkShader16MakeBitmapShaderERK8SkBitmapNS_8TileModeES3_PK8SkMatrix"]
+              "?MakeBitmapShader@SkShader@@SA?AV?$sk_sp@VSkShader@@@@AEBVSkBitmap@@W4TileMode@1@1PEBVSkMatrix@@@Z"]
         pub fn SkShader_MakeBitmapShader(src: *const root::SkBitmap,
                                          tmx: root::SkShader_TileMode,
                                          tmy: root::SkShader_TileMode,
@@ -8026,7 +6923,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @return     Returns a new shader object. Note: this function never returns null.
     */
         #[link_name =
-              "_ZN8SkShader17MakePictureShaderE5sk_spI9SkPictureENS_8TileModeES3_PK8SkMatrixPK6SkRect"]
+              "?MakePictureShader@SkShader@@SA?AV?$sk_sp@VSkShader@@@@V?$sk_sp@VSkPicture@@@@W4TileMode@1@1PEBVSkMatrix@@PEBUSkRect@@@Z"]
         pub fn SkShader_MakePictureShader(src: root::sk_sp<root::SkPicture>,
                                           tmx: root::SkShader_TileMode,
                                           tmy: root::SkShader_TileMode,
@@ -8035,12 +6932,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
          -> root::sk_sp<root::SkShader>;
     }
     extern "C" {
-        #[link_name = "_ZN8SkShader22InitializeFlattenablesEv"]
+        #[link_name = "?InitializeFlattenables@SkShader@@SAXXZ"]
         pub fn SkShader_InitializeFlattenables();
     }
     extern "C" {
         #[link_name =
-              "_ZNK8SkShader12appendStagesEP16SkRasterPipelineP12SkColorSpaceP15SkFallbackAllocRK8SkMatrixRK7SkPaint"]
+              "?appendStages@SkShader@@QEBA_NPEAVSkRasterPipeline@@PEAVSkColorSpace@@PEAVSkFallbackAlloc@@AEBVSkMatrix@@AEBVSkPaint@@@Z"]
         pub fn SkShader_appendStages(this: *const root::SkShader,
                                      arg1: *mut root::SkRasterPipeline,
                                      arg2: *mut root::SkColorSpace,
@@ -8050,7 +6947,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZNK8SkShader19computeTotalInverseERKNS_10ContextRecEP8SkMatrix"]
+              "?computeTotalInverse@SkShader@@IEBA_NAEBUContextRec@1@PEAVSkMatrix@@@Z"]
         pub fn SkShader_computeTotalInverse(this: *const root::SkShader,
                                             arg1:
                                                 *const root::SkShader_ContextRec,
@@ -8175,12 +7072,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     #[repr(C)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct SkSurfaceProps_Flags(pub u32);
-    #[repr(u32)]
+    pub struct SkSurfaceProps_Flags(pub i32);
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkSurfaceProps_InitType { kLegacyFontHost_InitType = 0, }
     extern "C" {
-        #[link_name = "_ZN14SkSurfaceProps27kUseDistanceFieldFonts_FlagE"]
+        #[link_name =
+              "?kUseDistanceFieldFonts_Flag@SkSurfaceProps@@2W4Flags@1@B"]
         pub static SkSurfaceProps_kUseDistanceFieldFonts_Flag:
                    root::SkSurfaceProps_Flags;
     }
@@ -8210,7 +7108,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const GrPixelConfig_kLast_GrPixelConfig: root::GrPixelConfig =
         GrPixelConfig::kRGBA_half_GrPixelConfig;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
  * Pixel configurations.
  */
@@ -8235,7 +7133,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kRGBA_half_GrPixelConfig = 16,
     }
     pub type GrBackendObject = isize;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
  * Some textures will be stored such that the upper and left edges of the content meet at the
  * the origin (in texture coord space) and for other textures the lower and left edges meet at
@@ -8287,7 +7185,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
  * Note: These flags currently form a subset of GrTexture's flags.
  */
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct GrBackendTextureFlags(pub u32);
+    pub struct GrBackendTextureFlags(pub i32);
     #[repr(C)]
     #[derive(Debug, Copy)]
     pub struct GrBackendTextureDesc {
@@ -8358,500 +7256,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
     impl Clone for GrBackendRenderTargetDesc {
         fn clone(&self) -> Self { *self }
     }
-    extern "C" {
-        //////////////////////////////////////////////////////////////////////////////
-        #[link_name = "_ZL12SkSwizzle_RBj"]
-        pub fn SkSwizzle_RB(c: u32) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkPackARGB_as_RGBAjjjj"]
-        pub fn SkPackARGB_as_RGBA(a: root::U8CPU, r: root::U8CPU,
-                                  g: root::U8CPU, b: root::U8CPU) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkPackARGB_as_BGRAjjjj"]
-        pub fn SkPackARGB_as_BGRA(a: root::U8CPU, r: root::U8CPU,
-                                  g: root::U8CPU, b: root::U8CPU) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL25SkSwizzle_RGBA_to_PMColorj"]
-        pub fn SkSwizzle_RGBA_to_PMColor(c: u32) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL25SkSwizzle_BGRA_to_PMColorj"]
-        pub fn SkSwizzle_BGRA_to_PMColor(c: u32) -> root::SkPMColor;
-    }
-    extern "C" {
-        /** Computes the luminance from the given r, g, and b in accordance with
-    SK_LUM_COEFF_X. For correct results, r, g, and b should be in linear space.
-*/
-        #[link_name = "_ZL18SkComputeLuminancejjj"]
-        pub fn SkComputeLuminance(r: root::U8CPU, g: root::U8CPU,
-                                  b: root::U8CPU) -> root::U8CPU;
-    }
-    extern "C" {
-        /** Turn 0..255 into 0..256 by adding 1 at the half-way point. Used to turn a
-    byte into a scale value, so that we can say scale * value >> 8 instead of
-    alpha * value / 255.
-
-    In debugging, asserts that alpha is 0..255
-*/
-        #[link_name = "_ZL15SkAlpha255To256j"]
-        pub fn SkAlpha255To256(alpha: root::U8CPU) -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        /**
- *  Turn a 0..255 value into a 0..256 value, rounding up if the value is >= 0x80.
- *  This is slightly more accurate than SkAlpha255To256.
- */
-        #[link_name = "_ZL10Sk255To256j"]
-        pub fn Sk255To256(value: root::U8CPU) -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        /** Calculates 256 - (value * alpha256) / 255 in range [0,256],
- *  for [0,255] value and [0,256] alpha256.
- */
-        #[link_name = "_ZL16SkAlphaMulInv256jj"]
-        pub fn SkAlphaMulInv256(value: root::U16CPU, alpha256: root::U16CPU)
-         -> root::U16CPU;
-    }
-    extern "C" {
-        #[link_name = "_ZL12SkAlphaBlendiii"]
-        pub fn SkAlphaBlend(src: ::std::os::raw::c_int,
-                            dst: ::std::os::raw::c_int,
-                            scale256: ::std::os::raw::c_int)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        /**
- *  Returns (src * alpha + dst * (255 - alpha)) / 255
- *
- *  This is more accurate than SkAlphaBlend, but slightly slower
- */
-        #[link_name = "_ZL15SkAlphaBlend255iij"]
-        pub fn SkAlphaBlend255(src: root::S16CPU, dst: root::S16CPU,
-                               alpha: root::U8CPU) -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL23SkUnitScalarClampToBytef"]
-        pub fn SkUnitScalarClampToByte(x: root::SkScalar) -> root::U8CPU;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkPackRGB16jjj"]
-        pub fn SkPackRGB16(r: ::std::os::raw::c_uint,
-                           g: ::std::os::raw::c_uint,
-                           b: ::std::os::raw::c_uint) -> u16;
-    }
-    extern "C" {
-        /** Expand the 16bit color into a 32bit value that can be scaled all at once
-    by a value up to 32. Used in conjunction with SkCompact_rgb_16.
-*/
-        #[link_name = "_ZL15SkExpand_rgb_16j"]
-        pub fn SkExpand_rgb_16(c: root::U16CPU) -> u32;
-    }
-    extern "C" {
-        /** Compress an expanded value (from SkExpand_rgb_16) back down to a 16bit
-    color value. The computation yields only 16bits of valid data, but we claim
-    to return 32bits, so that the compiler won't generate extra instructions to
-    "clean" the top 16bits. However, the top 16 can contain garbage, so it is
-    up to the caller to safely ignore them.
-*/
-        #[link_name = "_ZL16SkCompact_rgb_16j"]
-        pub fn SkCompact_rgb_16(c: u32) -> root::U16CPU;
-    }
-    extern "C" {
-        /** Scale the 16bit color value by the 0..256 scale parameter.
-    The computation yields only 16bits of valid data, but we claim
-    to return 32bits, so that the compiler won't generate extra instructions to
-    "clean" the top 16bits.
-*/
-        #[link_name = "_ZL15SkAlphaMulRGB16jj"]
-        pub fn SkAlphaMulRGB16(c: root::U16CPU, scale: ::std::os::raw::c_uint)
-         -> root::U16CPU;
-    }
-    extern "C" {
-        /** Blend pre-expanded RGB32 with 16bit color value by the 0..32 scale parameter.
-    The computation yields only 16bits of valid data, but we claim to return
-    32bits, so that the compiler won't generate extra instructions to "clean"
-    the top 16bits.
-*/
-        #[link_name = "_ZL15SkBlend32_RGB16jtj"]
-        pub fn SkBlend32_RGB16(src_expand: u32, dst: u16,
-                               scale: ::std::os::raw::c_uint) -> root::U16CPU;
-    }
-    extern "C" {
-        /** Blend src and dst 16bit colors by the 0..256 scale parameter.
-    The computation yields only 16bits of valid data, but we claim
-    to return 32bits, so that the compiler won't generate extra instructions to
-    "clean" the top 16bits.
-*/
-        #[link_name = "_ZL12SkBlendRGB16jji"]
-        pub fn SkBlendRGB16(src: root::U16CPU, dst: root::U16CPU,
-                            srcScale: ::std::os::raw::c_int) -> root::U16CPU;
-    }
-    extern "C" {
-        #[link_name = "_ZL12SkBlendRGB16PKtPtii"]
-        pub fn SkBlendRGB161(src: *const u16, dst: *mut u16,
-                             srcScale: ::std::os::raw::c_int,
-                             count: ::std::os::raw::c_int);
-    }
-    extern "C" {
-        #[link_name = "_ZL10SkRGB16Addjj"]
-        pub fn SkRGB16Add(a: root::U16CPU, b: root::U16CPU) -> root::U16CPU;
-    }
-    extern "C" {
-        #[link_name = "_ZL14SkPMColorValidj"]
-        pub fn SkPMColorValid(c: root::SkPMColor) -> bool;
-    }
-    extern "C" {
-        /**
- *  Pack the components into a SkPMColor, checking (in the debug version) that
- *  the components are 0..255, and are already premultiplied (i.e. alpha >= color)
- */
-        #[link_name = "_ZL12SkPackARGB32jjjj"]
-        pub fn SkPackARGB32(a: root::U8CPU, r: root::U8CPU, g: root::U8CPU,
-                            b: root::U8CPU) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL21SkPackPMColor_as_RGBAj"]
-        pub fn SkPackPMColor_as_RGBA(c: root::SkPMColor) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL21SkPackPMColor_as_BGRAj"]
-        pub fn SkPackPMColor_as_BGRA(c: root::SkPMColor) -> u32;
-    }
-    extern "C" {
-        /**
- * Abstract 4-byte interpolation, implemented on top of SkPMColor
- * utility functions. Third parameter controls blending of the first two:
- *   (src, dst, 0) returns dst
- *   (src, dst, 0xFF) returns src
- *   srcWeight is [0..256], unlike SkFourByteInterp which takes [0..255]
- */
-        #[link_name = "_ZL19SkFourByteInterp256jjj"]
-        pub fn SkFourByteInterp256(src: root::SkPMColor, dst: root::SkPMColor,
-                                   scale: ::std::os::raw::c_uint)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        /**
- * Abstract 4-byte interpolation, implemented on top of SkPMColor
- * utility functions. Third parameter controls blending of the first two:
- *   (src, dst, 0) returns dst
- *   (src, dst, 0xFF) returns src
- */
-        #[link_name = "_ZL16SkFourByteInterpjjj"]
-        pub fn SkFourByteInterp(src: root::SkPMColor, dst: root::SkPMColor,
-                                srcWeight: root::U8CPU) -> root::SkPMColor;
-    }
-    extern "C" {
-        /**
- * 0xAARRGGBB -> 0x00AA00GG, 0x00RR00BB
- */
-        #[link_name = "_ZL7SkSplayjPjS_"]
-        pub fn SkSplay(color: u32, ag: *mut u32, rb: *mut u32);
-    }
-    extern "C" {
-        /**
- * 0xAARRGGBB -> 0x00AA00GG00RR00BB
- * (note, ARGB -> AGRB)
- */
-        #[link_name = "_ZL7SkSplayj"]
-        pub fn SkSplay1(color: u32) -> u64;
-    }
-    extern "C" {
-        /**
- * 0xAAxxGGxx, 0xRRxxBBxx-> 0xAARRGGBB
- */
-        #[link_name = "_ZL9SkUnsplayjj"]
-        pub fn SkUnsplay(ag: u32, rb: u32) -> u32;
-    }
-    extern "C" {
-        /**
- * 0xAAxxGGxxRRxxBBxx -> 0xAARRGGBB
- * (note, AGRB -> ARGB)
- */
-        #[link_name = "_ZL9SkUnsplaym"]
-        pub fn SkUnsplay1(agrb: u64) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL26SkFastFourByteInterp256_32jjj"]
-        pub fn SkFastFourByteInterp256_32(src: root::SkPMColor,
-                                          dst: root::SkPMColor,
-                                          scale: ::std::os::raw::c_uint)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL26SkFastFourByteInterp256_64jjj"]
-        pub fn SkFastFourByteInterp256_64(src: root::SkPMColor,
-                                          dst: root::SkPMColor,
-                                          scale: ::std::os::raw::c_uint)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        /**
- * Same as SkFourByteInterp256, but faster.
- */
-        #[link_name = "_ZL23SkFastFourByteInterp256jjj"]
-        pub fn SkFastFourByteInterp256(src: root::SkPMColor,
-                                       dst: root::SkPMColor,
-                                       scale: ::std::os::raw::c_uint)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        /**
- * Nearly the same as SkFourByteInterp, but faster and a touch more accurate, due to better
- * srcWeight scaling to [0, 256].
- */
-        #[link_name = "_ZL20SkFastFourByteInterpjjj"]
-        pub fn SkFastFourByteInterp(src: root::SkPMColor,
-                                    dst: root::SkPMColor,
-                                    srcWeight: root::U8CPU)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        /**
- *  Same as SkPackARGB32, but this version guarantees to not check that the
- *  values are premultiplied in the debug version.
- */
-        #[link_name = "_ZL19SkPackARGB32NoCheckjjjj"]
-        pub fn SkPackARGB32NoCheck(a: root::U8CPU, r: root::U8CPU,
-                                   g: root::U8CPU, b: root::U8CPU)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL23SkPremultiplyARGBInlinejjjj"]
-        pub fn SkPremultiplyARGBInline(a: root::U8CPU, r: root::U8CPU,
-                                       g: root::U8CPU, b: root::U8CPU)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkAlphaMulQjj"]
-        pub fn SkAlphaMulQ(c: u32, scale: ::std::os::raw::c_uint) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkPMSrcOverjj"]
-        pub fn SkPMSrcOver(src: root::SkPMColor, dst: root::SkPMColor)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        /**
- * Interpolates between colors src and dst using [0,256] scale.
- */
-        #[link_name = "_ZL8SkPMLerpjjj"]
-        pub fn SkPMLerp(src: root::SkPMColor, dst: root::SkPMColor,
-                        scale: ::std::os::raw::c_uint) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkBlendARGB32jjj"]
-        pub fn SkBlendARGB32(src: root::SkPMColor, dst: root::SkPMColor,
-                             aa: root::U8CPU) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL10SkR32ToR16j"]
-        pub fn SkR32ToR16(r: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL10SkG32ToG16j"]
-        pub fn SkG32ToG16(g: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL10SkB32ToB16j"]
-        pub fn SkB32ToB16(b: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkPixel32ToPixel16j"]
-        pub fn SkPixel32ToPixel16(c: root::SkPMColor) -> root::U16CPU;
-    }
-    extern "C" {
-        #[link_name = "_ZL16SkPack888ToRGB16jjj"]
-        pub fn SkPack888ToRGB16(r: root::U8CPU, g: root::U8CPU,
-                                b: root::U8CPU) -> root::U16CPU;
-    }
-    extern "C" {
-        #[link_name = "_ZL22SkDitherPack888ToRGB16jjj"]
-        pub fn SkDitherPack888ToRGB16(r: root::U8CPU, g: root::U8CPU,
-                                      b: root::U8CPU) -> u16;
-    }
-    extern "C" {
-        #[link_name = "_ZL24SkDitherPixel32ToPixel16j"]
-        pub fn SkDitherPixel32ToPixel16(c: root::SkPMColor) -> u16;
-    }
-    extern "C" {
-        #[link_name = "_ZL23SkPMColorToExpanded16x5j"]
-        pub fn SkPMColorToExpanded16x5(c: root::SkPMColor) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL15SkSrcOver32To16jt"]
-        pub fn SkSrcOver32To16(src: root::SkPMColor, dst: u16)
-         -> root::U16CPU;
-    }
-    extern "C" {
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        #[link_name = "_ZL10SkR16ToR32j"]
-        pub fn SkR16ToR32(r: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL10SkG16ToG32j"]
-        pub fn SkG16ToG32(g: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL10SkB16ToB32j"]
-        pub fn SkB16ToB32(b: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkPixel16ToPixel32j"]
-        pub fn SkPixel16ToPixel32(src: root::U16CPU) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL16SkPixel16ToColorj"]
-        pub fn SkPixel16ToColor(src: root::U16CPU) -> root::SkColor;
-    }
-    ///////////////////////////////////////////////////////////////////////////////
-    pub type SkPMColor16 = u16;
-    extern "C" {
-        #[link_name = "_ZL17SkReplicateNibblej"]
-        pub fn SkReplicateNibble(nib: ::std::os::raw::c_uint) -> root::U8CPU;
-    }
-    extern "C" {
-        #[link_name = "_ZL17SkPMColor16Assertj"]
-        pub fn SkPMColor16Assert(c: root::U16CPU);
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkAlpha15To16j"]
-        pub fn SkAlpha15To16(a: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL11SkAlphaMul4ii"]
-        pub fn SkAlphaMul4(value: ::std::os::raw::c_int,
-                           scale: ::std::os::raw::c_int)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkR4444ToR565j"]
-        pub fn SkR4444ToR565(r: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkG4444ToG565j"]
-        pub fn SkG4444ToG565(g: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkB4444ToB565j"]
-        pub fn SkB4444ToB565(b: ::std::os::raw::c_uint)
-         -> ::std::os::raw::c_uint;
-    }
-    extern "C" {
-        #[link_name = "_ZL14SkPackARGB4444jjjj"]
-        pub fn SkPackARGB4444(a: ::std::os::raw::c_uint,
-                              r: ::std::os::raw::c_uint,
-                              g: ::std::os::raw::c_uint,
-                              b: ::std::os::raw::c_uint) -> root::SkPMColor16;
-    }
-    extern "C" {
-        #[link_name = "_ZL12SkAlphaMulQ4ti"]
-        pub fn SkAlphaMulQ4(c: root::SkPMColor16,
-                            scale: ::std::os::raw::c_int)
-         -> root::SkPMColor16;
-    }
-    extern "C" {
-        /** Expand the SkPMColor16 color into a 32bit value that can be scaled all at
-    once by a value up to 16.
-*/
-        #[link_name = "_ZL13SkExpand_4444j"]
-        pub fn SkExpand_4444(c: root::U16CPU) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL17SkSrcOver4444To16tt"]
-        pub fn SkSrcOver4444To16(s: root::SkPMColor16, d: u16) -> u16;
-    }
-    extern "C" {
-        #[link_name = "_ZL15SkBlend4444To16tti"]
-        pub fn SkBlend4444To16(src: root::SkPMColor16, dst: u16,
-                               scale16: ::std::os::raw::c_int) -> u16;
-    }
-    extern "C" {
-        #[link_name = "_ZL20SkPixel4444ToPixel32j"]
-        pub fn SkPixel4444ToPixel32(c: root::U16CPU) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL20SkPixel32ToPixel4444j"]
-        pub fn SkPixel32ToPixel4444(c: root::SkPMColor) -> root::SkPMColor16;
-    }
-    extern "C" {
-        #[link_name = "_ZL20SkDitherARGB32To4444jjjj"]
-        pub fn SkDitherARGB32To4444(a: root::U8CPU, r: root::U8CPU,
-                                    g: root::U8CPU, b: root::U8CPU)
-         -> root::SkPMColor16;
-    }
-    extern "C" {
-        #[link_name = "_ZL21SkDitherPixel32To4444j"]
-        pub fn SkDitherPixel32To4444(c: root::SkPMColor) -> root::SkPMColor16;
-    }
-    extern "C" {
-        #[link_name = "_ZL13SkExpand_8888j"]
-        pub fn SkExpand_8888(c: root::SkPMColor) -> u32;
-    }
-    extern "C" {
-        #[link_name = "_ZL14SkCompact_8888j"]
-        pub fn SkCompact_8888(c: u32) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL15SkExpand32_4444j"]
-        pub fn SkExpand32_4444(c: root::SkPMColor) -> u32;
-    }
-    extern "C" {
-        ///////////////////////////////////////////////////////////////////////////////
-        #[link_name = "_ZL15SkUpscale31To32i"]
-        pub fn SkUpscale31To32(value: ::std::os::raw::c_int)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL9SkBlend32iii"]
-        pub fn SkBlend32(src: ::std::os::raw::c_int,
-                         dst: ::std::os::raw::c_int,
-                         scale: ::std::os::raw::c_int)
-         -> ::std::os::raw::c_int;
-    }
-    extern "C" {
-        #[link_name = "_ZL12SkBlendLCD16iiiijt"]
-        pub fn SkBlendLCD16(srcA: ::std::os::raw::c_int,
-                            srcR: ::std::os::raw::c_int,
-                            srcG: ::std::os::raw::c_int,
-                            srcB: ::std::os::raw::c_int, dst: root::SkPMColor,
-                            mask: u16) -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkBlendLCD16Opaqueiiijtj"]
-        pub fn SkBlendLCD16Opaque(srcR: ::std::os::raw::c_int,
-                                  srcG: ::std::os::raw::c_int,
-                                  srcB: ::std::os::raw::c_int,
-                                  dst: root::SkPMColor, mask: u16,
-                                  opaqueDst: root::SkPMColor)
-         -> root::SkPMColor;
-    }
-    extern "C" {
-        #[link_name = "_ZL14SkBlitLCD16RowPjPKtjij"]
-        pub fn SkBlitLCD16Row(dst: *mut root::SkPMColor, mask: *const u16,
-                              src: root::SkColor,
-                              width: ::std::os::raw::c_int,
-                              arg1: root::SkPMColor);
-    }
-    extern "C" {
-        #[link_name = "_ZL20SkBlitLCD16OpaqueRowPjPKtjij"]
-        pub fn SkBlitLCD16OpaqueRow(dst: *mut root::SkPMColor,
-                                    mask: *const u16, src: root::SkColor,
-                                    width: ::std::os::raw::c_int,
-                                    opaqueDst: root::SkPMColor);
-    }
     #[repr(C)]
     #[derive(Debug, Copy)]
     pub struct SkFallbackAlloc {
@@ -8861,7 +7265,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         fn clone(&self) -> Self { *self }
     }
     #[test]
-    fn __bindgen_test_layout_template_18() {
+    fn __bindgen_test_layout_template_14() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkImage>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkImage>>() ,
@@ -8899,7 +7303,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     pub type SkImage_TextureReleaseProc =
         ::std::option::Option<unsafe extern "C" fn(arg1:
                                                        root::SkImage_ReleaseContext)>;
-    #[repr(u32)]
+    #[repr(i32)]
     /**
      *  Hints to image calls where the system might cache computed intermediates (e.g. the results
      *  of decoding or a read-back from the GPU. Passing kAllow signals that the system's default
@@ -8928,7 +7332,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     impl Clone for SkImage_DeferredTextureImageUsageParams {
         fn clone(&self) -> Self { *self }
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkImage_LegacyBitmapMode {
         kRO_LegacyBitmapMode = 0,
@@ -8937,17 +7341,18 @@ be copied. It hides its copy-constructor and its assignment-operator.
     pub type SkImage_INHERITED = root::SkRefCnt;
     #[test]
     fn bindgen_test_layout_SkImage() {
-        assert_eq!(::std::mem::size_of::<SkImage>() , 24usize);
+        assert_eq!(::std::mem::size_of::<SkImage>() , 32usize);
         assert_eq!(::std::mem::align_of::<SkImage>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN7SkImage14MakeRasterCopyERK8SkPixmap"]
+        #[link_name =
+              "?MakeRasterCopy@SkImage@@SA?AV?$sk_sp@VSkImage@@@@AEBVSkPixmap@@@Z"]
         pub fn SkImage_MakeRasterCopy(arg1: *const root::SkPixmap)
          -> root::sk_sp<root::SkImage>;
     }
     extern "C" {
         #[link_name =
-              "_ZN7SkImage14MakeRasterDataERK11SkImageInfo5sk_spI6SkDataEm"]
+              "?MakeRasterData@SkImage@@SA?AV?$sk_sp@VSkImage@@@@AEBUSkImageInfo@@V?$sk_sp@VSkData@@@@_K@Z"]
         pub fn SkImage_MakeRasterData(arg1: *const root::SkImage_Info,
                                       pixels: root::sk_sp<root::SkData>,
                                       rowBytes: usize)
@@ -8961,7 +7366,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  Returns NULL if the requested pixmap info is unsupported.
      */
-        #[link_name = "_ZN7SkImage14MakeFromRasterERK8SkPixmapPFvPKvPvES5_"]
+        #[link_name =
+              "?MakeFromRaster@SkImage@@SA?AV?$sk_sp@VSkImage@@@@AEBVSkPixmap@@P6AXPEBXPEAX@Z2@Z"]
         pub fn SkImage_MakeFromRaster(arg1: *const root::SkPixmap,
                                       arg2: root::SkImage_RasterReleaseProc,
                                       arg3: root::SkImage_ReleaseContext)
@@ -8972,7 +7378,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Construct a new image from the specified bitmap. If the bitmap is marked immutable, and
      *  its pixel memory is shareable, it may be shared instead of copied.
      */
-        #[link_name = "_ZN7SkImage14MakeFromBitmapERK8SkBitmap"]
+        #[link_name =
+              "?MakeFromBitmap@SkImage@@SA?AV?$sk_sp@VSkImage@@@@AEBVSkBitmap@@@Z"]
         pub fn SkImage_MakeFromBitmap(arg1: *const root::SkBitmap)
          -> root::sk_sp<root::SkImage>;
     }
@@ -8984,7 +7391,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If a subset is specified, it must be contained within the generator's bounds.
      */
         #[link_name =
-              "_ZN7SkImage17MakeFromGeneratorEP16SkImageGeneratorPK7SkIRect"]
+              "?MakeFromGenerator@SkImage@@SA?AV?$sk_sp@VSkImage@@@@PEAVSkImageGenerator@@PEBUSkIRect@@@Z"]
         pub fn SkImage_MakeFromGenerator(arg1: *mut root::SkImageGenerator,
                                          subset: *const root::SkIRect)
          -> root::sk_sp<root::SkImage>;
@@ -8997,7 +7404,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If a subset is specified, it must be contained within the encoded data's bounds.
      */
         #[link_name =
-              "_ZN7SkImage15MakeFromEncodedE5sk_spI6SkDataEPK7SkIRect"]
+              "?MakeFromEncoded@SkImage@@SA?AV?$sk_sp@VSkImage@@@@V?$sk_sp@VSkData@@@@PEBUSkIRect@@@Z"]
         pub fn SkImage_MakeFromEncoded(encoded: root::sk_sp<root::SkData>,
                                        subset: *const root::SkIRect)
          -> root::sk_sp<root::SkImage>;
@@ -9011,7 +7418,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     *  Will return NULL if the specified descriptor is unsupported.
     */
         #[link_name =
-              "_ZN7SkImage15MakeFromTextureEP9GrContextRK20GrBackendTextureDesc11SkAlphaType5sk_spI12SkColorSpaceEPFvPvES9_"]
+              "?MakeFromTexture@SkImage@@SA?AV?$sk_sp@VSkImage@@@@PEAVGrContext@@AEBUGrBackendTextureDesc@@W4SkAlphaType@@V?$sk_sp@VSkColorSpace@@@@P6AXPEAX@Z4@Z"]
         pub fn SkImage_MakeFromTexture(arg1: *mut root::GrContext,
                                        arg2:
                                            *const root::GrBackendTextureDesc,
@@ -9029,7 +7436,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Will return NULL if the specified descriptor is unsupported.
      */
         #[link_name =
-              "_ZN7SkImage22MakeFromAdoptedTextureEP9GrContextRK20GrBackendTextureDesc11SkAlphaType5sk_spI12SkColorSpaceE"]
+              "?MakeFromAdoptedTexture@SkImage@@SA?AV?$sk_sp@VSkImage@@@@PEAVGrContext@@AEBUGrBackendTextureDesc@@W4SkAlphaType@@V?$sk_sp@VSkColorSpace@@@@@Z"]
         pub fn SkImage_MakeFromAdoptedTexture(arg1: *mut root::GrContext,
                                               arg2:
                                                   *const root::GrBackendTextureDesc,
@@ -9045,7 +7452,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  deleted after the function returns. The image will have the dimensions of the y texture.
      */
         #[link_name =
-              "_ZN7SkImage23MakeFromYUVTexturesCopyEP9GrContext15SkYUVColorSpacePKlPK7SkTSizeIiE15GrSurfaceOrigin5sk_spI12SkColorSpaceE"]
+              "?MakeFromYUVTexturesCopy@SkImage@@SA?AV?$sk_sp@VSkImage@@@@PEAVGrContext@@W4SkYUVColorSpace@@QEB_JQEBU?$SkTSize@H@@W4GrSurfaceOrigin@@V?$sk_sp@VSkColorSpace@@@@@Z"]
         pub fn SkImage_MakeFromYUVTexturesCopy(arg1: *mut root::GrContext,
                                                arg2: root::SkYUVColorSpace,
                                                yuvTextureHandles:
@@ -9063,7 +7470,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  deleted after the function returns. The image will have the dimensions of the y texture.
      */
         #[link_name =
-              "_ZN7SkImage24MakeFromNV12TexturesCopyEP9GrContext15SkYUVColorSpacePKlPK7SkTSizeIiE15GrSurfaceOrigin5sk_spI12SkColorSpaceE"]
+              "?MakeFromNV12TexturesCopy@SkImage@@SA?AV?$sk_sp@VSkImage@@@@PEAVGrContext@@W4SkYUVColorSpace@@QEB_JQEBU?$SkTSize@H@@W4GrSurfaceOrigin@@V?$sk_sp@VSkColorSpace@@@@@Z"]
         pub fn SkImage_MakeFromNV12TexturesCopy(arg1: *mut root::GrContext,
                                                 arg2: root::SkYUVColorSpace,
                                                 nv12TextureHandles:
@@ -9076,7 +7483,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN7SkImage15MakeFromPictureE5sk_spI9SkPictureERK7SkTSizeIiEPK8SkMatrixPK7SkPaint"]
+              "?MakeFromPicture@SkImage@@SA?AV?$sk_sp@VSkImage@@@@V?$sk_sp@VSkPicture@@@@AEBU?$SkTSize@H@@PEBVSkMatrix@@PEBVSkPaint@@@Z"]
         pub fn SkImage_MakeFromPicture(arg1: root::sk_sp<root::SkPicture>,
                                        dimensions: *const root::SkISize,
                                        arg2: *const root::SkMatrix,
@@ -9085,14 +7492,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN7SkImage21MakeTextureFromPixmapEP9GrContextRK8SkPixmap10SkBudgeted"]
+              "?MakeTextureFromPixmap@SkImage@@SA?AV?$sk_sp@VSkImage@@@@PEAVGrContext@@AEBVSkPixmap@@W4SkBudgeted@@@Z"]
         pub fn SkImage_MakeTextureFromPixmap(arg1: *mut root::GrContext,
                                              arg2: *const root::SkPixmap,
                                              budgeted: root::SkBudgeted)
          -> root::sk_sp<root::SkImage>;
     }
     extern "C" {
-        #[link_name = "_ZNK7SkImage9alphaTypeEv"]
+        #[link_name = "?alphaType@SkImage@@QEBA?AW4SkAlphaType@@XZ"]
         pub fn SkImage_alphaType(this: *const root::SkImage)
          -> root::SkAlphaType;
     }
@@ -9100,7 +7507,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Returns true fi the image will be drawn as a mask, with no intrinsic color of its own.
      */
-        #[link_name = "_ZNK7SkImage11isAlphaOnlyEv"]
+        #[link_name = "?isAlphaOnly@SkImage@@QEBA_NXZ"]
         pub fn SkImage_isAlphaOnly(this: *const root::SkImage) -> bool;
     }
     extern "C" {
@@ -9109,7 +7516,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * planes and rowBytes arrays are ordered [y, u, v].
      */
         #[link_name =
-              "_ZNK7SkImage14readYUV8PlanesEPK7SkTSizeIiEPKPvPKm15SkYUVColorSpace"]
+              "?readYUV8Planes@SkImage@@QEBA_NQEBU?$SkTSize@H@@QEBQEAXQEB_KW4SkYUVColorSpace@@@Z"]
         pub fn SkImage_readYUV8Planes(this: *const root::SkImage,
                                       arg1: *mut root::SkISize,
                                       planes:
@@ -9119,7 +7526,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZNK7SkImage10makeShaderEN8SkShader8TileModeES1_PK8SkMatrix"]
+              "?makeShader@SkImage@@QEBA?AV?$sk_sp@VSkShader@@@@W4TileMode@SkShader@@0PEBVSkMatrix@@@Z"]
         pub fn SkImage_makeShader(this: *const root::SkImage,
                                   arg1: root::SkShader_TileMode,
                                   arg2: root::SkShader_TileMode,
@@ -9134,7 +7541,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  On failure, return false and ignore the pixmap parameter.
      */
-        #[link_name = "_ZNK7SkImage10peekPixelsEP8SkPixmap"]
+        #[link_name = "?peekPixels@SkImage@@QEBA_NPEAVSkPixmap@@@Z"]
         pub fn SkImage_peekPixels(this: *const root::SkImage,
                                   pixmap: *mut root::SkPixmap) -> bool;
     }
@@ -9151,12 +7558,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If the image will drawn to a GPU-backed canvas or surface, pass the associated GrContext.
      *  If the image will be drawn to any other type of canvas or surface, pass null.
      */
-        #[link_name = "_ZNK7SkImage7prerollEP9GrContext"]
+        #[link_name = "?preroll@SkImage@@QEBAXPEAVGrContext@@@Z"]
         pub fn SkImage_preroll(this: *const root::SkImage,
                                arg1: *mut root::GrContext);
     }
     extern "C" {
-        #[link_name = "_ZNK7SkImage10getTextureEv"]
+        #[link_name = "?getTexture@SkImage@@QEBAPEAVGrTexture@@XZ"]
         pub fn SkImage_getTexture(this: *const root::SkImage)
          -> *mut root::GrTexture;
     }
@@ -9164,7 +7571,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      *  Returns true if the image is texture backed.
      */
-        #[link_name = "_ZNK7SkImage15isTextureBackedEv"]
+        #[link_name = "?isTextureBacked@SkImage@@QEBA_NXZ"]
         pub fn SkImage_isTextureBacked(this: *const root::SkImage) -> bool;
     }
     extern "C" {
@@ -9173,7 +7580,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  GrContext will issue to the backend API any deferred IO operations on the texture before
      *  returning.
      */
-        #[link_name = "_ZNK7SkImage16getTextureHandleEb"]
+        #[link_name = "?getTextureHandle@SkImage@@QEBA_J_N@Z"]
         pub fn SkImage_getTextureHandle(this: *const root::SkImage,
                                         flushPendingGrContextIO: bool)
          -> root::GrBackendObject;
@@ -9198,7 +7605,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  - If the requested colortype/alphatype cannot be converted from the image's types.
      */
         #[link_name =
-              "_ZNK7SkImage10readPixelsERK11SkImageInfoPvmiiNS_11CachingHintE"]
+              "?readPixels@SkImage@@QEBA_NAEBUSkImageInfo@@PEAX_KHHW4CachingHint@1@@Z"]
         pub fn SkImage_readPixels(this: *const root::SkImage,
                                   dstInfo: *const root::SkImageInfo,
                                   dstPixels: *mut ::std::os::raw::c_void,
@@ -9209,7 +7616,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZNK7SkImage10readPixelsERK8SkPixmapiiNS_11CachingHintE"]
+              "?readPixels@SkImage@@QEBA_NAEBVSkPixmap@@HHW4CachingHint@1@@Z"]
         pub fn SkImage_readPixels1(this: *const root::SkImage,
                                    dst: *const root::SkPixmap,
                                    srcX: ::std::os::raw::c_int,
@@ -9225,7 +7632,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  specified filter-quality.
      */
         #[link_name =
-              "_ZNK7SkImage11scalePixelsERK8SkPixmap15SkFilterQualityNS_11CachingHintE"]
+              "?scalePixels@SkImage@@QEBA_NAEBVSkPixmap@@W4SkFilterQuality@@W4CachingHint@1@@Z"]
         pub fn SkImage_scalePixels(this: *const root::SkImage,
                                    dst: *const root::SkPixmap,
                                    arg1: root::SkFilterQuality,
@@ -9242,7 +7649,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Note: this will attempt to encode the image's pixels in the specified format,
      *  even if the image returns a data from refEncoded(). That data will be ignored.
      */
-        #[link_name = "_ZNK7SkImage6encodeE20SkEncodedImageFormati"]
+        #[link_name =
+              "?encode@SkImage@@QEBAPEAVSkData@@W4SkEncodedImageFormat@@H@Z"]
         pub fn SkImage_encode(this: *const root::SkImage,
                               arg1: root::SkEncodedImageFormat,
                               quality: ::std::os::raw::c_int)
@@ -9263,7 +7671,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If no compatible encoded data exists and encoding fails, this method will also
      *  fail (return NULL).
      */
-        #[link_name = "_ZNK7SkImage6encodeEP17SkPixelSerializer"]
+        #[link_name =
+              "?encode@SkImage@@QEBAPEAVSkData@@PEAVSkPixelSerializer@@@Z"]
         pub fn SkImage_encode1(this: *const root::SkImage,
                                arg1: *mut root::SkPixelSerializer)
          -> *mut root::SkData;
@@ -9278,12 +7687,12 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  Note: to force the image to return its contents as encoded data, try calling encode(...).
      */
-        #[link_name = "_ZNK7SkImage10refEncodedEv"]
+        #[link_name = "?refEncoded@SkImage@@QEBAPEAVSkData@@XZ"]
         pub fn SkImage_refEncoded(this: *const root::SkImage)
          -> *mut root::SkData;
     }
     extern "C" {
-        #[link_name = "_ZNK7SkImage8toStringEP8SkString"]
+        #[link_name = "?toString@SkImage@@QEBAPEBDPEAVSkString@@@Z"]
         pub fn SkImage_toString(this: *const root::SkImage,
                                 arg1: *mut root::SkString)
          -> *const ::std::os::raw::c_char;
@@ -9296,7 +7705,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If subset does not intersect the bounds of this image, or the copy/share cannot be made,
      *  NULL will be returned.
      */
-        #[link_name = "_ZNK7SkImage10makeSubsetERK7SkIRect"]
+        #[link_name =
+              "?makeSubset@SkImage@@QEBA?AV?$sk_sp@VSkImage@@@@AEBUSkIRect@@@Z"]
         pub fn SkImage_makeSubset(this: *const root::SkImage,
                                   subset: *const root::SkIRect)
          -> root::sk_sp<root::SkImage>;
@@ -9307,7 +7717,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  transformation is required, the returned image may be the same as this image. If the this
      *  image is from a different GrContext, this will fail.
      */
-        #[link_name = "_ZNK7SkImage16makeTextureImageEP9GrContext"]
+        #[link_name =
+              "?makeTextureImage@SkImage@@QEBA?AV?$sk_sp@VSkImage@@@@PEAVGrContext@@@Z"]
         pub fn SkImage_makeTextureImage(this: *const root::SkImage,
                                         arg1: *mut root::GrContext)
          -> root::sk_sp<root::SkImage>;
@@ -9317,7 +7728,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * If the image is texture-backed this will make a raster copy of it (or nullptr if reading back
      * the pixels fails). Otherwise, it returns the original image.
      */
-        #[link_name = "_ZNK7SkImage19makeNonTextureImageEv"]
+        #[link_name =
+              "?makeNonTextureImage@SkImage@@QEBA?AV?$sk_sp@VSkImage@@@@XZ"]
         pub fn SkImage_makeNonTextureImage(this: *const root::SkImage)
          -> root::sk_sp<root::SkImage>;
     }
@@ -9340,7 +7752,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  caller.
      */
         #[link_name =
-              "_ZNK7SkImage14makeWithFilterEPK13SkImageFilterRK7SkIRectS5_PS3_P8SkIPoint"]
+              "?makeWithFilter@SkImage@@QEBA?AV?$sk_sp@VSkImage@@@@PEBVSkImageFilter@@AEBUSkIRect@@1PEAU4@PEAUSkIPoint@@@Z"]
         pub fn SkImage_makeWithFilter(this: *const root::SkImage,
                                       filter: *const root::SkImageFilter,
                                       subset: *const root::SkIRect,
@@ -9375,7 +7787,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * for building them (gamma-correct or not).
      */
         #[link_name =
-              "_ZNK7SkImage27getDeferredTextureImageDataERK24GrContextThreadSafeProxyPKNS_31DeferredTextureImageUsageParamsEiPvP12SkColorSpace"]
+              "?getDeferredTextureImageData@SkImage@@QEBA_KAEBVGrContextThreadSafeProxy@@QEBUDeferredTextureImageUsageParams@1@HPEAXPEAVSkColorSpace@@@Z"]
         pub fn SkImage_getDeferredTextureImageData(this: *const root::SkImage,
                                                    arg1:
                                                        *const root::GrContextThreadSafeProxy,
@@ -9396,7 +7808,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * getDeferredTextureImageData.
      */
         #[link_name =
-              "_ZN7SkImage32MakeFromDeferredTextureImageDataEP9GrContextPKv10SkBudgeted"]
+              "?MakeFromDeferredTextureImageData@SkImage@@SA?AV?$sk_sp@VSkImage@@@@PEAVGrContext@@PEBXW4SkBudgeted@@@Z"]
         pub fn SkImage_MakeFromDeferredTextureImageData(arg1:
                                                             *mut root::GrContext,
                                                         arg2:
@@ -9416,7 +7828,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  to empty.
      */
         #[link_name =
-              "_ZNK7SkImage14asLegacyBitmapEP8SkBitmapNS_16LegacyBitmapModeE"]
+              "?asLegacyBitmap@SkImage@@QEBA_NPEAVSkBitmap@@W4LegacyBitmapMode@1@@Z"]
         pub fn SkImage_asLegacyBitmap(this: *const root::SkImage,
                                       arg1: *mut root::SkBitmap,
                                       arg2: root::SkImage_LegacyBitmapMode)
@@ -9427,7 +7839,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Returns true if the image is backed by an image-generator or other src that creates
      *  (and caches) its pixels / texture on-demand.
      */
-        #[link_name = "_ZNK7SkImage15isLazyGeneratedEv"]
+        #[link_name = "?isLazyGenerated@SkImage@@QEBA_NXZ"]
         pub fn SkImage_isLazyGenerated(this: *const root::SkImage) -> bool;
     }
     impl SkImage {
@@ -9710,7 +8122,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         fn clone(&self) -> Self { *self }
     }
     #[test]
-    fn __bindgen_test_layout_template_19() {
+    fn __bindgen_test_layout_template_15() {
         assert_eq!(::std::mem::size_of::<root::std::unique_ptr<root::SkCanvas,
                                             root::std::default_delete<root::SkCanvas>>>()
                    , 8usize);
@@ -9719,13 +8131,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
                    , 8usize);
     }
     #[test]
-    fn __bindgen_test_layout_template_20() {
+    fn __bindgen_test_layout_template_16() {
         assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkSurface>>() ,
                    8usize);
         assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkSurface>>() ,
                    8usize);
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkClipOp {
         kDifference_SkClipOp = 0,
@@ -9778,7 +8190,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub const SkCanvas_PrivateSaveLayerFlags_kDontClipToLayer_PrivateSaveLayerFlag:
               root::SkCanvas_PrivateSaveLayerFlags =
-        SkCanvas_PrivateSaveLayerFlags(2147483648);
+        SkCanvas_PrivateSaveLayerFlags(-2147483648);
     impl ::std::ops::BitOr<root::SkCanvas_PrivateSaveLayerFlags> for
      root::SkCanvas_PrivateSaveLayerFlags {
         type
@@ -9792,13 +8204,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     #[repr(C)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct SkCanvas_PrivateSaveLayerFlags(pub u32);
+    pub struct SkCanvas_PrivateSaveLayerFlags(pub i32);
     pub const SkCanvas_kIsOpaque_SaveLayerFlag: root::SkCanvas__bindgen_ty_1 =
         SkCanvas__bindgen_ty_1::kIsOpaque_SaveLayerFlag;
     pub const SkCanvas_kPreserveLCDText_SaveLayerFlag:
               root::SkCanvas__bindgen_ty_1 =
         SkCanvas__bindgen_ty_1::kPreserveLCDText_SaveLayerFlag;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkCanvas__bindgen_ty_1 {
         kIsOpaque_SaveLayerFlag = 1,
@@ -9821,14 +8233,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
     impl Clone for SkCanvas_SaveLayerRec {
         fn clone(&self) -> Self { *self }
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkCanvas_PointMode {
         kPoints_PointMode = 0,
         kLines_PointMode = 1,
         kPolygon_PointMode = 2,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     /**
      *  Controls the behavior at the edge of the src-rect, when specified in drawImageRect,
      *  trading off speed for exactness.
@@ -9888,7 +8300,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     impl Clone for SkCanvas_Lattice {
         fn clone(&self) -> Self { *self }
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkCanvas_VertexMode {
         kTriangles_VertexMode = 0,
@@ -9896,13 +8308,13 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kTriangleFan_VertexMode = 2,
     }
     pub type SkCanvas_ClipVisitor = root::SkCanvasClipVisitor;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkCanvas_SaveLayerStrategy {
         kFullLayer_SaveLayerStrategy = 0,
         kNoLayer_SaveLayerStrategy = 1,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkCanvas_ClipEdgeStyle {
         kHard_ClipEdgeStyle = 0,
@@ -9936,38 +8348,38 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         /** Cycle to the next device */
-        #[link_name = "_ZN8SkCanvas9LayerIter4nextEv"]
+        #[link_name = "?next@LayerIter@SkCanvas@@QEAAXXZ"]
         pub fn SkCanvas_LayerIter_next(this: *mut root::SkCanvas_LayerIter);
     }
     extern "C" {
-        #[link_name = "_ZNK8SkCanvas9LayerIter6deviceEv"]
+        #[link_name = "?device@LayerIter@SkCanvas@@QEBAPEAVSkBaseDevice@@XZ"]
         pub fn SkCanvas_LayerIter_device(this:
                                              *const root::SkCanvas_LayerIter)
          -> *mut root::SkBaseDevice;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkCanvas9LayerIter6matrixEv"]
+        #[link_name = "?matrix@LayerIter@SkCanvas@@QEBAAEBVSkMatrix@@XZ"]
         pub fn SkCanvas_LayerIter_matrix(this:
                                              *const root::SkCanvas_LayerIter)
          -> *const root::SkMatrix;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkCanvas9LayerIter4clipEv"]
+        #[link_name = "?clip@LayerIter@SkCanvas@@QEBAAEBVSkRasterClip@@XZ"]
         pub fn SkCanvas_LayerIter_clip(this: *const root::SkCanvas_LayerIter)
          -> *const root::SkRasterClip;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkCanvas9LayerIter5paintEv"]
+        #[link_name = "?paint@LayerIter@SkCanvas@@QEBAAEBVSkPaint@@XZ"]
         pub fn SkCanvas_LayerIter_paint(this: *const root::SkCanvas_LayerIter)
          -> *const root::SkPaint;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkCanvas9LayerIter1xEv"]
+        #[link_name = "?x@LayerIter@SkCanvas@@QEBAHXZ"]
         pub fn SkCanvas_LayerIter_x(this: *const root::SkCanvas_LayerIter)
          -> ::std::os::raw::c_int;
     }
     extern "C" {
-        #[link_name = "_ZNK8SkCanvas9LayerIter1yEv"]
+        #[link_name = "?y@LayerIter@SkCanvas@@QEBAHXZ"]
         pub fn SkCanvas_LayerIter_y(this: *const root::SkCanvas_LayerIter)
          -> ::std::os::raw::c_int;
     }
@@ -9999,7 +8411,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
             SkCanvas_LayerIter_y(&*self)
         }
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkCanvas_ShaderOverrideOpacity {
         kNone_ShaderOverrideOpacity = 0,
@@ -10020,7 +8432,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         SkCanvas__bindgen_ty_2::kMCRecCount;
     pub const SkCanvas_kDeviceCMSize: root::SkCanvas__bindgen_ty_2 =
         SkCanvas__bindgen_ty_2::kDeviceCMSize;
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkCanvas__bindgen_ty_2 {
         kMCRecSize = 128,
@@ -10046,7 +8458,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     #[repr(C)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub struct SkCanvas_InitFlags(pub u32);
+    pub struct SkCanvas_InitFlags(pub i32);
     #[repr(C)]
     #[derive(Debug)]
     pub struct SkCanvas_AutoValidateClip {
@@ -10081,7 +8493,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Note: it is valid to request a supported ImageInfo, but with zero
      *  dimensions.
      */
-        #[link_name = "_ZN8SkCanvas16MakeRasterDirectERK11SkImageInfoPvm"]
+        #[link_name =
+              "?MakeRasterDirect@SkCanvas@@SA?AV?$unique_ptr@VSkCanvas@@U?$default_delete@VSkCanvas@@@std@@@std@@AEBUSkImageInfo@@PEAX_K@Z"]
         pub fn SkCanvas_MakeRasterDirect(arg1: *const root::SkImageInfo,
                                          arg2: *mut ::std::os::raw::c_void,
                                          arg3: usize)
@@ -10090,7 +8503,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                                    root::std::default_delete<root::SkCanvas>>;
     }
     extern "C" {
-        #[link_name = "_ZN8SkCanvas11getMetaDataEv"]
+        #[link_name = "?getMetaData@SkCanvas@@QEAAAEAVSkMetaData@@XZ"]
         pub fn SkCanvas_getMetaData(this: *mut root::SkCanvas)
          -> *mut root::SkMetaData;
     }
@@ -10099,7 +8512,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Return ImageInfo for this canvas. If the canvas is not backed by pixels
      *  (cpu or gpu), then the info's ColorType will be kUnknown_SkColorType.
      */
-        #[link_name = "_ZNK8SkCanvas9imageInfoEv"]
+        #[link_name = "?imageInfo@SkCanvas@@QEBA?AUSkImageInfo@@XZ"]
         pub fn SkCanvas_imageInfo(this: *const root::SkCanvas)
          -> root::SkImageInfo;
     }
@@ -10109,7 +8522,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  for the canvas to the location supplied by the caller, and returns true. Otherwise,
      *  return false and leave the supplied props unchanged.
      */
-        #[link_name = "_ZNK8SkCanvas8getPropsEP14SkSurfaceProps"]
+        #[link_name = "?getProps@SkCanvas@@QEBA_NPEAVSkSurfaceProps@@@Z"]
         pub fn SkCanvas_getProps(this: *const root::SkCanvas,
                                  arg1: *mut root::SkSurfaceProps) -> bool;
     }
@@ -10119,11 +8532,11 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  backend this will resolve all rendering to the GPU surface backing the
      *  SkSurface that owns this canvas.
      */
-        #[link_name = "_ZN8SkCanvas5flushEv"]
+        #[link_name = "?flush@SkCanvas@@QEAAXXZ"]
         pub fn SkCanvas_flush(this: *mut root::SkCanvas);
     }
     extern "C" {
-        #[link_name = "_ZNK8SkCanvas9getDeviceEv"]
+        #[link_name = "?getDevice@SkCanvas@@IEBAPEAVSkBaseDevice@@XZ"]
         pub fn SkCanvas_getDevice(this: *const root::SkCanvas)
          -> *mut root::SkBaseDevice;
     }
@@ -10138,7 +8551,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  surface, then the new surface is created with default properties.
      */
         #[link_name =
-              "_ZN8SkCanvas11makeSurfaceERK11SkImageInfoPK14SkSurfaceProps"]
+              "?makeSurface@SkCanvas@@QEAA?AV?$sk_sp@VSkSurface@@@@AEBUSkImageInfo@@PEBVSkSurfaceProps@@@Z"]
         pub fn SkCanvas_makeSurface(this: *mut root::SkCanvas,
                                     arg1: *const root::SkImageInfo,
                                     arg2: *const root::SkSurfaceProps)
@@ -10149,7 +8562,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * Return the GPU context of the device that is associated with the canvas.
      * For a canvas with non-GPU device, NULL is returned.
      */
-        #[link_name = "_ZN8SkCanvas12getGrContextEv"]
+        #[link_name = "?getGrContext@SkCanvas@@QEAAPEAVGrContext@@XZ"]
         pub fn SkCanvas_getGrContext(this: *mut root::SkCanvas)
          -> *mut root::GrContext;
     }
@@ -10166,7 +8579,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  On failure, returns NULL and the info, rowBytes, and origin parameters are ignored.
      */
         #[link_name =
-              "_ZN8SkCanvas20accessTopLayerPixelsEP11SkImageInfoPmP8SkIPoint"]
+              "?accessTopLayerPixels@SkCanvas@@QEAAPEAXPEAUSkImageInfo@@PEA_KPEAUSkIPoint@@@Z"]
         pub fn SkCanvas_accessTopLayerPixels(this: *mut root::SkCanvas,
                                              info: *mut root::SkImageInfo,
                                              rowBytes: *mut usize,
@@ -10185,7 +8598,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  On failure, returns false and the pixmap parameter will be ignored.
      */
-        #[link_name = "_ZN8SkCanvas10peekPixelsEP8SkPixmap"]
+        #[link_name = "?peekPixels@SkCanvas@@QEAA_NPEAVSkPixmap@@@Z"]
         pub fn SkCanvas_peekPixels(this: *mut root::SkCanvas,
                                    arg1: *mut root::SkPixmap) -> bool;
     }
@@ -10209,7 +8622,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  - If the requested colortype/alphatype cannot be converted from the base-layer's types.
      *  - If this canvas is not backed by pixels (e.g. picture or PDF)
      */
-        #[link_name = "_ZN8SkCanvas10readPixelsERK11SkImageInfoPvmii"]
+        #[link_name =
+              "?readPixels@SkCanvas@@QEAA_NAEBUSkImageInfo@@PEAX_KHH@Z"]
         pub fn SkCanvas_readPixels(this: *mut root::SkCanvas,
                                    dstInfo: *const root::SkImageInfo,
                                    dstPixels: *mut ::std::os::raw::c_void,
@@ -10223,7 +8637,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If not, it will attempt to call allocPixels(). If this fails, it will return false. If not,
      *  it calls through to readPixels(info) and returns its result.
      */
-        #[link_name = "_ZN8SkCanvas10readPixelsEP8SkBitmapii"]
+        #[link_name = "?readPixels@SkCanvas@@QEAA_NPEAVSkBitmap@@HH@Z"]
         pub fn SkCanvas_readPixels1(this: *mut root::SkCanvas,
                                     bitmap: *mut root::SkBitmap,
                                     srcX: ::std::os::raw::c_int,
@@ -10236,7 +8650,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  allocated in bitmap and true returned. On failure, false is returned and bitmap will be
      *  set to empty.
      */
-        #[link_name = "_ZN8SkCanvas10readPixelsERK7SkIRectP8SkBitmap"]
+        #[link_name =
+              "?readPixels@SkCanvas@@QEAA_NAEBUSkIRect@@PEAVSkBitmap@@@Z"]
         pub fn SkCanvas_readPixels2(this: *mut root::SkCanvas,
                                     srcRect: *const root::SkIRect,
                                     bitmap: *mut root::SkBitmap) -> bool;
@@ -10260,7 +8675,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  - If the src colortype/alphatype cannot be converted to the canvas' types
      *  - If this canvas is not backed by pixels (e.g. picture or PDF)
      */
-        #[link_name = "_ZN8SkCanvas11writePixelsERK11SkImageInfoPKvmii"]
+        #[link_name =
+              "?writePixels@SkCanvas@@QEAA_NAEBUSkImageInfo@@PEBX_KHH@Z"]
         pub fn SkCanvas_writePixels(this: *mut root::SkCanvas,
                                     arg1: *const root::SkImageInfo,
                                     pixels: *const ::std::os::raw::c_void,
@@ -10272,7 +8688,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Helper for calling writePixels(info) by passing its pixels and rowbytes. If the bitmap
      *  is just wrapping a texture, returns false and does nothing.
      */
-        #[link_name = "_ZN8SkCanvas11writePixelsERK8SkBitmapii"]
+        #[link_name = "?writePixels@SkCanvas@@QEAA_NAEBVSkBitmap@@HH@Z"]
         pub fn SkCanvas_writePixels1(this: *mut root::SkCanvas,
                                      bitmap: *const root::SkBitmap,
                                      x: ::std::os::raw::c_int,
@@ -10288,7 +8704,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
 
         @return The value to pass to restoreToCount() to balance this save()
     */
-        #[link_name = "_ZN8SkCanvas4saveEv"]
+        #[link_name = "?save@SkCanvas@@QEAAHXZ"]
         pub fn SkCanvas_save(this: *mut root::SkCanvas)
          -> ::std::os::raw::c_int;
     }
@@ -10305,7 +8721,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
                      offscreen when restore() is called
         @return The value to pass to restoreToCount() to balance this save()
     */
-        #[link_name = "_ZN8SkCanvas9saveLayerEPK6SkRectPK7SkPaint"]
+        #[link_name = "?saveLayer@SkCanvas@@QEAAHPEBUSkRect@@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_saveLayer(this: *mut root::SkCanvas,
                                   bounds: *const root::SkRect,
                                   paint: *const root::SkPaint)
@@ -10318,7 +8734,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  only draw on top of opaque sections of the layer to get good results.
      */
         #[link_name =
-              "_ZN8SkCanvas32saveLayerPreserveLCDTextRequestsEPK6SkRectPK7SkPaint"]
+              "?saveLayerPreserveLCDTextRequests@SkCanvas@@QEAAHPEBUSkRect@@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_saveLayerPreserveLCDTextRequests(this:
                                                              *mut root::SkCanvas,
                                                          bounds:
@@ -10339,14 +8755,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param alpha  This is applied to the offscreen when restore() is called.
         @return The value to pass to restoreToCount() to balance this save()
     */
-        #[link_name = "_ZN8SkCanvas14saveLayerAlphaEPK6SkRectj"]
+        #[link_name = "?saveLayerAlpha@SkCanvas@@QEAAHPEBUSkRect@@I@Z"]
         pub fn SkCanvas_saveLayerAlpha(this: *mut root::SkCanvas,
                                        bounds: *const root::SkRect,
                                        alpha: root::U8CPU)
          -> ::std::os::raw::c_int;
     }
     extern "C" {
-        #[link_name = "_ZN8SkCanvas9saveLayerERKNS_12SaveLayerRecE"]
+        #[link_name = "?saveLayer@SkCanvas@@QEAAHAEBUSaveLayerRec@1@@Z"]
         pub fn SkCanvas_saveLayer1(this: *mut root::SkCanvas,
                                    arg1: *const root::SkCanvas_SaveLayerRec)
          -> ::std::os::raw::c_int;
@@ -10357,7 +8773,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         call.
         It is an error to call restore() more times than save() was called.
     */
-        #[link_name = "_ZN8SkCanvas7restoreEv"]
+        #[link_name = "?restore@SkCanvas@@QEAAXXZ"]
         pub fn SkCanvas_restore(this: *mut root::SkCanvas);
     }
     extern "C" {
@@ -10365,7 +8781,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         This will equal # save() calls - # restore() calls + 1. The save count on
         a new canvas is 1.
     */
-        #[link_name = "_ZNK8SkCanvas12getSaveCountEv"]
+        #[link_name = "?getSaveCount@SkCanvas@@QEBAHXZ"]
         pub fn SkCanvas_getSaveCount(this: *const root::SkCanvas)
          -> ::std::os::raw::c_int;
     }
@@ -10376,7 +8792,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pass saveCount == 1.
         @param saveCount    The number of save() levels to restore from
     */
-        #[link_name = "_ZN8SkCanvas14restoreToCountEi"]
+        #[link_name = "?restoreToCount@SkCanvas@@QEAAXH@Z"]
         pub fn SkCanvas_restoreToCount(this: *mut root::SkCanvas,
                                        saveCount: ::std::os::raw::c_int);
     }
@@ -10385,7 +8801,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param dx   The distance to translate in X
         @param dy   The distance to translate in Y
     */
-        #[link_name = "_ZN8SkCanvas9translateEff"]
+        #[link_name = "?translate@SkCanvas@@QEAAXMM@Z"]
         pub fn SkCanvas_translate(this: *mut root::SkCanvas,
                                   dx: root::SkScalar, dy: root::SkScalar);
     }
@@ -10394,7 +8810,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param sx   The amount to scale in X
         @param sy   The amount to scale in Y
     */
-        #[link_name = "_ZN8SkCanvas5scaleEff"]
+        #[link_name = "?scale@SkCanvas@@QEAAXMM@Z"]
         pub fn SkCanvas_scale(this: *mut root::SkCanvas, sx: root::SkScalar,
                               sy: root::SkScalar);
     }
@@ -10402,7 +8818,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcat the current matrix with the specified rotation about the origin.
         @param degrees  The amount to rotate, in degrees
     */
-        #[link_name = "_ZN8SkCanvas6rotateEf"]
+        #[link_name = "?rotate@SkCanvas@@QEAAXM@Z"]
         pub fn SkCanvas_rotate(this: *mut root::SkCanvas,
                                degrees: root::SkScalar);
     }
@@ -10412,7 +8828,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param px  The x coordinate of the point to rotate about.
         @param py  The y coordinate of the point to rotate about.
     */
-        #[link_name = "_ZN8SkCanvas6rotateEfff"]
+        #[link_name = "?rotate@SkCanvas@@QEAAXMMM@Z"]
         pub fn SkCanvas_rotate1(this: *mut root::SkCanvas,
                                 degrees: root::SkScalar, px: root::SkScalar,
                                 py: root::SkScalar);
@@ -10422,7 +8838,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param sx   The amount to skew in X
         @param sy   The amount to skew in Y
     */
-        #[link_name = "_ZN8SkCanvas4skewEff"]
+        #[link_name = "?skew@SkCanvas@@QEAAXMM@Z"]
         pub fn SkCanvas_skew(this: *mut root::SkCanvas, sx: root::SkScalar,
                              sy: root::SkScalar);
     }
@@ -10430,7 +8846,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Preconcat the current matrix with the specified matrix.
         @param matrix   The matrix to preconcatenate with the current matrix
     */
-        #[link_name = "_ZN8SkCanvas6concatERK8SkMatrix"]
+        #[link_name = "?concat@SkCanvas@@QEAAXAEBVSkMatrix@@@Z"]
         pub fn SkCanvas_concat(this: *mut root::SkCanvas,
                                matrix: *const root::SkMatrix);
     }
@@ -10438,14 +8854,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Replace the current matrix with a copy of the specified matrix.
         @param matrix The matrix that will be copied into the current matrix.
     */
-        #[link_name = "_ZN8SkCanvas9setMatrixERK8SkMatrix"]
+        #[link_name = "?setMatrix@SkCanvas@@QEAAXAEBVSkMatrix@@@Z"]
         pub fn SkCanvas_setMatrix(this: *mut root::SkCanvas,
                                   matrix: *const root::SkMatrix);
     }
     extern "C" {
         /** Helper for setMatrix(identity). Sets the current matrix to identity.
     */
-        #[link_name = "_ZN8SkCanvas11resetMatrixEv"]
+        #[link_name = "?resetMatrix@SkCanvas@@QEAAXXZ"]
         pub fn SkCanvas_resetMatrix(this: *mut root::SkCanvas);
     }
     extern "C" {
@@ -10455,7 +8871,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param op The region op to apply to the current clip
      *  @param doAntiAlias true if the clip should be antialiased
      */
-        #[link_name = "_ZN8SkCanvas8clipRectERK6SkRect8SkClipOpb"]
+        #[link_name = "?clipRect@SkCanvas@@QEAAXAEBUSkRect@@W4SkClipOp@@_N@Z"]
         pub fn SkCanvas_clipRect(this: *mut root::SkCanvas,
                                  rect: *const root::SkRect,
                                  arg1: root::SkClipOp, doAntiAlias: bool);
@@ -10467,7 +8883,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param op The region op to apply to the current clip
      *  @param doAntiAlias true if the clip should be antialiased
      */
-        #[link_name = "_ZN8SkCanvas9clipRRectERK7SkRRect8SkClipOpb"]
+        #[link_name =
+              "?clipRRect@SkCanvas@@QEAAXAEBVSkRRect@@W4SkClipOp@@_N@Z"]
         pub fn SkCanvas_clipRRect(this: *mut root::SkCanvas,
                                   rrect: *const root::SkRRect,
                                   op: root::SkClipOp, doAntiAlias: bool);
@@ -10479,7 +8896,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param op The region op to apply to the current clip
      *  @param doAntiAlias true if the clip should be antialiased
      */
-        #[link_name = "_ZN8SkCanvas8clipPathERK6SkPath8SkClipOpb"]
+        #[link_name = "?clipPath@SkCanvas@@QEAAXAEBVSkPath@@W4SkClipOp@@_N@Z"]
         pub fn SkCanvas_clipPath(this: *mut root::SkCanvas,
                                  path: *const root::SkPath,
                                  op: root::SkClipOp, doAntiAlias: bool);
@@ -10492,7 +8909,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param deviceRgn    The region to apply to the current clip
         @param op The region op to apply to the current clip
     */
-        #[link_name = "_ZN8SkCanvas10clipRegionERK8SkRegion8SkClipOp"]
+        #[link_name =
+              "?clipRegion@SkCanvas@@QEAAXAEBVSkRegion@@W4SkClipOp@@@Z"]
         pub fn SkCanvas_clipRegion(this: *mut root::SkCanvas,
                                    deviceRgn: *const root::SkRegion,
                                    op: root::SkClipOp);
@@ -10506,7 +8924,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @return true if the rect (transformed by the canvas' matrix) does not
                      intersect with the canvas' clip
     */
-        #[link_name = "_ZNK8SkCanvas11quickRejectERK6SkRect"]
+        #[link_name = "?quickReject@SkCanvas@@QEBA_NAEBUSkRect@@@Z"]
         pub fn SkCanvas_quickReject(this: *const root::SkCanvas,
                                     rect: *const root::SkRect) -> bool;
     }
@@ -10521,7 +8939,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @return true if the path (transformed by the canvas' matrix) does not
                      intersect with the canvas' clip
     */
-        #[link_name = "_ZNK8SkCanvas11quickRejectERK6SkPath"]
+        #[link_name = "?quickReject@SkCanvas@@QEBA_NAEBVSkPath@@@Z"]
         pub fn SkCanvas_quickReject1(this: *const root::SkCanvas,
                                      path: *const root::SkPath) -> bool;
     }
@@ -10534,7 +8952,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param b    the blue component (0..255) of the color to fill the canvas
         @param mode the mode to apply the color in (defaults to SrcOver)
     */
-        #[link_name = "_ZN8SkCanvas8drawARGBEjjjj11SkBlendMode"]
+        #[link_name = "?drawARGB@SkCanvas@@QEAAXIIIIW4SkBlendMode@@@Z"]
         pub fn SkCanvas_drawARGB(this: *mut root::SkCanvas, a: root::U8CPU,
                                  r: root::U8CPU, g: root::U8CPU,
                                  b: root::U8CPU, mode: root::SkBlendMode);
@@ -10545,7 +8963,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param color    the color to draw with
         @param mode the mode to apply the color in (defaults to SrcOver)
     */
-        #[link_name = "_ZN8SkCanvas9drawColorEj11SkBlendMode"]
+        #[link_name = "?drawColor@SkCanvas@@QEAAXIW4SkBlendMode@@@Z"]
         pub fn SkCanvas_drawColor(this: *mut root::SkCanvas,
                                   color: root::SkColor,
                                   mode: root::SkBlendMode);
@@ -10556,7 +8974,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  specified paint.
      *  @param paint    The paint used to fill the canvas
      */
-        #[link_name = "_ZN8SkCanvas9drawPaintERK7SkPaint"]
+        #[link_name = "?drawPaint@SkCanvas@@QEAAXAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPaint(this: *mut root::SkCanvas,
                                   paint: *const root::SkPaint);
     }
@@ -10583,7 +9001,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param paint    The paint used to draw the points
     */
         #[link_name =
-              "_ZN8SkCanvas10drawPointsENS_9PointModeEmPK7SkPointRK7SkPaint"]
+              "?drawPoints@SkCanvas@@QEAAXW4PointMode@1@_KQEBUSkPoint@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPoints(this: *mut root::SkCanvas,
                                    mode: root::SkCanvas_PointMode,
                                    count: usize, pts: *const root::SkPoint,
@@ -10593,7 +9011,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /** Helper method for drawing a single point. See drawPoints() for a more
         details.
     */
-        #[link_name = "_ZN8SkCanvas9drawPointEffRK7SkPaint"]
+        #[link_name = "?drawPoint@SkCanvas@@QEAAXMMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPoint(this: *mut root::SkCanvas,
                                   x: root::SkScalar, y: root::SkScalar,
                                   paint: *const root::SkPaint);
@@ -10604,7 +9022,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param y        The Y coordiante of which pixel to draw
         @param color    The color to draw
     */
-        #[link_name = "_ZN8SkCanvas9drawPointEffj"]
+        #[link_name = "?drawPoint@SkCanvas@@QEAAXMMI@Z"]
         pub fn SkCanvas_drawPoint1(this: *mut root::SkCanvas,
                                    x: root::SkScalar, y: root::SkScalar,
                                    color: root::SkColor);
@@ -10619,7 +9037,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param y1    The y-coordinate of the end point of the line
         @param paint The paint used to draw the line
     */
-        #[link_name = "_ZN8SkCanvas8drawLineEffffRK7SkPaint"]
+        #[link_name = "?drawLine@SkCanvas@@QEAAXMMMMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawLine(this: *mut root::SkCanvas,
                                  x0: root::SkScalar, y0: root::SkScalar,
                                  x1: root::SkScalar, y1: root::SkScalar,
@@ -10631,7 +9049,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param rect     The rect to be drawn
         @param paint    The paint used to draw the rect
     */
-        #[link_name = "_ZN8SkCanvas8drawRectERK6SkRectRK7SkPaint"]
+        #[link_name = "?drawRect@SkCanvas@@QEAAXAEBUSkRect@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawRect(this: *mut root::SkCanvas,
                                  rect: *const root::SkRect,
                                  paint: *const root::SkPaint);
@@ -10645,7 +9063,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param bottom   The bottom side of the rectangle to be drawn
         @param paint    The paint used to draw the rect
     */
-        #[link_name = "_ZN8SkCanvas14drawRectCoordsEffffRK7SkPaint"]
+        #[link_name = "?drawRectCoords@SkCanvas@@QEAAXMMMMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawRectCoords(this: *mut root::SkCanvas,
                                        left: root::SkScalar,
                                        top: root::SkScalar,
@@ -10658,7 +9076,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param region   The region to be drawn
         @param paint    The paint used to draw the region
     */
-        #[link_name = "_ZN8SkCanvas10drawRegionERK8SkRegionRK7SkPaint"]
+        #[link_name =
+              "?drawRegion@SkCanvas@@QEAAXAEBVSkRegion@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawRegion(this: *mut root::SkCanvas,
                                    region: *const root::SkRegion,
                                    paint: *const root::SkPaint);
@@ -10669,7 +9088,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param oval     The rectangle bounds of the oval to be drawn
         @param paint    The paint used to draw the oval
     */
-        #[link_name = "_ZN8SkCanvas8drawOvalERK6SkRectRK7SkPaint"]
+        #[link_name = "?drawOval@SkCanvas@@QEAAXAEBUSkRect@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawOval(this: *mut root::SkCanvas,
                                  oval: *const root::SkRect,
                                  arg1: *const root::SkPaint);
@@ -10682,7 +9101,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param rrect    The round-rect to draw
      *  @param paint    The paint used to draw the round-rect
      */
-        #[link_name = "_ZN8SkCanvas9drawRRectERK7SkRRectRK7SkPaint"]
+        #[link_name =
+              "?drawRRect@SkCanvas@@QEAAXAEBVSkRRect@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawRRect(this: *mut root::SkCanvas,
                                   rrect: *const root::SkRRect,
                                   paint: *const root::SkPaint);
@@ -10692,7 +9112,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Draw the annulus formed by the outer and inner rrects. The results
      *  are undefined if the outer does not contain the inner.
      */
-        #[link_name = "_ZN8SkCanvas10drawDRRectERK7SkRRectS2_RK7SkPaint"]
+        #[link_name =
+              "?drawDRRect@SkCanvas@@QEAAXAEBVSkRRect@@0AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawDRRect(this: *mut root::SkCanvas,
                                    outer: *const root::SkRRect,
                                    inner: *const root::SkRRect,
@@ -10707,7 +9128,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param radius   The radius of the cirle to be drawn
         @param paint    The paint used to draw the circle
     */
-        #[link_name = "_ZN8SkCanvas10drawCircleEfffRK7SkPaint"]
+        #[link_name = "?drawCircle@SkCanvas@@QEAAXMMMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawCircle(this: *mut root::SkCanvas,
                                    cx: root::SkScalar, cy: root::SkScalar,
                                    radius: root::SkScalar,
@@ -10728,7 +9149,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param useCenter true means include the center of the oval.
         @param paint    The paint used to draw the arc
     */
-        #[link_name = "_ZN8SkCanvas7drawArcERK6SkRectffbRK7SkPaint"]
+        #[link_name =
+              "?drawArc@SkCanvas@@QEAAXAEBUSkRect@@MM_NAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawArc(this: *mut root::SkCanvas,
                                 oval: *const root::SkRect,
                                 startAngle: root::SkScalar,
@@ -10743,7 +9165,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param ry       The y-radius of the oval used to round the corners
         @param paint    The paint used to draw the roundRect
     */
-        #[link_name = "_ZN8SkCanvas13drawRoundRectERK6SkRectffRK7SkPaint"]
+        #[link_name =
+              "?drawRoundRect@SkCanvas@@QEAAXAEBUSkRect@@MMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawRoundRect(this: *mut root::SkCanvas,
                                       rect: *const root::SkRect,
                                       rx: root::SkScalar, ry: root::SkScalar,
@@ -10755,7 +9178,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param path     The path to be drawn
         @param paint    The paint used to draw the path
     */
-        #[link_name = "_ZN8SkCanvas8drawPathERK6SkPathRK7SkPaint"]
+        #[link_name = "?drawPath@SkCanvas@@QEAAXAEBVSkPath@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPath(this: *mut root::SkCanvas,
                                  path: *const root::SkPath,
                                  paint: *const root::SkPaint);
@@ -10769,7 +9192,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param top      The position of the top side of the image being drawn
         @param paint    The paint used to draw the image, or NULL
      */
-        #[link_name = "_ZN8SkCanvas9drawImageEPK7SkImageffPK7SkPaint"]
+        #[link_name =
+              "?drawImage@SkCanvas@@QEAAXPEBVSkImage@@MMPEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawImage(this: *mut root::SkCanvas,
                                   image: *const root::SkImage,
                                   left: root::SkScalar, top: root::SkScalar,
@@ -10788,7 +9212,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param constraint Control the tradeoff between speed and exactness w.r.t. the src-rect.
      */
         #[link_name =
-              "_ZN8SkCanvas13drawImageRectEPK7SkImageRK6SkRectS5_PK7SkPaintNS_17SrcRectConstraintE"]
+              "?drawImageRect@SkCanvas@@QEAAXPEBVSkImage@@AEBUSkRect@@1PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_drawImageRect(this: *mut root::SkCanvas,
                                       image: *const root::SkImage,
                                       src: *const root::SkRect,
@@ -10799,7 +9223,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas13drawImageRectEPK7SkImageRK7SkIRectRK6SkRectPK7SkPaintNS_17SrcRectConstraintE"]
+              "?drawImageRect@SkCanvas@@QEAAXPEBVSkImage@@AEBUSkIRect@@AEBUSkRect@@PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_drawImageRect1(this: *mut root::SkCanvas,
                                        image: *const root::SkImage,
                                        isrc: *const root::SkIRect,
@@ -10810,7 +9234,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas13drawImageRectEPK7SkImageRK6SkRectPK7SkPaintNS_17SrcRectConstraintE"]
+              "?drawImageRect@SkCanvas@@QEAAXPEBVSkImage@@AEBUSkRect@@PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_drawImageRect2(this: *mut root::SkCanvas,
                                        image: *const root::SkImage,
                                        dst: *const root::SkRect,
@@ -10834,7 +9258,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  - The sides (along the shrink axis) and center are not drawn
      */
         #[link_name =
-              "_ZN8SkCanvas13drawImageNineEPK7SkImageRK7SkIRectRK6SkRectPK7SkPaint"]
+              "?drawImageNine@SkCanvas@@QEAAXPEBVSkImage@@AEBUSkIRect@@AEBUSkRect@@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawImageNine(this: *mut root::SkCanvas,
                                       arg1: *const root::SkImage,
                                       center: *const root::SkIRect,
@@ -10858,7 +9282,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param top      The position of the top side of the bitmap being drawn
         @param paint    The paint used to draw the bitmap, or NULL
     */
-        #[link_name = "_ZN8SkCanvas10drawBitmapERK8SkBitmapffPK7SkPaint"]
+        #[link_name =
+              "?drawBitmap@SkCanvas@@QEAAXAEBVSkBitmap@@MMPEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawBitmap(this: *mut root::SkCanvas,
                                    bitmap: *const root::SkBitmap,
                                    left: root::SkScalar, top: root::SkScalar,
@@ -10877,7 +9302,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  @param constraint Control the tradeoff between speed and exactness w.r.t. the src-rect.
      */
         #[link_name =
-              "_ZN8SkCanvas14drawBitmapRectERK8SkBitmapRK6SkRectS5_PK7SkPaintNS_17SrcRectConstraintE"]
+              "?drawBitmapRect@SkCanvas@@QEAAXAEBVSkBitmap@@AEBUSkRect@@1PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_drawBitmapRect(this: *mut root::SkCanvas,
                                        bitmap: *const root::SkBitmap,
                                        src: *const root::SkRect,
@@ -10888,7 +9313,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas14drawBitmapRectERK8SkBitmapRK7SkIRectRK6SkRectPK7SkPaintNS_17SrcRectConstraintE"]
+              "?drawBitmapRect@SkCanvas@@QEAAXAEBVSkBitmap@@AEBUSkIRect@@AEBUSkRect@@PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_drawBitmapRect1(this: *mut root::SkCanvas,
                                         bitmap: *const root::SkBitmap,
                                         isrc: *const root::SkIRect,
@@ -10899,7 +9324,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas14drawBitmapRectERK8SkBitmapRK6SkRectPK7SkPaintNS_17SrcRectConstraintE"]
+              "?drawBitmapRect@SkCanvas@@QEAAXAEBVSkBitmap@@AEBUSkRect@@PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_drawBitmapRect2(this: *mut root::SkCanvas,
                                         bitmap: *const root::SkBitmap,
                                         dst: *const root::SkRect,
@@ -10923,7 +9348,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  - The sides (along the shrink axis) and center are not drawn
      */
         #[link_name =
-              "_ZN8SkCanvas14drawBitmapNineERK8SkBitmapRK7SkIRectRK6SkRectPK7SkPaint"]
+              "?drawBitmapNine@SkCanvas@@QEAAXAEBVSkBitmap@@AEBUSkIRect@@AEBUSkRect@@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawBitmapNine(this: *mut root::SkCanvas,
                                        bitmap: *const root::SkBitmap,
                                        center: *const root::SkIRect,
@@ -10947,7 +9372,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  The same interpretation also applies to the y-dimension.
      */
         #[link_name =
-              "_ZN8SkCanvas17drawBitmapLatticeERK8SkBitmapRKNS_7LatticeERK6SkRectPK7SkPaint"]
+              "?drawBitmapLattice@SkCanvas@@QEAAXAEBVSkBitmap@@AEBULattice@1@AEBUSkRect@@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawBitmapLattice(this: *mut root::SkCanvas,
                                           bitmap: *const root::SkBitmap,
                                           lattice:
@@ -10957,7 +9382,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas16drawImageLatticeEPK7SkImageRKNS_7LatticeERK6SkRectPK7SkPaint"]
+              "?drawImageLattice@SkCanvas@@QEAAXPEBVSkImage@@AEBULattice@1@AEBUSkRect@@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawImageLattice(this: *mut root::SkCanvas,
                                          image: *const root::SkImage,
                                          lattice:
@@ -10974,7 +9399,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param y        The y-coordinate of the origin of the text being drawn
         @param paint    The paint used for the text (e.g. color, size, style)
     */
-        #[link_name = "_ZN8SkCanvas8drawTextEPKvmffRK7SkPaint"]
+        #[link_name = "?drawText@SkCanvas@@QEAAXPEBX_KMMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawText(this: *mut root::SkCanvas,
                                  text: *const ::std::os::raw::c_void,
                                  byteLength: usize, x: root::SkScalar,
@@ -10989,7 +9414,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param pos      Array of positions, used to position each character
         @param paint    The paint used for the text (e.g. color, size, style)
         */
-        #[link_name = "_ZN8SkCanvas11drawPosTextEPKvmPK7SkPointRK7SkPaint"]
+        #[link_name =
+              "?drawPosText@SkCanvas@@QEAAXPEBX_KQEBUSkPoint@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPosText(this: *mut root::SkCanvas,
                                     text: *const ::std::os::raw::c_void,
                                     byteLength: usize,
@@ -11006,7 +9432,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param constY   The shared Y coordinate for all of the positions
         @param paint    The paint used for the text (e.g. color, size, style)
         */
-        #[link_name = "_ZN8SkCanvas12drawPosTextHEPKvmPKffRK7SkPaint"]
+        #[link_name =
+              "?drawPosTextH@SkCanvas@@QEAAXPEBX_KQEBMMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPosTextH(this: *mut root::SkCanvas,
                                      text: *const ::std::os::raw::c_void,
                                      byteLength: usize,
@@ -11028,7 +9455,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param paint        The paint used for the text
     */
         #[link_name =
-              "_ZN8SkCanvas16drawTextOnPathHVEPKvmRK6SkPathffRK7SkPaint"]
+              "?drawTextOnPathHV@SkCanvas@@QEAAXPEBX_KAEBVSkPath@@MMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawTextOnPathHV(this: *mut root::SkCanvas,
                                          text: *const ::std::os::raw::c_void,
                                          byteLength: usize,
@@ -11049,7 +9476,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param paint        The paint used for the text
         */
         #[link_name =
-              "_ZN8SkCanvas14drawTextOnPathEPKvmRK6SkPathPK8SkMatrixRK7SkPaint"]
+              "?drawTextOnPath@SkCanvas@@QEAAXPEBX_KAEBVSkPath@@PEBVSkMatrix@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawTextOnPath(this: *mut root::SkCanvas,
                                        text: *const ::std::os::raw::c_void,
                                        byteLength: usize,
@@ -11064,7 +9491,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  taking into account the xforms and the paint, and will be used to accelerate culling.
      */
         #[link_name =
-              "_ZN8SkCanvas15drawTextRSXformEPKvmPK9SkRSXformPK6SkRectRK7SkPaint"]
+              "?drawTextRSXform@SkCanvas@@QEAAXPEBX_KQEBUSkRSXform@@PEBUSkRect@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawTextRSXform(this: *mut root::SkCanvas,
                                         text: *const ::std::os::raw::c_void,
                                         byteLength: usize,
@@ -11079,7 +9506,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
         @param y        The y-offset of the text being drawn
         @param paint    The paint used for the text (e.g. color, size, style)
     */
-        #[link_name = "_ZN8SkCanvas12drawTextBlobEPK10SkTextBlobffRK7SkPaint"]
+        #[link_name =
+              "?drawTextBlob@SkCanvas@@QEAAXPEBVSkTextBlob@@MMAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawTextBlob(this: *mut root::SkCanvas,
                                      blob: *const root::SkTextBlob,
                                      x: root::SkScalar, y: root::SkScalar,
@@ -11099,7 +9527,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *      saveLayer(paint)/drawPicture/restore
      */
         #[link_name =
-              "_ZN8SkCanvas11drawPictureEPK9SkPicturePK8SkMatrixPK7SkPaint"]
+              "?drawPicture@SkCanvas@@QEAAXPEBVSkPicture@@PEBVSkMatrix@@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPicture(this: *mut root::SkCanvas,
                                     arg1: *const root::SkPicture,
                                     matrix: *const root::SkMatrix,
@@ -11122,14 +9550,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
                       vertex, to be interpolated across the triangle.
         @param mode Used if both texs and colors are present. In this
                     case the colors are combined with the texture using mode,
-                    before being drawn using the paint.
+                    before being drawn using the paint. 
         @param indices If not null, array of indices to reference into the
                     vertex (texs, colors) array.
         @param indexCount number of entries in the indices array (if not null)
         @param paint Specifies the shader/texture if present.
     */
         #[link_name =
-              "_ZN8SkCanvas12drawVerticesENS_10VertexModeEiPK7SkPointS3_PKj11SkBlendModePKtiRK7SkPaint"]
+              "?drawVertices@SkCanvas@@QEAAXW4VertexMode@1@HQEBUSkPoint@@1QEBIW4SkBlendMode@@QEBGHAEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawVertices(this: *mut root::SkCanvas,
                                      vmode: root::SkCanvas_VertexMode,
                                      vertexCount: ::std::os::raw::c_int,
@@ -11156,7 +9584,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      @param paint Specifies the shader/texture if present.
      */
         #[link_name =
-              "_ZN8SkCanvas9drawPatchEPK7SkPointPKjS2_11SkBlendModeRK7SkPaint"]
+              "?drawPatch@SkCanvas@@QEAAXQEBUSkPoint@@QEBI0W4SkBlendMode@@AEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawPatch(this: *mut root::SkCanvas,
                                   cubics: *mut root::SkPoint,
                                   colors: *mut root::SkColor,
@@ -11183,7 +9611,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  and blendmode are used to affect each of the quads.
      */
         #[link_name =
-              "_ZN8SkCanvas9drawAtlasEPK7SkImagePK9SkRSXformPK6SkRectPKji11SkBlendModeS8_PK7SkPaint"]
+              "?drawAtlas@SkCanvas@@QEAAXPEBVSkImage@@QEBUSkRSXform@@QEBUSkRect@@QEBIHW4SkBlendMode@@PEBU4@PEBVSkPaint@@@Z"]
         pub fn SkCanvas_drawAtlas(this: *mut root::SkCanvas,
                                   atlas: *const root::SkImage,
                                   xform: *const root::SkRSXform,
@@ -11203,13 +9631,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If the intent is to force the contents of the drawable into this canvas immediately,
      *  then drawable->draw(canvas) may be called.
      */
-        #[link_name = "_ZN8SkCanvas12drawDrawableEP10SkDrawablePK8SkMatrix"]
+        #[link_name =
+              "?drawDrawable@SkCanvas@@QEAAXPEAVSkDrawable@@PEBVSkMatrix@@@Z"]
         pub fn SkCanvas_drawDrawable(this: *mut root::SkCanvas,
                                      drawable: *mut root::SkDrawable,
                                      arg1: *const root::SkMatrix);
     }
     extern "C" {
-        #[link_name = "_ZN8SkCanvas12drawDrawableEP10SkDrawableff"]
+        #[link_name = "?drawDrawable@SkCanvas@@QEAAXPEAVSkDrawable@@MM@Z"]
         pub fn SkCanvas_drawDrawable1(this: *mut root::SkCanvas,
                                       arg1: *mut root::SkDrawable,
                                       x: root::SkScalar, y: root::SkScalar);
@@ -11225,7 +9654,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Note: on may canvas types, this information is ignored, but some canvases (e.g. recording
      *  a picture or drawing to a PDF document) will pass on this information.
      */
-        #[link_name = "_ZN8SkCanvas14drawAnnotationERK6SkRectPKcP6SkData"]
+        #[link_name =
+              "?drawAnnotation@SkCanvas@@QEAAXAEBUSkRect@@QEBDPEAVSkData@@@Z"]
         pub fn SkCanvas_drawAnnotation(this: *mut root::SkCanvas,
                                        arg1: *const root::SkRect,
                                        key: *const ::std::os::raw::c_char,
@@ -11236,7 +9666,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         This does not account for the translate in any of the devices.
         @return The current matrix on the canvas.
     */
-        #[link_name = "_ZNK8SkCanvas14getTotalMatrixEv"]
+        #[link_name = "?getTotalMatrix@SkCanvas@@QEBAAEBVSkMatrix@@XZ"]
         pub fn SkCanvas_getTotalMatrix(this: *const root::SkCanvas)
          -> *const root::SkMatrix;
     }
@@ -11246,41 +9676,42 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  the canvas, calling the appropriate method on the visitor for each
      *  clip. All clips have already been transformed into device space.
      */
-        #[link_name = "_ZNK8SkCanvas11replayClipsEP19SkCanvasClipVisitor"]
+        #[link_name =
+              "?replayClips@SkCanvas@@QEBAXPEAVSkCanvasClipVisitor@@@Z"]
         pub fn SkCanvas_replayClips(this: *const root::SkCanvas,
                                     arg1: *mut root::SkCanvas_ClipVisitor);
     }
     extern "C" {
         ///////////////////////////////////////////////////////////////////////////
         #[link_name =
-              "_ZN8SkCanvas50internal_private_accessTopLayerRenderTargetContextEv"]
+              "?internal_private_accessTopLayerRenderTargetContext@SkCanvas@@QEAAPEAVGrRenderTargetContext@@XZ"]
         pub fn SkCanvas_internal_private_accessTopLayerRenderTargetContext(this:
                                                                                *mut root::SkCanvas)
          -> *mut root::GrRenderTargetContext;
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas41Internal_Private_SetIgnoreSaveLayerBoundsEb"]
+              "?Internal_Private_SetIgnoreSaveLayerBounds@SkCanvas@@SAX_N@Z"]
         pub fn SkCanvas_Internal_Private_SetIgnoreSaveLayerBounds(arg1: bool);
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas41Internal_Private_GetIgnoreSaveLayerBoundsEv"]
+              "?Internal_Private_GetIgnoreSaveLayerBounds@SkCanvas@@SA_NXZ"]
         pub fn SkCanvas_Internal_Private_GetIgnoreSaveLayerBounds() -> bool;
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas39Internal_Private_SetTreatSpriteAsBitmapEb"]
+              "?Internal_Private_SetTreatSpriteAsBitmap@SkCanvas@@SAX_N@Z"]
         pub fn SkCanvas_Internal_Private_SetTreatSpriteAsBitmap(arg1: bool);
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas39Internal_Private_GetTreatSpriteAsBitmapEv"]
+              "?Internal_Private_GetTreatSpriteAsBitmap@SkCanvas@@SA_NXZ"]
         pub fn SkCanvas_Internal_Private_GetTreatSpriteAsBitmap() -> bool;
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas20legacy_drawImageRectEPK7SkImagePK6SkRectRS4_PK7SkPaintNS_17SrcRectConstraintE"]
+              "?legacy_drawImageRect@SkCanvas@@QEAAXPEBVSkImage@@PEBUSkRect@@AEBU3@PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_legacy_drawImageRect(this: *mut root::SkCanvas,
                                              image: *const root::SkImage,
                                              src: *const root::SkRect,
@@ -11291,7 +9722,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas21legacy_drawBitmapRectERK8SkBitmapPK6SkRectRS4_PK7SkPaintNS_17SrcRectConstraintE"]
+              "?legacy_drawBitmapRect@SkCanvas@@QEAAXAEBVSkBitmap@@PEBUSkRect@@AEBU3@PEBVSkPaint@@W4SrcRectConstraint@1@@Z"]
         pub fn SkCanvas_legacy_drawBitmapRect(this: *mut root::SkCanvas,
                                               bitmap: *const root::SkBitmap,
                                               src: *const root::SkRect,
@@ -11305,7 +9736,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * Returns CTM and clip bounds, translated from canvas coordinates to top layer coordinates.
      */
         #[link_name =
-              "_ZN8SkCanvas35temporary_internal_describeTopLayerEP8SkMatrixP7SkIRect"]
+              "?temporary_internal_describeTopLayer@SkCanvas@@QEAAXPEAVSkMatrix@@PEAUSkIRect@@@Z"]
         pub fn SkCanvas_temporary_internal_describeTopLayer(this:
                                                                 *mut root::SkCanvas,
                                                             matrix:
@@ -11315,7 +9746,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     extern "C" {
         #[link_name =
-              "_ZN8SkCanvas14clipRectBoundsEPK6SkRectjP7SkIRectPK13SkImageFilter"]
+              "?clipRectBounds@SkCanvas@@IEAA_NPEBUSkRect@@IPEAUSkIRect@@PEBVSkImageFilter@@@Z"]
         pub fn SkCanvas_clipRectBounds(this: *mut root::SkCanvas,
                                        bounds: *const root::SkRect,
                                        arg1: root::SkCanvas_SaveLayerFlags,
@@ -11938,7 +10369,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub fHeight: ::std::os::raw::c_int,
         pub fGenerationID: u32,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     /**
      *  Modes that can be passed to notifyContentWillChange
      */
@@ -11947,14 +10378,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kDiscard_ContentChangeMode = 0,
         kRetain_ContentChangeMode = 1,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkSurface_BackendHandleAccess {
         kFlushRead_BackendHandleAccess = 0,
         kFlushWrite_BackendHandleAccess = 1,
         kDiscardWrite_BackendHandleAccess = 2,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     /**
      * In rare instances a client may want a unique copy of the SkSurface's contents in an image
      * snapshot. This enum can be used to enforce that the image snapshot's backing store is not
@@ -11968,23 +10399,26 @@ be copied. It hides its copy-constructor and its assignment-operator.
     }
     pub type SkSurface_INHERITED = root::SkRefCnt;
     extern "C" {
-        #[link_name = "_ZN9SkSurface30kFlushRead_TextureHandleAccessE"]
+        #[link_name =
+              "?kFlushRead_TextureHandleAccess@SkSurface@@2W4BackendHandleAccess@1@B"]
         pub static SkSurface_kFlushRead_TextureHandleAccess:
                    root::SkSurface_BackendHandleAccess;
     }
     extern "C" {
-        #[link_name = "_ZN9SkSurface31kFlushWrite_TextureHandleAccessE"]
+        #[link_name =
+              "?kFlushWrite_TextureHandleAccess@SkSurface@@2W4BackendHandleAccess@1@B"]
         pub static SkSurface_kFlushWrite_TextureHandleAccess:
                    root::SkSurface_BackendHandleAccess;
     }
     extern "C" {
-        #[link_name = "_ZN9SkSurface33kDiscardWrite_TextureHandleAccessE"]
+        #[link_name =
+              "?kDiscardWrite_TextureHandleAccess@SkSurface@@2W4BackendHandleAccess@1@B"]
         pub static SkSurface_kDiscardWrite_TextureHandleAccess:
                    root::SkSurface_BackendHandleAccess;
     }
     #[test]
     fn bindgen_test_layout_SkSurface() {
-        assert_eq!(::std::mem::size_of::<SkSurface>() , 32usize);
+        assert_eq!(::std::mem::size_of::<SkSurface>() , 40usize);
         assert_eq!(::std::mem::align_of::<SkSurface>() , 8usize);
     }
     extern "C" {
@@ -11998,7 +10432,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  Callers are responsible for initialiazing the surface pixels.
      */
         #[link_name =
-              "_ZN9SkSurface16MakeRasterDirectERK11SkImageInfoPvmPK14SkSurfaceProps"]
+              "?MakeRasterDirect@SkSurface@@SA?AV?$sk_sp@VSkSurface@@@@AEBUSkImageInfo@@PEAX_KPEBVSkSurfaceProps@@@Z"]
         pub fn SkSurface_MakeRasterDirect(arg1: *const root::SkImageInfo,
                                           pixels: *mut ::std::os::raw::c_void,
                                           rowBytes: usize,
@@ -12011,7 +10445,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  when the surface is deleted, and is passed the pixel memory and the specified context.
      */
         #[link_name =
-              "_ZN9SkSurface27MakeRasterDirectReleaseProcERK11SkImageInfoPvmPFvS3_S3_ES3_PK14SkSurfaceProps"]
+              "?MakeRasterDirectReleaseProc@SkSurface@@SA?AV?$sk_sp@VSkSurface@@@@AEBUSkImageInfo@@PEAX_KP6AX11@Z1PEBVSkSurfaceProps@@@Z"]
         pub fn SkSurface_MakeRasterDirectReleaseProc(arg1:
                                                          *const root::SkImageInfo,
                                                      pixels:
@@ -12039,7 +10473,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  supported configuration, NULL will be returned.
      */
         #[link_name =
-              "_ZN9SkSurface10MakeRasterERK11SkImageInfomPK14SkSurfaceProps"]
+              "?MakeRaster@SkSurface@@SA?AV?$sk_sp@VSkSurface@@@@AEBUSkImageInfo@@_KPEBVSkSurfaceProps@@@Z"]
         pub fn SkSurface_MakeRaster(arg1: *const root::SkImageInfo,
                                     rowBytes: usize,
                                     arg2: *const root::SkSurfaceProps)
@@ -12053,7 +10487,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  SkSurface.
      */
         #[link_name =
-              "_ZN9SkSurface22MakeFromBackendTextureEP9GrContextRK20GrBackendTextureDesc5sk_spI12SkColorSpaceEPK14SkSurfaceProps"]
+              "?MakeFromBackendTexture@SkSurface@@SA?AV?$sk_sp@VSkSurface@@@@PEAVGrContext@@AEBUGrBackendTextureDesc@@V?$sk_sp@VSkColorSpace@@@@PEBVSkSurfaceProps@@@Z"]
         pub fn SkSurface_MakeFromBackendTexture(arg1: *mut root::GrContext,
                                                 arg2:
                                                     *const root::GrBackendTextureDesc,
@@ -12070,7 +10504,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  lifetime of the SkSurface.
      */
         #[link_name =
-              "_ZN9SkSurface27MakeFromBackendRenderTargetEP9GrContextRK25GrBackendRenderTargetDesc5sk_spI12SkColorSpaceEPK14SkSurfaceProps"]
+              "?MakeFromBackendRenderTarget@SkSurface@@SA?AV?$sk_sp@VSkSurface@@@@PEAVGrContext@@AEBUGrBackendRenderTargetDesc@@V?$sk_sp@VSkColorSpace@@@@PEBVSkSurfaceProps@@@Z"]
         pub fn SkSurface_MakeFromBackendRenderTarget(arg1:
                                                          *mut root::GrContext,
                                                      arg2:
@@ -12091,7 +10525,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  SkSurface.
      */
         #[link_name =
-              "_ZN9SkSurface36MakeFromBackendTextureAsRenderTargetEP9GrContextRK20GrBackendTextureDesc5sk_spI12SkColorSpaceEPK14SkSurfaceProps"]
+              "?MakeFromBackendTextureAsRenderTarget@SkSurface@@SA?AV?$sk_sp@VSkSurface@@@@PEAVGrContext@@AEBUGrBackendTextureDesc@@V?$sk_sp@VSkColorSpace@@@@PEBVSkSurfaceProps@@@Z"]
         pub fn SkSurface_MakeFromBackendTextureAsRenderTarget(arg1:
                                                                   *mut root::GrContext,
                                                               arg2:
@@ -12108,7 +10542,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  render target, allocated by the surface.
      */
         #[link_name =
-              "_ZN9SkSurface16MakeRenderTargetEP9GrContext10SkBudgetedRK11SkImageInfoi15GrSurfaceOriginPK14SkSurfaceProps"]
+              "?MakeRenderTarget@SkSurface@@SA?AV?$sk_sp@VSkSurface@@@@PEAVGrContext@@W4SkBudgeted@@AEBUSkImageInfo@@HW4GrSurfaceOrigin@@PEBVSkSurfaceProps@@@Z"]
         pub fn SkSurface_MakeRenderTarget(arg1: *mut root::GrContext,
                                           arg2: root::SkBudgeted,
                                           arg3: *const root::SkImageInfo,
@@ -12127,7 +10561,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  If this surface is empty (i.e. has a zero-dimention), this will return
      *  0.
      */
-        #[link_name = "_ZN9SkSurface12generationIDEv"]
+        #[link_name = "?generationID@SkSurface@@QEAAIXZ"]
         pub fn SkSurface_generationID(this: *mut root::SkSurface) -> u32;
     }
     extern "C" {
@@ -12138,7 +10572,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  CAN WE DEPRECATE THIS?
      */
         #[link_name =
-              "_ZN9SkSurface23notifyContentWillChangeENS_17ContentChangeModeE"]
+              "?notifyContentWillChange@SkSurface@@QEAAXW4ContentChangeMode@1@@Z"]
         pub fn SkSurface_notifyContentWillChange(this: *mut root::SkSurface,
                                                  mode:
                                                      root::SkSurface_ContentChangeMode);
@@ -12152,7 +10586,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  or the surface is deleted.
      */
         #[link_name =
-              "_ZN9SkSurface16getTextureHandleENS_19BackendHandleAccessE"]
+              "?getTextureHandle@SkSurface@@QEAA_JW4BackendHandleAccess@1@@Z"]
         pub fn SkSurface_getTextureHandle(this: *mut root::SkSurface,
                                           arg1:
                                               root::SkSurface_BackendHandleAccess)
@@ -12166,7 +10600,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  In OpenGL this will return the FramebufferObject ID.
      */
         #[link_name =
-              "_ZN9SkSurface21getRenderTargetHandleEPlNS_19BackendHandleAccessE"]
+              "?getRenderTargetHandle@SkSurface@@QEAA_NPEA_JW4BackendHandleAccess@1@@Z"]
         pub fn SkSurface_getRenderTargetHandle(this: *mut root::SkSurface,
                                                arg1:
                                                    *mut root::GrBackendObject,
@@ -12181,7 +10615,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  surface. It should not be used when its parent surface has gone out of
      *  scope.
      */
-        #[link_name = "_ZN9SkSurface9getCanvasEv"]
+        #[link_name = "?getCanvas@SkSurface@@QEAAPEAVSkCanvas@@XZ"]
         pub fn SkSurface_getCanvas(this: *mut root::SkSurface)
          -> *mut root::SkCanvas;
     }
@@ -12199,7 +10633,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  ... // draw using canvasB
      *  canvasA->drawSurface(surfaceB); // <--- this will always be optimal!
      */
-        #[link_name = "_ZN9SkSurface11makeSurfaceERK11SkImageInfo"]
+        #[link_name =
+              "?makeSurface@SkSurface@@QEAA?AV?$sk_sp@VSkSurface@@@@AEBUSkImageInfo@@@Z"]
         pub fn SkSurface_makeSurface(this: *mut root::SkSurface,
                                      arg1: *const root::SkImageInfo)
          -> root::sk_sp<root::SkSurface>;
@@ -12212,14 +10647,15 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  parameter controls whether it counts against the resource budget
      *  (currently for the gpu backend only).
      */
-        #[link_name = "_ZN9SkSurface17makeImageSnapshotE10SkBudgeted"]
+        #[link_name =
+              "?makeImageSnapshot@SkSurface@@QEAA?AV?$sk_sp@VSkImage@@@@W4SkBudgeted@@@Z"]
         pub fn SkSurface_makeImageSnapshot(this: *mut root::SkSurface,
                                            arg1: root::SkBudgeted)
          -> root::sk_sp<root::SkImage>;
     }
     extern "C" {
         #[link_name =
-              "_ZN9SkSurface17makeImageSnapshotE10SkBudgetedNS_11ForceUniqueE"]
+              "?makeImageSnapshot@SkSurface@@QEAA?AV?$sk_sp@VSkImage@@@@W4SkBudgeted@@W4ForceUnique@1@@Z"]
         pub fn SkSurface_makeImageSnapshot1(this: *mut root::SkSurface,
                                             arg1: root::SkBudgeted,
                                             arg2: root::SkSurface_ForceUnique)
@@ -12233,7 +10669,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  we'd know that the "snapshot" need only live until we've handed it off
      *  to the canvas.
      */
-        #[link_name = "_ZN9SkSurface4drawEP8SkCanvasffPK7SkPaint"]
+        #[link_name = "?draw@SkSurface@@QEAAXPEAVSkCanvas@@MMPEBVSkPaint@@@Z"]
         pub fn SkSurface_draw(this: *mut root::SkSurface,
                               arg1: *mut root::SkCanvas, x: root::SkScalar,
                               y: root::SkScalar, arg2: *const root::SkPaint);
@@ -12248,7 +10684,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *
      *  On failure, returns false and the pixmap parameter is ignored.
      */
-        #[link_name = "_ZN9SkSurface10peekPixelsEP8SkPixmap"]
+        #[link_name = "?peekPixels@SkSurface@@QEAA_NPEAVSkPixmap@@@Z"]
         pub fn SkSurface_peekPixels(this: *mut root::SkSurface,
                                     arg1: *mut root::SkPixmap) -> bool;
     }
@@ -12271,7 +10707,8 @@ be copied. It hides its copy-constructor and its assignment-operator.
      *  - If srcR does not intersect the surface bounds.
      *  - If the requested colortype/alphatype cannot be converted from the surface's types.
      */
-        #[link_name = "_ZN9SkSurface10readPixelsERK11SkImageInfoPvmii"]
+        #[link_name =
+              "?readPixels@SkSurface@@QEAA_NAEBUSkImageInfo@@PEAX_KHH@Z"]
         pub fn SkSurface_readPixels(this: *mut root::SkSurface,
                                     dstInfo: *const root::SkImageInfo,
                                     dstPixels: *mut ::std::os::raw::c_void,
@@ -12283,7 +10720,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         /**
      * Issue any pending surface IO to the current backend 3D API and resolve any surface MSAA.
      */
-        #[link_name = "_ZN9SkSurface20prepareForExternalIOEv"]
+        #[link_name = "?prepareForExternalIO@SkSurface@@QEAAXXZ"]
         pub fn SkSurface_prepareForExternalIO(this: *mut root::SkSurface);
     }
     impl SkSurface {
@@ -12480,7 +10917,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         pub fPos: *mut ::std::os::raw::c_char,
         pub fElemSize: usize,
     }
-    #[repr(u32)]
+    #[repr(i32)]
     #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
     pub enum SkDeque_Iter_IterStart {
         kFront_IterStart = 0,
@@ -12492,17 +10929,17 @@ be copied. It hides its copy-constructor and its assignment-operator.
         assert_eq!(::std::mem::align_of::<SkDeque_Iter>() , 8usize);
     }
     extern "C" {
-        #[link_name = "_ZN7SkDeque4Iter4nextEv"]
+        #[link_name = "?next@Iter@SkDeque@@QEAAPEAXXZ"]
         pub fn SkDeque_Iter_next(this: *mut root::SkDeque_Iter)
          -> *mut ::std::os::raw::c_void;
     }
     extern "C" {
-        #[link_name = "_ZN7SkDeque4Iter4prevEv"]
+        #[link_name = "?prev@Iter@SkDeque@@QEAAPEAXXZ"]
         pub fn SkDeque_Iter_prev(this: *mut root::SkDeque_Iter)
          -> *mut ::std::os::raw::c_void;
     }
     extern "C" {
-        #[link_name = "_ZN7SkDeque4Iter5resetERKS_NS0_9IterStartE"]
+        #[link_name = "?reset@Iter@SkDeque@@QEAAXAEBV2@W4IterStart@12@@Z"]
         pub fn SkDeque_Iter_reset(this: *mut root::SkDeque_Iter,
                                   d: *const root::SkDeque,
                                   startLoc: root::SkDeque_Iter_IterStart);
@@ -12549,21 +10986,21 @@ be copied. It hides its copy-constructor and its assignment-operator.
      * push_front and push_back return a pointer to the memory space
      * for the new element
      */
-        #[link_name = "_ZN7SkDeque10push_frontEv"]
+        #[link_name = "?push_front@SkDeque@@QEAAPEAXXZ"]
         pub fn SkDeque_push_front(this: *mut root::SkDeque)
          -> *mut ::std::os::raw::c_void;
     }
     extern "C" {
-        #[link_name = "_ZN7SkDeque9push_backEv"]
+        #[link_name = "?push_back@SkDeque@@QEAAPEAXXZ"]
         pub fn SkDeque_push_back(this: *mut root::SkDeque)
          -> *mut ::std::os::raw::c_void;
     }
     extern "C" {
-        #[link_name = "_ZN7SkDeque9pop_frontEv"]
+        #[link_name = "?pop_front@SkDeque@@QEAAXXZ"]
         pub fn SkDeque_pop_front(this: *mut root::SkDeque);
     }
     extern "C" {
-        #[link_name = "_ZN7SkDeque8pop_backEv"]
+        #[link_name = "?pop_back@SkDeque@@QEAAXXZ"]
         pub fn SkDeque_pop_back(this: *mut root::SkDeque);
     }
     impl SkDeque {
@@ -12580,7 +11017,7 @@ be copied. It hides its copy-constructor and its assignment-operator.
         #[inline]
         pub unsafe fn pop_back(&mut self) { SkDeque_pop_back(&mut *self) }
     }
-    #[repr(u32)]
+    #[repr(i32)]
     /**
  *  Description of how the LCD strips are arranged for each pixel. If this is unknown, or the
  *  pixels are meant to be "portable" and/or transformed before showing (e.g. rotated, scaled)
@@ -12593,92 +11030,6 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kBGR_H_SkPixelGeometry = 2,
         kRGB_V_SkPixelGeometry = 3,
         kBGR_V_SkPixelGeometry = 4,
-    }
-    extern "C" {
-        #[link_name = "_ZL20SkPixelGeometryIsRGB15SkPixelGeometry"]
-        pub fn SkPixelGeometryIsRGB(geo: root::SkPixelGeometry) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL20SkPixelGeometryIsBGR15SkPixelGeometry"]
-        pub fn SkPixelGeometryIsBGR(geo: root::SkPixelGeometry) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkPixelGeometryIsH15SkPixelGeometry"]
-        pub fn SkPixelGeometryIsH(geo: root::SkPixelGeometry) -> bool;
-    }
-    extern "C" {
-        #[link_name = "_ZL18SkPixelGeometryIsV15SkPixelGeometry"]
-        pub fn SkPixelGeometryIsV(geo: root::SkPixelGeometry) -> bool;
-    }
-    #[test]
-    fn __bindgen_test_layout_template_21() {
-        assert_eq!(::std::mem::size_of::<root::sk_sp<root::SkLights>>() ,
-                   8usize);
-        assert_eq!(::std::mem::align_of::<root::sk_sp<root::SkLights>>() ,
-                   8usize);
-    }
-    #[repr(C)]
-    pub struct SkLights {
-        pub _base: root::SkRefCnt,
-        pub fLights: [u64; 4usize],
-        pub fAmbientLightColor: root::SkColor3f,
-    }
-    #[repr(C)]
-    #[derive(Debug)]
-    pub struct SkLights_Light {
-        pub fType: root::SkLights_Light_LightType,
-        pub fColor: root::SkColor3f,
-        pub fDirOrPos: root::SkVector3,
-        pub fIntensity: root::SkScalar,
-        pub fShadowMap: root::sk_sp<root::SkImage>,
-        pub fIsRadial: bool,
-    }
-    #[repr(u32)]
-    #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-    pub enum SkLights_Light_LightType {
-        kDirectional_LightType = 0,
-        kPoint_LightType = 1,
-    }
-    #[test]
-    fn bindgen_test_layout_SkLights_Light() {
-        assert_eq!(::std::mem::size_of::<SkLights_Light>() , 48usize);
-        assert_eq!(::std::mem::align_of::<SkLights_Light>() , 8usize);
-    }
-    #[repr(C)]
-    pub struct SkLights_Builder {
-        pub fLights: root::sk_sp<root::SkLights>,
-    }
-    #[test]
-    fn bindgen_test_layout_SkLights_Builder() {
-        assert_eq!(::std::mem::size_of::<SkLights_Builder>() , 8usize);
-        assert_eq!(::std::mem::align_of::<SkLights_Builder>() , 8usize);
-    }
-    pub type SkLights_INHERITED = root::SkRefCnt;
-    #[test]
-    fn bindgen_test_layout_SkLights() {
-        assert_eq!(::std::mem::size_of::<SkLights>() , 64usize);
-        assert_eq!(::std::mem::align_of::<SkLights>() , 8usize);
-    }
-    extern "C" {
-        #[link_name = "_ZN8SkLights14MakeFromBufferER12SkReadBuffer"]
-        pub fn SkLights_MakeFromBuffer(buf: *mut root::SkReadBuffer)
-         -> root::sk_sp<root::SkLights>;
-    }
-    extern "C" {
-        #[link_name = "_ZNK8SkLights7flattenER13SkWriteBuffer"]
-        pub fn SkLights_flatten(this: *const root::SkLights,
-                                buf: *mut root::SkWriteBuffer);
-    }
-    impl SkLights {
-        #[inline]
-        pub unsafe fn MakeFromBuffer(buf: *mut root::SkReadBuffer)
-         -> root::sk_sp<root::SkLights> {
-            SkLights_MakeFromBuffer(buf)
-        }
-        #[inline]
-        pub unsafe fn flatten(&self, buf: *mut root::SkWriteBuffer) {
-            SkLights_flatten(&*self, buf)
-        }
     }
     #[repr(C)]
     #[derive(Debug, Copy)]
@@ -12758,26 +11109,14 @@ be copied. It hides its copy-constructor and its assignment-operator.
         fn clone(&self) -> Self { *self }
     }
     #[test]
-    fn __bindgen_test_layout_template_22() {
+    fn __bindgen_test_layout_template_17() {
         assert_eq!(::std::mem::size_of::<root::SkTSize<::std::os::raw::c_int>>()
                    , 8usize);
         assert_eq!(::std::mem::align_of::<root::SkTSize<::std::os::raw::c_int>>()
                    , 4usize);
     }
-    #[repr(C)]
-    #[derive(Debug, Copy)]
-    pub struct __va_list_tag {
-        pub gp_offset: ::std::os::raw::c_uint,
-        pub fp_offset: ::std::os::raw::c_uint,
-        pub overflow_arg_area: *mut ::std::os::raw::c_void,
-        pub reg_save_area: *mut ::std::os::raw::c_void,
-    }
-    impl Clone for __va_list_tag {
-        fn clone(&self) -> Self { *self }
-    }
-    pub type __builtin_va_list = [root::__va_list_tag; 1usize];
     #[test]
-    fn __bindgen_test_layout_template_23() {
+    fn __bindgen_test_layout_template_18() {
         assert_eq!(::std::mem::size_of::<root::std::default_delete<root::SkCanvas>>()
                    , 1usize);
         assert_eq!(::std::mem::align_of::<root::std::default_delete<root::SkCanvas>>()

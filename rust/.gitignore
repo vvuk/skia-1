@@ -3,5 +3,6 @@ target
 #*
 *~
 etc/skia_bind.rs
+etc/warnings.txt
 .vs
-
+junk

@@ -4,5 +4,10 @@
 #![allow(non_camel_case_types)]
 
 #![feature(untagged_unions)]
+#![feature(integer_atomics)]
 
-pub mod skia_bind;
+mod bindings;
+mod binding_helpers;
+
+pub use bindings::*;
+
