@@ -49,6 +49,13 @@ WHITELISTED_TYPES=(
     SkTypeface
     SkShader_TileMode
     SkClipStack
+    SkRect
+    SkIRect
+    SkSize
+    SKISize
+    SkPoint
+    SkIPoint
+    SkIPoint16
 )
 
 WHITELISTED_FN_REGEX=(

@@ -34,6 +34,7 @@ pub struct sk_sp<T> {
     pub dummy: *mut ::std::os::raw::c_void,
 }
 
+#[cfg(unix)]
 impl<T> Clone for sk_sp<T> {
     fn clone(&self) -> Self {
         let new_sp = sk_sp { ptr: self.ptr, dummy: ptr::null_mut() };
@@ -47,6 +48,7 @@ impl<T> Clone for sk_sp<T> {
     }
 }
 
+#[cfg(unix)]
 impl<T> Drop for sk_sp<T> {
     fn drop(&mut self) {
         println!("sk_sp drop: this: {:?} ptr: {:?}", &self as *const _, self.ptr);

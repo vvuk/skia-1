@@ -473,6 +473,24 @@ be copied. It hides its copy-constructor and its assignment-operator.
         kMedium_SkFilterQuality = 2,
         kHigh_SkFilterQuality = 3,
     }
+    /** \struct SkIPoint16
+
+    SkIPoint holds two 16 bit integer coordinates
+*/
+    #[repr(C)]
+    #[derive(Debug, Copy)]
+    pub struct SkIPoint16 {
+        pub fX: i16,
+        pub fY: i16,
+    }
+    #[test]
+    fn bindgen_test_layout_SkIPoint16() {
+        assert_eq!(::std::mem::size_of::<SkIPoint16>() , 4usize);
+        assert_eq!(::std::mem::align_of::<SkIPoint16>() , 2usize);
+    }
+    impl Clone for SkIPoint16 {
+        fn clone(&self) -> Self { *self }
+    }
     /** \struct SkIPoint
 
     SkIPoint holds two 32 bit integer coordinates
